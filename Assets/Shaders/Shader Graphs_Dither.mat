@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dither
+  m_Name: Shader Graphs_Dither
   m_Shader: {fileID: -6465566751694194690, guid: 10e74b6d745004442b421172369b39a6,
     type: 3}
   m_Parent: {fileID: 0}
@@ -37,6 +37,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _Spread: 0.25
     m_Colors: []
   m_BuildTextureStacks: []

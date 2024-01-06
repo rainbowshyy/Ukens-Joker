@@ -75,7 +75,7 @@ MonoBehaviour:
   m_RenderingMode: 0
   m_DepthPrimingMode: 0
   m_CopyDepthMode: 0
-  m_AccurateGbufferNormals: 0
+  m_AccurateGbufferNormals: 1
   m_IntermediateTextureMode: 1
 --- !u!114 &6131912651271149479
 MonoBehaviour:
@@ -93,7 +93,7 @@ MonoBehaviour:
   injectionPoint: 600
   fetchColorBuffer: 1
   requirements: 4
-  passMaterial: {fileID: 2100000, guid: 796d9d50e3ea150468d44eb8fab167ba, type: 2}
+  passMaterial: {fileID: 2100000, guid: 0207d29feb3455540aa1a894916c0638, type: 2}
   passIndex: 0
   bindDepthStencilAttachment: 0
   m_Version: 1
