@@ -47,7 +47,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _BlackThreshold: 0.5
-    - _DoorThreshold: 0.02
+    - _DoorThreshold: 0.025
     - _GreyThreshold: 0.15
     - _Spread: 0.25
     m_Colors:
