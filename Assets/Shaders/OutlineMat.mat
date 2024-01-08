@@ -39,7 +39,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _BlackThreshold: 0
-    - _ColorThreshold: 0.75
+    - _ColorThreshold: 1.25
     - _LightThreshold: 1.17
     - _NormalThreshold: 3.5
     - _OVERLAY: 0
