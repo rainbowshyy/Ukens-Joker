@@ -15,7 +15,7 @@ MonoBehaviour:
   m_Active: 1
   injectionPoint: 600
   fetchColorBuffer: 1
-  requirements: 6
+  requirements: 7
   passMaterial: {fileID: 2100000, guid: 0207d29feb3455540aa1a894916c0638, type: 2}
   passIndex: 0
   bindDepthStencilAttachment: 0
@@ -118,3 +118,22 @@ MonoBehaviour:
   passIndex: 0
   bindDepthStencilAttachment: 0
   m_Version: 1
+--- !u!114 &8987887835790182560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42c3efa557d31b54dadaa693779d5b5b, type: 3}
+  m_Name: RenderObjectsToTextureFeature
+  m_EditorClassIdentifier: 
+  m_Active: 0
+  Settings: {Material: {fileID: 0}, MaterialPassIndex: -1, BlitMaterial: {fileID: 0},
+    BlitMaterialPassIndex: -1, RenderPassEvent: 300, RenderPassInput: -1, RenderQueueLowerBound: 0,
+    RenderQueueUpperBound: 2499, ColorFormat: 0, SortingCriteria: 59, LayerMask:
+      m_Bits: 64
+, TextureName: _MyTexture, LightMode: 15, GlobalShaderKeywords: []
+}
