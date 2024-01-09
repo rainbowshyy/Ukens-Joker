@@ -24,6 +24,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _MyTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Palette:
         m_Texture: {fileID: 2800000, guid: 7746e7ec4f05ebc49842394fc95801b8, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -47,7 +51,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _BlackThreshold: 0.5
-    - _DoorThreshold: 0.025
+    - _DoorThreshold: 0.25
     - _GreyThreshold: 0.15
     - _Spread: 0.25
     m_Colors:
