@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Active: 1
   _settings:
     renderPassEvent: 500
-    screenHeight: 270
+    screenHeight: 108
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,9 +97,10 @@ MonoBehaviour:
   m_RendererFeatures:
   - {fileID: -7884562310357976579}
   - {fileID: 1621733887873112762}
+  - {fileID: 3367267905127515499}
   - {fileID: -931125661689249424}
   - {fileID: -4591885355251826285}
-  m_RendererFeatureMap: fdf9ad595a689492badae3f2608e81167001c3dd24fa13f39381e526995846c0
+  m_RendererFeatureMap: fdf9ad595a689492badae3f2608e81166b05b3b451f0ba2e7001c3dd24fa13f39381e526995846c0
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -157,7 +158,33 @@ MonoBehaviour:
   m_Active: 1
   Settings:
     RenderPassEvent: 300
-    RenderPassInput: 0
+    RenderPassInput: 4
+    RenderQueueLowerBound: 0
+    RenderQueueUpperBound: 2499
+    ColorFormat: 0
+    SortingCriteria: 0
+    LayerMask:
+      serializedVersion: 2
+      m_Bits: 64
+    TextureName: _DoorTexture
+    LightMode: 15
+    GlobalShaderKeywords: []
+--- !u!114 &3367267905127515499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40d85c13a013a184586f57350c13e326, type: 3}
+  m_Name: Door Normal
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  Settings:
+    RenderPassEvent: 300
+    RenderPassInput: 2
     RenderQueueLowerBound: 0
     RenderQueueUpperBound: 2499
     ColorFormat: 0
@@ -165,7 +192,7 @@ MonoBehaviour:
     LayerMask:
       serializedVersion: 2
       m_Bits: 64
-    TextureName: _DoorTexture
+    TextureName: _DoorNormal
     LightMode: 15
     GlobalShaderKeywords: []
 --- !u!114 &8987887835790182560

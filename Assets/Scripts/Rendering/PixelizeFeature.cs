@@ -1,4 +1,5 @@
 using System;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -50,6 +51,9 @@ public class PixelizePass : ScriptableRenderPass
 
         _pixelScreenHeight = _settings.screenHeight;
         _pixelScreenWidth = (int)(Mathf.Ceil(_pixelScreenHeight * renderingData.cameraData.camera.aspect));
+
+        cmd.SetGlobalFloat("_PixelWidth", _pixelScreenWidth);
+        cmd.SetGlobalFloat("_PixelHeight", _pixelScreenHeight);
 
         _material.SetVector("_BlockCount", new Vector2(_pixelScreenWidth, _pixelScreenHeight));
         _material.SetVector("_BlockSize", new Vector2(1.0f / _pixelScreenWidth, 1.0f / _pixelScreenHeight));
