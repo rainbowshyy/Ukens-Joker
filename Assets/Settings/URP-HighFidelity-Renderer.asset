@@ -62,6 +62,22 @@ MonoBehaviour:
   passSettings:
     renderPassEvent: 500
     spread: 0.198
+--- !u!114 &-931125661689249424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 800968f0875ad2a4292cef5481819366, type: 3}
+  m_Name: PixelizeFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  _settings:
+    renderPassEvent: 500
+    screenHeight: 270
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,11 +95,11 @@ MonoBehaviour:
       type: 3}
     hdrDebugViewPS: {fileID: 4800000, guid: 573620ae32aec764abd4d728906d2587, type: 3}
   m_RendererFeatures:
-  - {fileID: 6131912651271149479}
-  - {fileID: -4591885355251826285}
   - {fileID: -7884562310357976579}
   - {fileID: 1621733887873112762}
-  m_RendererFeatureMap: a797bd6c11ee18559381e526995846c0fdf9ad595a689492badae3f2608e8116
+  - {fileID: -931125661689249424}
+  - {fileID: -4591885355251826285}
+  m_RendererFeatureMap: fdf9ad595a689492badae3f2608e81167001c3dd24fa13f39381e526995846c0
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -152,26 +168,6 @@ MonoBehaviour:
     TextureName: _DoorTexture
     LightMode: 15
     GlobalShaderKeywords: []
---- !u!114 &6131912651271149479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d613f08f173d4dd895bb07b3230baa9, type: 3}
-  m_Name: Outline
-  m_EditorClassIdentifier: 
-  m_Active: 1
-  injectionPoint: 600
-  fetchColorBuffer: 1
-  requirements: 4
-  passMaterial: {fileID: 2100000, guid: be12e38f7f4a7db47b46a20346b70c0a, type: 2}
-  passIndex: 0
-  bindDepthStencilAttachment: 0
-  m_Version: 1
 --- !u!114 &8987887835790182560
 MonoBehaviour:
   m_ObjectHideFlags: 0
