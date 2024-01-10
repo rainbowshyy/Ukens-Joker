@@ -54,7 +54,7 @@ Material:
     - _DoorThreshold: 0.5
     - _GreyThreshold: 0.15
     - _OutlineLightThreshold: 0.25
-    - _OutlineThreshold: 0.5
+    - _OutlineThreshold: 0.55
     - _Spread: 0.25
     m_Colors:
     - _Black: {r: 0, g: 0, b: 0, a: 1}
