@@ -46,8 +46,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DistortionIntensity: 0.01
+    - _DistortionIntensity: 0.015
     - _DistortionRate: 8
-    - _PixelRatio: 0.5
+    - _PixelRatio: 2
     m_Colors: []
   m_BuildTextureStacks: []
