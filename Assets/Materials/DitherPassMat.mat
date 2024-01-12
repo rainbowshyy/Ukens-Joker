@@ -57,7 +57,7 @@ Material:
     - _BlackThreshold: 0.4
     - _DoorThreshold: 0.5
     - _GreyThreshold: 0.4
-    - _OutlineLightThreshold: 0.25
+    - _OutlineLightThreshold: 0.01
     - _OutlineThreshold: 0.55
     - _PixelHeight: 0
     - _PixelWidth: 0
