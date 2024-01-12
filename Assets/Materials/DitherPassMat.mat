@@ -32,6 +32,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: 7746e7ec4f05ebc49842394fc95801b8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _RovernDepth:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Texture2D:
         m_Texture: {fileID: 2800000, guid: 0d7352d06ddae81458b79cb76fbd21d7, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -55,6 +59,8 @@ Material:
     - _GreyThreshold: 0.4
     - _OutlineLightThreshold: 0.25
     - _OutlineThreshold: 0.55
+    - _PixelHeight: 0
+    - _PixelWidth: 0
     - _Spread: 0.25
     m_Colors:
     - _Black: {r: 0, g: 0, b: 0, a: 1}
