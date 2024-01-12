@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DitherMat
-  m_Shader: {fileID: -6465566751694194690, guid: 10e74b6d745004442b421172369b39a6,
+  m_Name: RovernPassMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5b96672a9c56304488847a74988de48c,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -24,16 +24,8 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _MyTexture:
+    - _RovernTexture:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Palette:
-        m_Texture: {fileID: 2800000, guid: 7746e7ec4f05ebc49842394fc95801b8, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Texture2D:
-        m_Texture: {fileID: 2800000, guid: 0d7352d06ddae81458b79cb76fbd21d7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -49,15 +41,6 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats:
-    - _BlackThreshold: 0.4
-    - _DoorThreshold: 0.5
-    - _GreyThreshold: 0.4
-    - _OutlineLightThreshold: 0.25
-    - _OutlineThreshold: 0.55
-    - _Spread: 0.25
-    m_Colors:
-    - _Black: {r: 0, g: 0, b: 0, a: 1}
-    - _Door: {r: 0.29019603, g: 0.19999996, b: 0.07058824, a: 1}
-    - _Grey: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
+    m_Floats: []
+    m_Colors: []
   m_BuildTextureStacks: []

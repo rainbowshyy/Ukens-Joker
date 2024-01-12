@@ -26,6 +26,58 @@ MonoBehaviour:
     TextureName: _DoorDepth
     LightMode: -1
     GlobalShaderKeywords: []
+--- !u!114 &-6753999167794996730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40d85c13a013a184586f57350c13e326, type: 3}
+  m_Name: Rovern Texture
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  Settings:
+    RenderPassEvent: 350
+    RenderPassInput: 4
+    RenderQueueLowerBound: 0
+    RenderQueueUpperBound: 2499
+    ColorFormat: 0
+    SortingCriteria: 0
+    LayerMask:
+      serializedVersion: 2
+      m_Bits: 256
+    TextureName: _RovernTexture
+    LightMode: 15
+    GlobalShaderKeywords: []
+--- !u!114 &-6047643463003555328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40d85c13a013a184586f57350c13e326, type: 3}
+  m_Name: Rovern Depth
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  Settings:
+    RenderPassEvent: 350
+    RenderPassInput: 1
+    RenderQueueLowerBound: 0
+    RenderQueueUpperBound: 2499
+    ColorFormat: 11
+    SortingCriteria: 0
+    LayerMask:
+      serializedVersion: 2
+      m_Bits: 256
+    TextureName: _RovernDepth
+    LightMode: 15
+    GlobalShaderKeywords: []
 --- !u!114 &-4591885355251826285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,8 +150,11 @@ MonoBehaviour:
   - {fileID: -931125661689249424}
   - {fileID: -7884562310357976579}
   - {fileID: 1621733887873112762}
+  - {fileID: -6753999167794996730}
+  - {fileID: -6047643463003555328}
   - {fileID: -4591885355251826285}
-  m_RendererFeatureMap: 7001c3dd24fa13f3fdf9ad595a689492badae3f2608e81169381e526995846c0
+  - {fileID: 530964998034661522}
+  m_RendererFeatureMap: 7001c3dd24fa13f3fdf9ad595a689492badae3f2608e8116069a4b868af944a200ba75eb4f7412ac9381e526995846c092a00540da5d5e07
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -125,10 +180,10 @@ MonoBehaviour:
   m_AssetVersion: 2
   m_OpaqueLayerMask:
     serializedVersion: 2
-    m_Bits: 87
+    m_Bits: 343
   m_TransparentLayerMask:
     serializedVersion: 2
-    m_Bits: 87
+    m_Bits: 343
   m_DefaultStencilState:
     overrideStencilState: 0
     stencilReference: 0
@@ -142,6 +197,26 @@ MonoBehaviour:
   m_CopyDepthMode: 0
   m_AccurateGbufferNormals: 1
   m_IntermediateTextureMode: 1
+--- !u!114 &530964998034661522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d613f08f173d4dd895bb07b3230baa9, type: 3}
+  m_Name: Rovern
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  injectionPoint: 600
+  fetchColorBuffer: 1
+  requirements: 0
+  passMaterial: {fileID: 2100000, guid: 1c141797dd1ea974ea7329047d5c8fa0, type: 2}
+  passIndex: 0
+  bindDepthStencilAttachment: 1
+  m_Version: 1
 --- !u!114 &1621733887873112762
 MonoBehaviour:
   m_ObjectHideFlags: 0
