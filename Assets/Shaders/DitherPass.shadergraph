@@ -38,6 +38,9 @@
         },
         {
             "m_Id": "a77e9dabde474cd993610ca31e045b50"
+        },
+        {
+            "m_Id": "40de6fdcb5134d1baa91c045d8b8a0cc"
         }
     ],
     "m_Keywords": [],
@@ -1809,6 +1812,20 @@
             },
             "m_InputSlot": {
                 "m_Node": {
+                    "m_Id": "e28cbea92b5b4ef4b626f782f2bd1426"
+                },
+                "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "c6399fd60629474e95c9efbdef6ee062"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
                     "m_Id": "f7bde446083146a6b05a22a823309623"
                 },
                 "m_SlotId": 0
@@ -3416,10 +3433,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -621.0,
-            "y": 678.0000610351563,
-            "width": 125.99993896484375,
-            "height": 117.99993896484375
+            "x": -713.9999389648438,
+            "y": 674.0,
+            "width": 126.0,
+            "height": 118.0
         }
     },
     "m_Slots": [
@@ -5089,10 +5106,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 1954.0,
-            "y": 81.0,
-            "width": 183.0,
-            "height": 250.99996948242188
+            "x": 1889.0001220703125,
+            "y": 78.99996185302735,
+            "width": 182.9998779296875,
+            "height": 251.0
         }
     },
     "m_Slots": [
@@ -5255,6 +5272,36 @@
         "e32": 0.0,
         "e33": 1.0
     }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Texture2DShaderProperty",
+    "m_ObjectId": "40de6fdcb5134d1baa91c045d8b8a0cc",
+    "m_Guid": {
+        "m_GuidSerialized": "2eb5abf9-2039-49a2-af96-8976c7f50bbc"
+    },
+    "m_Name": "RovernDepth",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "RovernDepth",
+    "m_DefaultReferenceName": "_RovernDepth",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": false,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": {
+        "m_SerializedTexture": "{\"texture\":{\"instanceID\":0}}",
+        "m_Guid": ""
+    },
+    "isMainTexture": false,
+    "useTilingAndOffset": false,
+    "m_Modifiable": true,
+    "m_DefaultType": 0
 }
 
 {
@@ -10030,6 +10077,9 @@
         },
         {
             "m_Id": "a77e9dabde474cd993610ca31e045b50"
+        },
+        {
+            "m_Id": "40de6fdcb5134d1baa91c045d8b8a0cc"
         }
     ]
 }
@@ -10921,9 +10971,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -616.0000610351563,
-            "y": 480.0,
-            "width": 125.99996948242188,
+            "x": -686.0,
+            "y": 481.0,
+            "width": 126.0,
             "height": 118.0
         }
     },
@@ -12220,10 +12270,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 478.9999694824219,
-            "y": -819.9999389648438,
-            "width": 208.00003051757813,
-            "height": 312.9999694824219
+            "x": 506.9999694824219,
+            "y": -837.9999389648438,
+            "width": 155.00003051757813,
+            "height": 129.0
         }
     },
     "m_Slots": [

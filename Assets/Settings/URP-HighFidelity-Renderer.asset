@@ -24,7 +24,7 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 64
     TextureName: _DoorDepth
-    LightMode: -1
+    LightMode: 48
     GlobalShaderKeywords: []
 --- !u!114 &-6753999167794996730
 MonoBehaviour:
@@ -76,7 +76,7 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 256
     TextureName: _RovernDepth
-    LightMode: 15
+    LightMode: 48
     GlobalShaderKeywords: []
 --- !u!114 &-4591885355251826285
 MonoBehaviour:
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Active: 1
   injectionPoint: 600
   fetchColorBuffer: 1
-  requirements: 0
+  requirements: 5
   passMaterial: {fileID: 2100000, guid: 1c141797dd1ea974ea7329047d5c8fa0, type: 2}
   passIndex: 0
   bindDepthStencilAttachment: 1
