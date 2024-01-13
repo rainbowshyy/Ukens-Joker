@@ -1,0 +1,17 @@
+{
+    "name": "ukensjoker.engine",
+    "rootNamespace": "UkensJoker.Engine",
+    "references": [
+        "GUID:3a515e7fd63ea754b9a772509d75c51f",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

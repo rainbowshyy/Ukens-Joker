@@ -4,244 +4,247 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-public class RenderObjectsToTextureFeature : ScriptableRendererFeature
+namespace UkensJoker.Rendering
 {
-    public RenderObjectsToTexturePass.Settings Settings = new();
-
-    private RenderObjectsToTexturePass _renderPass;
-
-    public override void Create()
+    public class RenderObjectsToTextureFeature : ScriptableRendererFeature
     {
-        _renderPass = new RenderObjectsToTexturePass(name, Settings);
-    }
+        public RenderObjectsToTexturePass.Settings Settings = new();
 
-    public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
-    {
-        _renderPass.Setup(renderingData.cameraData.cameraTargetDescriptor);
-        renderer.EnqueuePass(_renderPass);
-    }
-}
+        private RenderObjectsToTexturePass _renderPass;
 
-public class RenderObjectsToTexturePass : ScriptableRenderPass
-{
-    private const int DepthBufferBits = 32;
-
-    private readonly Settings _settings;
-    private RenderTextureDescriptor _descriptor;
-    private FilteringSettings _filteringSettings;
-    private RenderTargetHandle _tempTextureHandle;
-    private RenderTargetHandle _textureHandle;
-
-
-    [Serializable]
-    public class Settings
-    {
-        [Flags]
-        public enum LightModeTags
+        public override void Create()
         {
-            None = 0,
-            SRPDefaultUnlit = 1 << 0,
-            UniversalForward = 1 << 1,
-            UniversalForwardOnly = 1 << 2,
-            LightweightForward = 1 << 3,
-            DepthNormals = 1 << 4,
-            DepthOnly = 1 << 5,
-            Standard = SRPDefaultUnlit | UniversalForward | UniversalForwardOnly | LightweightForward,
+            _renderPass = new RenderObjectsToTexturePass(name, Settings);
         }
 
-        public RenderPassEvent RenderPassEvent = RenderPassEvent.AfterRenderingOpaques;
-        public ScriptableRenderPassInput RenderPassInput = ScriptableRenderPassInput.None;
+        public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
+        {
+            _renderPass.Setup(renderingData.cameraData.cameraTargetDescriptor);
+            renderer.EnqueuePass(_renderPass);
+        }
+    }
 
-        [Range(0, 5000)]
-        public int RenderQueueLowerBound;
+    public class RenderObjectsToTexturePass : ScriptableRenderPass
+    {
+        private const int DepthBufferBits = 32;
 
-        [Range(0, 5000)]
-        public int RenderQueueUpperBound = 2499;
+        private readonly Settings _settings;
+        private RenderTextureDescriptor _descriptor;
+        private FilteringSettings _filteringSettings;
+        private RenderTargetHandle _tempTextureHandle;
+        private RenderTargetHandle _textureHandle;
 
-        public RenderTextureFormat ColorFormat = RenderTextureFormat.ARGB32;
-        public SortingCriteria SortingCriteria = SortingCriteria.CommonOpaque;
-        public LayerMask LayerMask = -1;
-        public string TextureName = "_MyTexture";
-
-        public LightModeTags LightMode = LightModeTags.Standard;
-
-        public GlobalKeyword[] GlobalShaderKeywords;
 
         [Serializable]
-        public struct GlobalKeyword
+        public class Settings
         {
-            public enum Mode
+            [Flags]
+            public enum LightModeTags
             {
-                None,
-                Enable,
-                Disable,
+                None = 0,
+                SRPDefaultUnlit = 1 << 0,
+                UniversalForward = 1 << 1,
+                UniversalForwardOnly = 1 << 2,
+                LightweightForward = 1 << 3,
+                DepthNormals = 1 << 4,
+                DepthOnly = 1 << 5,
+                Standard = SRPDefaultUnlit | UniversalForward | UniversalForwardOnly | LightweightForward,
             }
 
-            public string Name;
-            public bool Disabled;
+            public RenderPassEvent RenderPassEvent = RenderPassEvent.AfterRenderingOpaques;
+            public ScriptableRenderPassInput RenderPassInput = ScriptableRenderPassInput.None;
 
-            public Mode BeforeRenderMode;
-            public Mode AfterRenderMode;
-        }
+            [Range(0, 5000)]
+            public int RenderQueueLowerBound;
 
-        public RenderQueueRange RenderQueueRange => new(RenderQueueLowerBound, RenderQueueUpperBound);
+            [Range(0, 5000)]
+            public int RenderQueueUpperBound = 2499;
 
-        public List<ShaderTagId> LightModeShaderTags
-        {
-            get
+            public RenderTextureFormat ColorFormat = RenderTextureFormat.ARGB32;
+            public SortingCriteria SortingCriteria = SortingCriteria.CommonOpaque;
+            public LayerMask LayerMask = -1;
+            public string TextureName = "_MyTexture";
+
+            public LightModeTags LightMode = LightModeTags.Standard;
+
+            public GlobalKeyword[] GlobalShaderKeywords;
+
+            [Serializable]
+            public struct GlobalKeyword
             {
-                var tags = new List<ShaderTagId>();
-                if (LightMode.HasFlag(LightModeTags.SRPDefaultUnlit))
+                public enum Mode
                 {
-                    tags.Add(new ShaderTagId("SRPDefaultUnlit"));
+                    None,
+                    Enable,
+                    Disable,
                 }
-                if (LightMode.HasFlag(LightModeTags.UniversalForward))
+
+                public string Name;
+                public bool Disabled;
+
+                public Mode BeforeRenderMode;
+                public Mode AfterRenderMode;
+            }
+
+            public RenderQueueRange RenderQueueRange => new(RenderQueueLowerBound, RenderQueueUpperBound);
+
+            public List<ShaderTagId> LightModeShaderTags
+            {
+                get
                 {
-                    tags.Add(new ShaderTagId("UniversalForward"));
+                    var tags = new List<ShaderTagId>();
+                    if (LightMode.HasFlag(LightModeTags.SRPDefaultUnlit))
+                    {
+                        tags.Add(new ShaderTagId("SRPDefaultUnlit"));
+                    }
+                    if (LightMode.HasFlag(LightModeTags.UniversalForward))
+                    {
+                        tags.Add(new ShaderTagId("UniversalForward"));
+                    }
+                    if (LightMode.HasFlag(LightModeTags.UniversalForwardOnly))
+                    {
+                        tags.Add(new ShaderTagId("UniversalForwardOnly"));
+                    }
+                    if (LightMode.HasFlag(LightModeTags.LightweightForward))
+                    {
+                        tags.Add(new ShaderTagId("LightweightForward"));
+                    }
+                    if (LightMode.HasFlag(LightModeTags.DepthNormals))
+                    {
+                        tags.Add(new ShaderTagId("DepthNormals"));
+                    }
+                    if (LightMode.HasFlag(LightModeTags.DepthOnly))
+                    {
+                        tags.Add(new ShaderTagId("DepthOnly"));
+                    }
+                    return tags;
                 }
-                if (LightMode.HasFlag(LightModeTags.UniversalForwardOnly))
-                {
-                    tags.Add(new ShaderTagId("UniversalForwardOnly"));
-                }
-                if (LightMode.HasFlag(LightModeTags.LightweightForward))
-                {
-                    tags.Add(new ShaderTagId("LightweightForward"));
-                }
-                if (LightMode.HasFlag(LightModeTags.DepthNormals))
-                {
-                    tags.Add(new ShaderTagId("DepthNormals"));
-                }
-                if (LightMode.HasFlag(LightModeTags.DepthOnly))
-                {
-                    tags.Add(new ShaderTagId("DepthOnly"));
-                }
-                return tags;
             }
         }
-    }
 
-    public RenderObjectsToTexturePass(string profilingName, Settings settings)
-    {
-        _settings = settings;
-        renderPassEvent = settings.RenderPassEvent;
-        profilingSampler = new ProfilingSampler(profilingName);
-        _filteringSettings = new FilteringSettings(settings.RenderQueueRange, settings.LayerMask.value);
-        _textureHandle.Init(settings.TextureName);
-        _tempTextureHandle.Init("_TempBlitMaterialTexture");
-    }
-
-    public void Setup(RenderTextureDescriptor baseDescriptor)
-    {
-        baseDescriptor.colorFormat = _settings.ColorFormat;
-        baseDescriptor.depthBufferBits = DepthBufferBits;
-
-        // Depth-Only pass don't use MSAA
-        baseDescriptor.msaaSamples = 1;
-        _descriptor = baseDescriptor;
-
-        ConfigureInput(_settings.RenderPassInput);
-    }
-
-
-    public override void OnCameraSetup(CommandBuffer cmd, ref RenderingData renderingData)
-    {
-        cmd.GetTemporaryRT(_textureHandle.id, _descriptor, FilterMode.Point);
-        ConfigureTarget(_textureHandle.Identifier());
-        ConfigureClear(ClearFlag.All, Color.clear);
-        cmd.GetTemporaryRT(_tempTextureHandle.id, _descriptor, FilterMode.Point);
-    }
-
-    public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
-    {
-        DrawingSettings drawingSettings = CreateDrawingSettings(
-            _settings.LightModeShaderTags,
-            ref renderingData,
-            _settings.SortingCriteria
-        );
-
-        CommandBuffer cmd = CommandBufferPool.Get();
-        using (new ProfilingScope(cmd, profilingSampler))
+        public RenderObjectsToTexturePass(string profilingName, Settings settings)
         {
-            UpdateKeywordsBeforeRender(cmd);
+            _settings = settings;
+            renderPassEvent = settings.RenderPassEvent;
+            profilingSampler = new ProfilingSampler(profilingName);
+            _filteringSettings = new FilteringSettings(settings.RenderQueueRange, settings.LayerMask.value);
+            _textureHandle.Init(settings.TextureName);
+            _tempTextureHandle.Init("_TempBlitMaterialTexture");
+        }
+
+        public void Setup(RenderTextureDescriptor baseDescriptor)
+        {
+            baseDescriptor.colorFormat = _settings.ColorFormat;
+            baseDescriptor.depthBufferBits = DepthBufferBits;
+
+            // Depth-Only pass don't use MSAA
+            baseDescriptor.msaaSamples = 1;
+            _descriptor = baseDescriptor;
+
+            ConfigureInput(_settings.RenderPassInput);
+        }
+
+
+        public override void OnCameraSetup(CommandBuffer cmd, ref RenderingData renderingData)
+        {
+            cmd.GetTemporaryRT(_textureHandle.id, _descriptor, FilterMode.Point);
+            ConfigureTarget(_textureHandle.Identifier());
+            ConfigureClear(ClearFlag.All, Color.clear);
+            cmd.GetTemporaryRT(_tempTextureHandle.id, _descriptor, FilterMode.Point);
+        }
+
+        public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
+        {
+            DrawingSettings drawingSettings = CreateDrawingSettings(
+                _settings.LightModeShaderTags,
+                ref renderingData,
+                _settings.SortingCriteria
+            );
+
+            CommandBuffer cmd = CommandBufferPool.Get();
+            using (new ProfilingScope(cmd, profilingSampler))
+            {
+                UpdateKeywordsBeforeRender(cmd);
+
+                context.ExecuteCommandBuffer(cmd);
+                cmd.Clear();
+
+                context.DrawRenderers(renderingData.cullResults, ref drawingSettings, ref _filteringSettings);
+                Blit(cmd, _textureHandle.Identifier(), _tempTextureHandle.Identifier());
+                Blit(cmd, _tempTextureHandle.Identifier(), _textureHandle.Identifier());
+
+                cmd.SetGlobalTexture(_settings.TextureName, _textureHandle.Identifier());
+
+                UpdateKeywordsAfterRender(cmd);
+            }
 
             context.ExecuteCommandBuffer(cmd);
-            cmd.Clear();
-
-            context.DrawRenderers(renderingData.cullResults, ref drawingSettings, ref _filteringSettings);
-            Blit(cmd, _textureHandle.Identifier(), _tempTextureHandle.Identifier());
-            Blit(cmd, _tempTextureHandle.Identifier(), _textureHandle.Identifier());
-
-            cmd.SetGlobalTexture(_settings.TextureName, _textureHandle.Identifier());
-
-            UpdateKeywordsAfterRender(cmd);
+            CommandBufferPool.Release(cmd);
         }
 
-        context.ExecuteCommandBuffer(cmd);
-        CommandBufferPool.Release(cmd);
-    }
-
-    public override void OnCameraCleanup(CommandBuffer cmd)
-    {
-        if (cmd == null)
+        public override void OnCameraCleanup(CommandBuffer cmd)
         {
-            throw new ArgumentNullException("cmd");
-        }
-
-        cmd.ReleaseTemporaryRT(_tempTextureHandle.id);
-    }
-
-    private void UpdateKeywordsBeforeRender(CommandBuffer cmd)
-    {
-        if (_settings.GlobalShaderKeywords == null)
-        {
-            return;
-        }
-        foreach (Settings.GlobalKeyword keyword in _settings.GlobalShaderKeywords)
-        {
-            if (keyword.Disabled)
+            if (cmd == null)
             {
-                continue;
+                throw new ArgumentNullException("cmd");
             }
-            switch (keyword.BeforeRenderMode)
+
+            cmd.ReleaseTemporaryRT(_tempTextureHandle.id);
+        }
+
+        private void UpdateKeywordsBeforeRender(CommandBuffer cmd)
+        {
+            if (_settings.GlobalShaderKeywords == null)
             {
-                case Settings.GlobalKeyword.Mode.None:
-                    break;
-                case Settings.GlobalKeyword.Mode.Enable:
-                    cmd.EnableShaderKeyword(keyword.Name);
-                    break;
-                case Settings.GlobalKeyword.Mode.Disable:
-                    cmd.DisableShaderKeyword(keyword.Name);
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
+                return;
+            }
+            foreach (Settings.GlobalKeyword keyword in _settings.GlobalShaderKeywords)
+            {
+                if (keyword.Disabled)
+                {
+                    continue;
+                }
+                switch (keyword.BeforeRenderMode)
+                {
+                    case Settings.GlobalKeyword.Mode.None:
+                        break;
+                    case Settings.GlobalKeyword.Mode.Enable:
+                        cmd.EnableShaderKeyword(keyword.Name);
+                        break;
+                    case Settings.GlobalKeyword.Mode.Disable:
+                        cmd.DisableShaderKeyword(keyword.Name);
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
             }
         }
-    }
 
-    private void UpdateKeywordsAfterRender(CommandBuffer cmd)
-    {
-        if (_settings.GlobalShaderKeywords == null)
+        private void UpdateKeywordsAfterRender(CommandBuffer cmd)
         {
-            return;
-        }
-        foreach (Settings.GlobalKeyword keyword in _settings.GlobalShaderKeywords)
-        {
-            if (keyword.Disabled)
+            if (_settings.GlobalShaderKeywords == null)
             {
-                continue;
+                return;
             }
-            switch (keyword.AfterRenderMode)
+            foreach (Settings.GlobalKeyword keyword in _settings.GlobalShaderKeywords)
             {
-                case Settings.GlobalKeyword.Mode.None:
-                    break;
-                case Settings.GlobalKeyword.Mode.Enable:
-                    cmd.EnableShaderKeyword(keyword.Name);
-                    break;
-                case Settings.GlobalKeyword.Mode.Disable:
-                    cmd.DisableShaderKeyword(keyword.Name);
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
+                if (keyword.Disabled)
+                {
+                    continue;
+                }
+                switch (keyword.AfterRenderMode)
+                {
+                    case Settings.GlobalKeyword.Mode.None:
+                        break;
+                    case Settings.GlobalKeyword.Mode.Enable:
+                        cmd.EnableShaderKeyword(keyword.Name);
+                        break;
+                    case Settings.GlobalKeyword.Mode.Disable:
+                        cmd.DisableShaderKeyword(keyword.Name);
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
             }
         }
     }
