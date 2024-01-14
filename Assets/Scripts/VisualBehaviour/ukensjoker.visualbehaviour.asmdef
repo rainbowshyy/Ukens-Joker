@@ -1,7 +1,9 @@
 {
     "name": "ukensjoker.visualbehaviour",
     "rootNamespace": "UkensJoker.VisualBehaviour",
-    "references": [],
+    "references": [
+        "GUID:3a515e7fd63ea754b9a772509d75c51f"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
