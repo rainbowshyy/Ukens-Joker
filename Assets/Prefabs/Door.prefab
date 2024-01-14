@@ -1,5 +1,74 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3200959573057985441
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4661532471887064801}
+  - component: {fileID: 5972453190462219515}
+  - component: {fileID: 5140987655861532970}
+  m_Layer: 9
+  m_Name: Interact
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4661532471887064801
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3200959573057985441}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4858579473320003745}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5972453190462219515
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3200959573057985441}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2.5, z: 0.25}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5140987655861532970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3200959573057985441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b524e0edc51853748b6b96903fae6913, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _openDoorInteractText: Close door
+  _closedDoorInteractText: Open door
+  _interactPrompt: {fileID: 11400000, guid: d60984b0c1898d843ab6a6646d378ab6, type: 2}
 --- !u!1 &4974962373672127958
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,11 +232,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2863768097138209115}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0f7dd456fdd1be146b5f111459ccb321,
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0f7dd456fdd1be146b5f111459ccb321,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3914204794030747862}
+      addedObject: {fileID: 4661532471887064801}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f7dd456fdd1be146b5f111459ccb321, type: 3}
 --- !u!4 &4858579473320003745 stripped
 Transform:
@@ -175,23 +244,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4965109975803440970}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &5199112091185582619 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0f7dd456fdd1be146b5f111459ccb321,
-    type: 3}
-  m_PrefabInstance: {fileID: 4965109975803440970}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3914204794030747862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5199112091185582619}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b524e0edc51853748b6b96903fae6913, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _openDoorInteractText: Close door
-  _closedDoorInteractText: Open door
