@@ -41,6 +41,12 @@
         },
         {
             "m_Id": "40de6fdcb5134d1baa91c045d8b8a0cc"
+        },
+        {
+            "m_Id": "9ae57e47ecb648a2892b51e90cc70fae"
+        },
+        {
+            "m_Id": "ccdc57c2dc7d4344988e03d201c6d3ea"
         }
     ],
     "m_Keywords": [],
@@ -353,6 +359,12 @@
         },
         {
             "m_Id": "c69454ca1a2a44c2a94e3af79b67150f"
+        },
+        {
+            "m_Id": "271a100f489f426e913ad64cd74a8c52"
+        },
+        {
+            "m_Id": "780e096dbcdd4739b69583dbb0cef6e8"
         }
     ],
     "m_GroupDatas": [
@@ -751,6 +763,20 @@
                     "m_Id": "005d2ff350924628a2609a117189dd10"
                 },
                 "m_SlotId": -1624378652
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "271a100f489f426e913ad64cd74a8c52"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "d3df7015bb91476da2fb8e2839c97e88"
+                },
+                "m_SlotId": 5
             }
         },
         {
@@ -1269,6 +1295,20 @@
                     "m_Id": "cbb9535b2d994597844181e1a2ee34d8"
                 },
                 "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "780e096dbcdd4739b69583dbb0cef6e8"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "d3df7015bb91476da2fb8e2839c97e88"
+                },
+                "m_SlotId": 4
             }
         },
         {
@@ -4139,6 +4179,65 @@
         "z": 0.0,
         "w": 0.0
     }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "271a100f489f426e913ad64cd74a8c52",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": 3091.000244140625,
+            "y": 965.0,
+            "width": 139.0,
+            "height": 34.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "cfe0dc4587a0487d852018196178cde1"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "9ae57e47ecb648a2892b51e90cc70fae"
+    }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector3MaterialSlot",
+    "m_ObjectId": "27970d57af2f4a5095ffbc5dde3b4a67",
+    "m_Id": 5,
+    "m_DisplayName": "DoorHandle",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "DoorHandle",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "m_Labels": []
 }
 
 {
@@ -7437,6 +7536,21 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "73cff920d35c4dae8c922436e854fb7b",
+    "m_Id": 0,
+    "m_DisplayName": "DoorHandleThreshold",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicValueMaterialSlot",
     "m_ObjectId": "75182fb1caa8423f98355b0174b2bec9",
     "m_Id": 0,
@@ -7591,6 +7705,42 @@
         "e31": 0.0,
         "e32": 0.0,
         "e33": 1.0
+    }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "780e096dbcdd4739b69583dbb0cef6e8",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": 3046.000244140625,
+            "y": 917.0,
+            "width": 190.0,
+            "height": 34.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "73cff920d35c4dae8c922436e854fb7b"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "ccdc57c2dc7d4344988e03d201c6d3ea"
     }
 }
 
@@ -8218,8 +8368,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 3098.0,
-            "y": 887.0,
+            "x": 3101.000244140625,
+            "y": 801.0,
             "width": 153.0,
             "height": 34.0
         }
@@ -9189,6 +9339,36 @@
     "m_CustomColors": {
         "m_SerializableColors": []
     }
+}
+
+{
+    "m_SGVersion": 3,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.ColorShaderProperty",
+    "m_ObjectId": "9ae57e47ecb648a2892b51e90cc70fae",
+    "m_Guid": {
+        "m_GuidSerialized": "23e070b7-c30d-4f1f-9e4a-a7bf17dca2d5"
+    },
+    "m_Name": "DoorHandle",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "DoorHandle",
+    "m_DefaultReferenceName": "_DoorHandle",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+    },
+    "isMainColor": false,
+    "m_ColorMode": 0
 }
 
 {
@@ -10322,6 +10502,9 @@
     "m_Name": "StrictColors",
     "m_ChildObjectList": [
         {
+            "m_Id": "9ae57e47ecb648a2892b51e90cc70fae"
+        },
+        {
             "m_Id": "c711959b469540c4bfaf7b628c00a08b"
         }
     ]
@@ -11401,6 +11584,34 @@
 }
 
 {
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "ccdc57c2dc7d4344988e03d201c6d3ea",
+    "m_Guid": {
+        "m_GuidSerialized": "f2947da8-6c2e-42b5-a1e2-10d076ea8834"
+    },
+    "m_Name": "DoorHandleThreshold",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "DoorHandleThreshold",
+    "m_DefaultReferenceName": "_DoorHandleThreshold",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": 0.0,
+    "m_FloatType": 0,
+    "m_RangeValues": {
+        "x": 0.0,
+        "y": 1.0
+    }
+}
+
+{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.GroupData",
     "m_ObjectId": "ce00d189462244a1922e3eedc1230eb1",
@@ -11543,6 +11754,31 @@
     "m_CustomColors": {
         "m_SerializableColors": []
     }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
+    "m_ObjectId": "cfe0dc4587a0487d852018196178cde1",
+    "m_Id": 0,
+    "m_DisplayName": "DoorHandle",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+    },
+    "m_Labels": []
 }
 
 {
@@ -11698,6 +11934,12 @@
             "m_Id": "cc219bad700f47d484eecb75d59b227e"
         },
         {
+            "m_Id": "e894f02a18ab4f46b318090ea8b1a400"
+        },
+        {
+            "m_Id": "27970d57af2f4a5095ffbc5dde3b4a67"
+        },
+        {
             "m_Id": "edba3c51360a47f8b2ddf9cf35377bf2"
         }
     ],
@@ -11715,7 +11957,7 @@
     "m_SourceType": 1,
     "m_FunctionName": "CheckDoorThreshold",
     "m_FunctionSource": "",
-    "m_FunctionBody": "if (length(-Input) > DoorThreshold)\n{\n\tOut = Door;\n}\nelse\n{\n\tOut = float3(0, 0, 0);\n}"
+    "m_FunctionBody": "if (length(-Input) > DoorHandleThreshold)\n{\n\tOut = DoorHandle;\n}\nelse if (length(-Input) > DoorThreshold)\n{\n\tOut = Door;\n}\nelse\n{\n\tOut = float3(0, 0, 0);\n}"
 }
 
 {
@@ -12200,6 +12442,9 @@
     "m_Name": "StrictThresholds",
     "m_ChildObjectList": [
         {
+            "m_Id": "ccdc57c2dc7d4344988e03d201c6d3ea"
+        },
+        {
             "m_Id": "7f1fcc1d0ce24eddb989f1105a5928b8"
         },
         {
@@ -12502,6 +12747,21 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "e894f02a18ab4f46b318090ea8b1a400",
+    "m_Id": 4,
+    "m_DisplayName": "DoorHandleThreshold",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "DoorHandleThreshold",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicValueMaterialSlot",
     "m_ObjectId": "eab0a4e2042244cbaca79c1b88e68773",
     "m_Id": 1,
@@ -12784,8 +13044,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 3142.0,
-            "y": 918.0,
+            "x": 3126.000244140625,
+            "y": 852.0,
             "width": 103.0,
             "height": 34.0
         }

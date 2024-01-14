@@ -68,7 +68,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _openDoorInteractText: Close door
   _closedDoorInteractText: Open door
-  _interactPrompt: {fileID: 11400000, guid: d60984b0c1898d843ab6a6646d378ab6, type: 2}
 --- !u!1 &4974962373672127958
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,6 +219,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 03d847d2caf71704a901735e837eb7a8, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 0f7dd456fdd1be146b5f111459ccb321,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 97799cc1651e73745aa6701aef39266e, type: 2}
     - target: {fileID: 919132149155446097, guid: 0f7dd456fdd1be146b5f111459ccb321,
         type: 3}
       propertyPath: m_Name
