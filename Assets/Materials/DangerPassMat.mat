@@ -42,7 +42,7 @@ Material:
     - _Frequency: 8
     - _PixelHeight: 270
     - _PixelWidth: 480
-    - _Threshold: 10.3
+    - _Threshold: 8.83
     - _VoronoiAngle: 86.4
     - _VoronoiDensity: 77.35
     - _WaveFrequency: 4.6
