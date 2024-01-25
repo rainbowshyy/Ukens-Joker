@@ -1,5 +1,58 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &781886729047069604
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1677728976623136956}
+  - component: {fileID: 2710266053658342865}
+  m_Layer: 0
+  m_Name: Collision
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1677728976623136956
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781886729047069604}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5, y: 1.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4858579473320003745}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2710266053658342865
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781886729047069604}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2.5, z: 0.125}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3200959573057985441
 GameObject:
   m_ObjectHideFlags: 0
@@ -27,7 +80,7 @@ Transform:
   m_GameObject: {fileID: 3200959573057985441}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 1, z: 0}
+  m_LocalPosition: {x: -0.5, y: 1.254, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -66,8 +119,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b524e0edc51853748b6b96903fae6913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _transform: {fileID: 4858579473320003745}
   _openDoorInteractText: Close door
   _closedDoorInteractText: Open door
+  _doorOpenTime:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: cd0894af352d29448a99fe1d06227b00, type: 2}
 --- !u!1 &4974962373672127958
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,6 +298,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 4661532471887064801}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0f7dd456fdd1be146b5f111459ccb321,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1677728976623136956}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f7dd456fdd1be146b5f111459ccb321, type: 3}
 --- !u!4 &4858579473320003745 stripped

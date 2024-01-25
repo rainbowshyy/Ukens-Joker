@@ -71,6 +71,17 @@ namespace UkensJoker.Engine
                 },
                 {
                     ""name"": """",
+                    ""id"": ""5f3dee40-4dec-4c74-8211-76f341bd5f98"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""2a058626-78c0-411d-97cf-a975099dac6a"",
                     ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",

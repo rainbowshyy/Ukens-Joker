@@ -38,7 +38,7 @@ namespace UkensJoker.Engine
         {
             if (_interactableCurrent == null)
                 return;
-            _interactableCurrent.Interact();
+            _interactableCurrent.Interact(_playerDirection.Value);
         }
     }
 }

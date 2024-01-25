@@ -7,6 +7,6 @@ namespace UkensJoker.Engine
     public interface IInteractable
     {
         public string GetInteractText();
-        public void Interact();
+        public void Interact(Vector3 direction);
     }
 }
