@@ -8,7 +8,7 @@ namespace UkensJoker.DataArchitecture
     {
         [SerializeField] private string _string;
 
-        public Action<string> OnValueChanged { get; private set; }
+        public event Action<string> OnValueChanged;
 
         public string Value { 
             get { return _string; } 
@@ -20,16 +20,6 @@ namespace UkensJoker.DataArchitecture
                     OnValueChanged?.Invoke(_string);
                 }
             }
-        }
-
-        public void RegisterListener(Action<string> onValueChanged)
-        {
-            OnValueChanged += onValueChanged;
-        }
-
-        public void UnregisterListener(Action<string> onValueChanged)
-        {
-            OnValueChanged -= onValueChanged;
         }
     }
 }

@@ -16,12 +16,12 @@ namespace UkensJoker.DataArchitecture
 
         public void RegisterListener(Action<string> onValueChanged)
         {
-            Variable.RegisterListener(onValueChanged);
+            Variable.OnValueChanged += onValueChanged;
         }
 
         public void UnregisterListener(Action<string> onValueChanged)
         {
-            Variable.UnregisterListener(onValueChanged);
+            Variable.OnValueChanged -= onValueChanged;
         }
     }
 }
