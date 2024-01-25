@@ -6,7 +6,7 @@ namespace UkensJoker.DataArchitecture
     public class GameEventListener : MonoBehaviour
     {
         public GameEvent GameEvent;
-        public UnityEvent Response;
+        public CustomUnityEvent Response;
 
         private void OnEnable()
         {
@@ -18,9 +18,9 @@ namespace UkensJoker.DataArchitecture
             GameEvent.RemoveListener(this);
         }
 
-        public virtual void OnEventRaised()
+        public virtual void OnEventRaised(Component sender, object data)
         {
-            Response.Invoke();
+            Response.Invoke(sender, data);
         }
     }
 }

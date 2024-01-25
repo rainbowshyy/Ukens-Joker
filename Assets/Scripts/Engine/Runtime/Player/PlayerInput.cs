@@ -34,12 +34,12 @@ namespace UkensJoker.Engine
 
         private void InteractInput(InputAction.CallbackContext context)
         {
-            interactTriggered.Raise();
+            interactTriggered.Raise(this, null);
         }
 
         private void InteractReleaseInput(InputAction.CallbackContext context)
         {
-            interactReleased.Raise();
+            interactReleased.Raise(this, null);
         }
 
         private void OnEnable()
