@@ -154,7 +154,8 @@ MonoBehaviour:
   - {fileID: -6047643463003555328}
   - {fileID: -4591885355251826285}
   - {fileID: 530964998034661522}
-  m_RendererFeatureMap: 7001c3dd24fa13f3fdf9ad595a689492badae3f2608e8116069a4b868af944a200ba75eb4f7412ac9381e526995846c092a00540da5d5e07
+  - {fileID: 5239272616932575092}
+  m_RendererFeatureMap: 7001c3dd24fa13f3fdf9ad595a689492badae3f2608e8116069a4b868af944a200ba75eb4f7412ac9381e526995846c092a00540da5d5e077487b2adafa2b548
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -243,6 +244,26 @@ MonoBehaviour:
     TextureName: _DoorTexture
     LightMode: 15
     GlobalShaderKeywords: []
+--- !u!114 &5239272616932575092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d613f08f173d4dd895bb07b3230baa9, type: 3}
+  m_Name: SoundPass
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  injectionPoint: 600
+  fetchColorBuffer: 1
+  requirements: 5
+  passMaterial: {fileID: 2100000, guid: 65f0f5f5ff7586b458d9a9625934c3bb, type: 2}
+  passIndex: 0
+  bindDepthStencilAttachment: 0
+  m_Version: 1
 --- !u!114 &8987887835790182560
 MonoBehaviour:
   m_ObjectHideFlags: 0
