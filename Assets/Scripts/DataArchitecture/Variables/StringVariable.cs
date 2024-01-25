@@ -10,7 +10,8 @@ namespace UkensJoker.DataArchitecture
 
         public event Action<string> OnValueChanged;
 
-        public string Value { 
+        public string Value 
+        { 
             get { return _string; } 
             set
             {

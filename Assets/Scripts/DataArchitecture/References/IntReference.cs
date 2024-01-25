@@ -13,5 +13,15 @@ namespace UkensJoker.DataArchitecture
         {
             get { return UseConstant ? ConstantValue : Variable.Value; }
         }
+
+        public void RegisterListener(Action<int> onValueChanged)
+        {
+            Variable.OnValueChanged += onValueChanged;
+        }
+
+        public void UnregisterListener(Action<int> onValueChanged)
+        {
+            Variable.OnValueChanged -= onValueChanged;
+        }
     }
 }
