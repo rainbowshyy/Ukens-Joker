@@ -16,7 +16,7 @@ namespace UkensJoker.VisualBehaviour
             _timeCurrent += Time.deltaTime;
             if (_timeCurrent >= _printerBlinkFrequency.Value)
             {
-                _timeCurrent -= _printerBlinkFrequency.Value;
+                _timeCurrent -= _blinkNumber == 1 ? _printerBlinkFrequency.Value : _printerBlinkFrequency.Value * 0.75f;
                 _lights[_blinkNumber].gameObject.SetActive(false);
                 _blinkNumber = (_blinkNumber + 1) % 2;
                 _lights[_blinkNumber].gameObject.SetActive(true);
