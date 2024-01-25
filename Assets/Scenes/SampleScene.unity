@@ -3112,26 +3112,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f05c34cad82d9e245a97ceb5759cabe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _danger:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 3f9a76c8d95dd2248acc4bbda7ca4713, type: 2}
   _dangerMat: {fileID: 2100000, guid: 65f0f5f5ff7586b458d9a9625934c3bb, type: 2}
   _aberrationMat: {fileID: 2100000, guid: 5d9924d66d4d0db49942dc9ee15fb5f5, type: 2}
   _ditherMat: {fileID: 2100000, guid: 0207d29feb3455540aa1a894916c0638, type: 2}
   _ditherBlackThresholdDefault:
-    UseConstant: 1
+    UseConstant: 0
     ConstantValue: 0.4
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: dd4d4449bfac6f544a46783fc87b2ddd, type: 2}
   _dangerThresholdMultiplier:
-    UseConstant: 1
+    UseConstant: 0
     ConstantValue: 10
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: 14b092c549dd2ff4db35c41d67497aa0, type: 2}
   _aberrationPixelMultiplier:
-    UseConstant: 1
+    UseConstant: 0
     ConstantValue: 1
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: 9fd7594a920cc7a4f855eb014b2b5321, type: 2}
   _ditherBlackThresholdMultiplier:
-    UseConstant: 1
+    UseConstant: 0
     ConstantValue: 1
-    Variable: {fileID: 0}
-  _dangerLevel: 0
+    Variable: {fileID: 11400000, guid: 4a6c8fae15d526e458480f22f8c5500b, type: 2}
 --- !u!4 &705378724
 Transform:
   m_ObjectHideFlags: 0
