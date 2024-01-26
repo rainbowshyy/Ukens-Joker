@@ -3686,6 +3686,7 @@ GameObject:
   - component: {fileID: 583535725}
   - component: {fileID: 583535727}
   - component: {fileID: 583535726}
+  - component: {fileID: 583535728}
   m_Layer: 8
   m_Name: "R\xF8vern"
   m_TagString: Untagged
@@ -3749,6 +3750,23 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &583535728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583535724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc7a6ed43b8d634b8eee3d84fcab527, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _danger: {fileID: 11400000, guid: 3f9a76c8d95dd2248acc4bbda7ca4713, type: 2}
+  _sightDanger:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: d75296b2dcbd29d4087430c920e86d0b, type: 2}
 --- !u!1001 &600197173
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4061,7 +4079,7 @@ GameObject:
   - component: {fileID: 705378724}
   - component: {fileID: 705378723}
   m_Layer: 0
-  m_Name: Danger
+  m_Name: DangerEffects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6020,6 +6038,7 @@ GameObject:
   - component: {fileID: 1033523909}
   - component: {fileID: 1033523908}
   - component: {fileID: 1033523911}
+  - component: {fileID: 1033523912}
   m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
@@ -6129,6 +6148,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 330585546}
+--- !u!114 &1033523912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033523906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27ffcaa433cea564dadb1e48d60b1ff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerPosition:
+    UseConstant: 0
+    ConstantValue: {x: 0, y: 0, z: 0}
+    Variable: {fileID: 11400000, guid: ce2e96dbefabec446979e58150c41dba, type: 2}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 119
+  _sightDanger: {fileID: 11400000, guid: d75296b2dcbd29d4087430c920e86d0b, type: 2}
+  _sightDangerMax:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: dbbb5cae20f53984b85587209e5f2fb7, type: 2}
+  _sightDangerMultiplier:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 49b9aeb958ff616439b747296478e426, type: 2}
+  _sightDangerDecayMultiplier:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: f16452d0e411573458e677cc1a784b66, type: 2}
 --- !u!1001 &1039080428
 PrefabInstance:
   m_ObjectHideFlags: 0
