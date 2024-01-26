@@ -20,6 +20,8 @@ namespace UkensJoker.Engine
 
         [SerializeField] private Rigidbody rb;
 
+        private bool _canLook = true;
+
         private void Start()
         {
             Cursor.lockState = CursorLockMode.Locked;
@@ -28,6 +30,9 @@ namespace UkensJoker.Engine
 
         private void LateUpdate()
         {
+            if (!_canLook)
+                return;
+
             float mouseX = _lookInput.Value.x * Time.deltaTime * _playerLookSensitivityX.Value;
             float mouseY = _lookInput.Value.y * Time.deltaTime * _playerLookSensitivityY.Value;
 
@@ -39,6 +44,12 @@ namespace UkensJoker.Engine
             rb.MoveRotation(Quaternion.Euler(0, _yRotation, 0));
 
             _playerDirection.Value = transform.forward;
+        }
+
+        public void PlayerControlsChanged(Component sender, object enabled)
+        {
+            if (enabled is bool)
+                _canLook = (bool)enabled;
         }
     }
 }

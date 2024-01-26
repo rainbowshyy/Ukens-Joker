@@ -28,6 +28,8 @@ namespace UkensJoker.Engine
         [SerializeField] private UnityEvent OnStopMove;
         private bool _moving = false;
 
+        private bool _canMove = true;
+
         private void Start()
         {
             rb = GetComponent<Rigidbody>();
@@ -42,6 +44,9 @@ namespace UkensJoker.Engine
 
         private void FixedUpdate()
         {
+            if (!_canMove)
+                return;
+
             MovePlayer();
             if (rb.velocity.magnitude > 0.1f && !_moving)
             {
@@ -83,6 +88,12 @@ namespace UkensJoker.Engine
         private void UpdatePlayerPosition()
         {
             _playerPosition.Value = transform.position;
+        }
+
+        public void PlayerControlsChanged(Component sender, object enabled)
+        {
+            if (enabled is bool)
+                _canMove = (bool)enabled;
         }
     }
 }

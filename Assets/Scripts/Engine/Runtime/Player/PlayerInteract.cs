@@ -13,14 +13,19 @@ namespace UkensJoker.Engine
 
         private IInteractable _interactableCurrent;
 
+        private bool _canInteract = true;
+
         private void Update()
         {
-            _interactableCurrent = GetInteractable();
-
             if (_interactableCurrent == null)
                 _interactText.Value = "";
             else
                 _interactText.Value = _interactableCurrent.GetInteractText();
+
+            if (!_canInteract)
+                return;
+
+            _interactableCurrent = GetInteractable();
         }
 
         private IInteractable GetInteractable()
@@ -39,6 +44,12 @@ namespace UkensJoker.Engine
             if (_interactableCurrent == null)
                 return;
             _interactableCurrent.Interact(_playerDirection.Value);
+        }
+
+        public void PlayerControlsChanged(Component sender, object enabled)
+        {
+            if (enabled is bool)
+                _canInteract = (bool)enabled;
         }
     }
 }
