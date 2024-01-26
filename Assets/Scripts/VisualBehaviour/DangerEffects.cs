@@ -8,6 +8,7 @@ namespace UkensJoker.VisualBehaviour
     public class DangerEffects : MonoBehaviour
     {
         [SerializeField] private FloatReference _danger;
+        [SerializeField] private Vector2Reference _sightPosition;
 
         [Header("Material References")]
         [SerializeField] private Material _dangerMat;
@@ -25,11 +26,13 @@ namespace UkensJoker.VisualBehaviour
         private void OnEnable()
         {
             _danger.RegisterListener(SetMaterialValues);
+            _sightPosition.RegisterListener(SetSightPosition);
         }
 
         private void OnDisable()
         {
             _danger.UnregisterListener(SetMaterialValues);
+            _sightPosition?.UnregisterListener(SetSightPosition);
         }
 
         private void OnValidate()
@@ -42,6 +45,12 @@ namespace UkensJoker.VisualBehaviour
             _dangerMat.SetFloat("_Threshold", 10f - (1f - Mathf.Pow(1f - value, 5)) * _dangerThresholdMultiplier.Value);
             _aberrationMat.SetFloat("_PixelOffset", Mathf.Floor(0.99f + _aberrationPixelMultiplier.Value * value));
             _ditherMat.SetFloat("_BlackThreshold", _ditherBlackThresholdDefault.Value + value * _ditherBlackThresholdMultiplier.Value);
+        }
+
+        private void SetSightPosition(Vector2 value)
+        {
+            _dangerMat.SetVector("_RovernPosition", value);
+            _aberrationMat.SetVector("_RovernPosition", value);
         }
     }
 }

@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e396329c649987b44a6e0df4225739ed, type: 3}
-  m_Name: AberrationPixelMultipler
+  m_Script: {fileID: 11500000, guid: 7cb013bed41885345b322d57b3d4989a, type: 3}
+  m_Name: SightPosition
   m_EditorClassIdentifier: 
-  _float: 4
+  _vector: {x: 0, y: 0}

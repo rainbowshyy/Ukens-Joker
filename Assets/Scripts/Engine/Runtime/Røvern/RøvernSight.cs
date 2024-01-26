@@ -7,21 +7,28 @@ namespace UkensJoker.Engine
     {
         [SerializeField] private Vector3Reference _playerPosition;
         [SerializeField] private LayerMask _layerMask;
+        [SerializeField] private Camera _camera;
 
         [SerializeField] private FloatVariable _sightDanger;
         [SerializeField] private FloatReference _sightDangerMax;
         [SerializeField] private FloatReference _sightDangerMultiplier;
         [SerializeField] private FloatReference _sightDangerDecayMultiplier;
+        [SerializeField] private Vector2Variable _sightPosition;
 
         private void Update()
         {
             float value = _sightDanger.Value;
 
             if (IsInSight())
+            {
                 value += Time.deltaTime * _sightDangerMultiplier.Value;
+            }
             else
+            {
                 value -= Time.deltaTime * _sightDangerDecayMultiplier.Value;
+            }
 
+            _sightPosition.Value = GetScreenPos();
             _sightDanger.Value = Mathf.Clamp(value, 0f, _sightDangerMax.Value);
         }
 
@@ -34,6 +41,11 @@ namespace UkensJoker.Engine
                     return false;
             }
             return true;
+        }
+
+        private Vector2 GetScreenPos()
+        {
+            return _camera.WorldToViewportPoint(transform.position);
         }
     }
 }
