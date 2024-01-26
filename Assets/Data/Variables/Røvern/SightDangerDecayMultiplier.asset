@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e396329c649987b44a6e0df4225739ed, type: 3}
   m_Name: SightDangerDecayMultiplier
   m_EditorClassIdentifier: 
-  _float: 0.5
+  _float: 0.25
