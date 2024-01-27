@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Outside
   m_EditorClassIdentifier: 
   Position: {x: 0, y: 0, z: 0}
-  <Connections>k__BackingField: []
+  <Connections>k__BackingField:
+  - {fileID: 11400000, guid: c4d812ce24646364b8832e978278a5d9, type: 2}
+  - {fileID: 11400000, guid: 06149ee31b12fba468c8f64597c8fb9b, type: 2}
+  - {fileID: 11400000, guid: 8847c924e0c43de498e45844c8854542, type: 2}
   <PathfindingEnabled>k__BackingField: 0
   Interest: 0

@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: WindowHallwayRight
   m_EditorClassIdentifier: 
   Position: {x: 0, y: 0, z: 0}
-  <Connections>k__BackingField: []
+  <Connections>k__BackingField:
+  - {fileID: 11400000, guid: eda1f4302085c6543a27e67e4e2fe161, type: 2}
+  - {fileID: 11400000, guid: 620d676e2aa3ad64da5072eca389c772, type: 2}
   <PathfindingEnabled>k__BackingField: 0
   Interest: 0

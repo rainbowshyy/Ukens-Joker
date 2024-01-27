@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: LivingRoom
   m_EditorClassIdentifier: 
   Position: {x: 0, y: 0, z: 0}
-  Connections: []
-  <PathfindingEnabled>k__BackingField: 0
+  <Connections>k__BackingField:
+  - {fileID: 11400000, guid: e67fe176825957644ad2f2a5db456500, type: 2}
+  - {fileID: 11400000, guid: 620d676e2aa3ad64da5072eca389c772, type: 2}
+  - {fileID: 11400000, guid: 8847c924e0c43de498e45844c8854542, type: 2}
+  <PathfindingEnabled>k__BackingField: 1
+  Interest: 0

@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: Kitchen
   m_EditorClassIdentifier: 
   Position: {x: 0, y: 0, z: 0}
-  Connections: []
-  <PathfindingEnabled>k__BackingField: 0
+  <Connections>k__BackingField:
+  - {fileID: 11400000, guid: c0f28e57a6df27a42b53229f86c42e04, type: 2}
+  - {fileID: 11400000, guid: e67fe176825957644ad2f2a5db456500, type: 2}
+  <PathfindingEnabled>k__BackingField: 1
+  Interest: 0

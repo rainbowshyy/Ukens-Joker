@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: HallwayRight
   m_EditorClassIdentifier: 
   Position: {x: 0, y: 0, z: 0}
-  Connections: []
-  <PathfindingEnabled>k__BackingField: 0
+  <Connections>k__BackingField:
+  - {fileID: 11400000, guid: 06149ee31b12fba468c8f64597c8fb9b, type: 2}
+  - {fileID: 11400000, guid: bab7921976e5f8f4c8d139cde46d0f83, type: 2}
+  - {fileID: 11400000, guid: c0f28e57a6df27a42b53229f86c42e04, type: 2}
+  <PathfindingEnabled>k__BackingField: 1
+  Interest: 0
