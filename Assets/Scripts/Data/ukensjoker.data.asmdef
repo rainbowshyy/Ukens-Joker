@@ -1,11 +1,8 @@
 {
-    "name": "ukensjoker.engine",
-    "rootNamespace": "UkensJoker.Engine",
+    "name": "ukensjoker.data",
+    "rootNamespace": "UkensJoker.Data",
     "references": [
-        "GUID:3a515e7fd63ea754b9a772509d75c51f",
-        "GUID:75469ad4d38634e559750d17036d5f7c",
-        "GUID:4307f53044263cf4b835bd812fc161a4",
-        "GUID:a980aabb16fd98a429b87d7539710a81"
+        "GUID:3a515e7fd63ea754b9a772509d75c51f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
