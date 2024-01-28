@@ -1,6 +1,7 @@
 using UnityEngine;
 using UkensJoker.DataArchitecture;
 using System;
+using UnityEngine.Events;
 
 namespace UkensJoker.Engine
 {
@@ -11,6 +12,9 @@ namespace UkensJoker.Engine
 
         [Header("Values")]
         [SerializeField] private FloatReference _doorOpenTime;
+
+        [SerializeField] private UnityEvent OnOpenDoor;
+        [SerializeField] private UnityEvent OnCloseDoor;
 
         private float _yRotDefault;
         private float _yRotPrevious;
@@ -38,6 +42,8 @@ namespace UkensJoker.Engine
             if (_transitionTime >= 1f)
             {
                 _isTransitioning = false;
+                if (!_openDoor)
+                    OnCloseDoor?.Invoke();
             }
         }
 
@@ -50,6 +56,9 @@ namespace UkensJoker.Engine
         {
             if (_isTransitioning)
                 return;
+
+            if (!_openDoor)
+                OnOpenDoor?.Invoke();
 
             _openDoor = !_openDoor;
             _isTransitioning = true;
