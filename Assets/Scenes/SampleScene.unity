@@ -3837,41 +3837,41 @@ MonoBehaviour:
     ConstantValue: {x: 0, y: 0, z: 0}
     Variable: {fileID: 11400000, guid: ce2e96dbefabec446979e58150c41dba, type: 2}
   "_r\xF8vernAnger":
-    UseConstant: 1
+    UseConstant: 0
     ConstantValue: 0
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: a2bc5ee9d9e14714483a9639c6c04695, type: 2}
   "_r\xF8vernUpdateTime":
-    UseConstant: 1
+    UseConstant: 0
     ConstantValue: 5
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: 9602a294ba8b19c4dacd4ab1f793dfd9, type: 2}
   "_r\xF8vernUpdateAngerTime":
-    UseConstant: 1
+    UseConstant: 0
     ConstantValue: 0
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: 80c6683040c4248479f634347cf08697, type: 2}
   "_r\xF8vernSpeedIdle":
-    UseConstant: 1
+    UseConstant: 0
     ConstantValue: 1
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: 5f53d8b2b2bb1ab4e85a264d58543fa3, type: 2}
   "_r\xF8vernSpeedCurious":
-    UseConstant: 1
+    UseConstant: 0
     ConstantValue: 1
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: a146a3357145d704aa574a79e0bcfa25, type: 2}
   "_r\xF8vernSpeedChase":
-    UseConstant: 1
+    UseConstant: 0
     ConstantValue: 1
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: 1bdf377c0ae591c4a848ea2e31806bd9, type: 2}
   _spotInterestDecay:
-    UseConstant: 1
+    UseConstant: 0
     ConstantValue: 0.5
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: 38039c05a99266c4abf742b83bbacee9, type: 2}
   _spotInterestMin:
-    UseConstant: 1
+    UseConstant: 0
     ConstantValue: 1
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: 8bac3b332fff28b41a80c8daab40d4c1, type: 2}
   _spotInterestMax:
-    UseConstant: 1
+    UseConstant: 0
     ConstantValue: 10
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: d4a9740ca6445b7479375ef3ad4b4108, type: 2}
 --- !u!195 &583535727
 NavMeshAgent:
   m_ObjectHideFlags: 0
