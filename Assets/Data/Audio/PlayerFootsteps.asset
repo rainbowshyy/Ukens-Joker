@@ -9,7 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e396329c649987b44a6e0df4225739ed, type: 3}
-  m_Name: PlayerDrag
+  m_Script: {fileID: 11500000, guid: ed228b35f5896094faafd891aa039028, type: 3}
+  m_Name: PlayerFootsteps
   m_EditorClassIdentifier: 
-  _float: 10
+  Loop: 1
+  PlayOnAwake: 0
+  _audioClips:
+  - {fileID: 8300000, guid: 284d3909bbe64a448b55ce35291882ca, type: 3}
+  _pitchMin: 0.9
+  _pitchMax: 1.1
+  _volumeMin: 0.9
+  _volumeMax: 1.1

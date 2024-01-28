@@ -48,12 +48,12 @@ namespace UkensJoker.Engine
                 return;
 
             MovePlayer();
-            if (rb.velocity.magnitude > 0.1f && !_moving)
+            if (rb.velocity.magnitude > 0.5f && !_moving)
             {
                 _moving = true;
                 OnStartMove.Invoke();
             }
-            else if (rb.velocity.magnitude <= 0.1f && _moving)
+            else if (rb.velocity.magnitude <= 0.5f && _moving)
             {
                 _moving = false;
                 OnStopMove.Invoke();
