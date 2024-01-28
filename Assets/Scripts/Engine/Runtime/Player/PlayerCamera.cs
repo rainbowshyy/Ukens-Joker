@@ -33,6 +33,12 @@ namespace UkensJoker.Engine
             if (!_canLook)
                 return;
 
+            if (_lookInput.Value == Vector2.zero)
+            {
+                rb.angularVelocity = Vector3.zero;
+                return;
+            }
+
             float mouseX = _lookInput.Value.x * Time.deltaTime * _playerLookSensitivityX.Value;
             float mouseY = _lookInput.Value.y * Time.deltaTime * _playerLookSensitivityY.Value;
 
