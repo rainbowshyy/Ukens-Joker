@@ -16,9 +16,10 @@ namespace UkensJoker.Audio
             if (_audio is not RandomAudioData)
                 _audioSource.loop = _audio.Loop;
 
-            _audioSource.playOnAwake = _audio.PlayOnAwake;
-
             SetAudioData();
+
+            if (_audio.PlayOnAwake)
+                _audioSource.Play();
         }
 
         protected void SetAudioData()

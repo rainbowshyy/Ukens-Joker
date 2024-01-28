@@ -1,21 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace UkensJoker.Audio
 {
-    public class GlobalAudioPlayer : MonoBehaviour
+    public class GlobalAudioPlayer : AudioPlayer
     {
-        // Start is called before the first frame update
-        void Start()
+        protected override void Awake()
         {
-        
+            base.Awake();
+            _audioSource.spatialBlend = 0f;
         }
 
-        // Update is called once per frame
-        void Update()
+        public override void Play()
         {
-        
+            base.Play();
+        }
+
+        public override void Stop()
+        {
+            base.Stop();
         }
     }
 }
