@@ -40,7 +40,7 @@ namespace UkensJoker.Engine
                 },
                 {
                     ""name"": ""Look"",
-                    ""type"": ""Value"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""ec0ba2ef-aaba-452a-a565-409b53ba59c8"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
