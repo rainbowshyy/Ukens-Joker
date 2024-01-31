@@ -7656,7 +7656,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9031a693e0dc5ca40a5bd8d4a78bf9a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 330585546}
+  _target:
+    UseConstant: 0
+    ConstantValue: {x: 0, y: 0, z: 0}
+    Variable: {fileID: 11400000, guid: ce2e96dbefabec446979e58150c41dba, type: 2}
+  _offset: {x: 0, y: 0.5, z: 0}
 --- !u!114 &1033523912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12810,6 +12814,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7808151628608198116, guid: c275e756c55f06f4a969f8d0143a6334,
         type: 3}
+      propertyPath: m_InitialEventName
+      value: OnPlay
+      objectReference: {fileID: 0}
+    - target: {fileID: 7808151628608198116, guid: c275e756c55f06f4a969f8d0143a6334,
+        type: 3}
       propertyPath: m_PropertySheet.m_Float.m_Array.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -12826,7 +12835,7 @@ PrefabInstance:
     - target: {fileID: 7808151628608198116, guid: c275e756c55f06f4a969f8d0143a6334,
         type: 3}
       propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Value
-      value: 0.2
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 7808151628608198116, guid: c275e756c55f06f4a969f8d0143a6334,
         type: 3}
@@ -16863,7 +16872,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 471
+    m_Bits: 1495
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5529999403695264604}
   - component: {fileID: 5430775400956666818}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Noise
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9031a693e0dc5ca40a5bd8d4a78bf9a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  _target:
+    UseConstant: 0
+    ConstantValue: {x: 0, y: 0, z: 0}
+    Variable: {fileID: 11400000, guid: ce2e96dbefabec446979e58150c41dba, type: 2}
+  _offset: {x: 0, y: 0.5, z: 0}
 --- !u!1 &2052746107826543445
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,7 +61,7 @@ GameObject:
   - component: {fileID: 3387798866200345231}
   - component: {fileID: 7808151628608198116}
   - component: {fileID: 6894802231615752353}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Visual Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,8 +92,8 @@ VisualEffect:
   m_GameObject: {fileID: 2052746107826543445}
   m_Enabled: 1
   m_Asset: {fileID: 8926484042661614526, guid: 5782f08647c587841bdf71818f15ac35, type: 3}
-  m_InitialEventName: OnPlay
-  m_InitialEventNameOverriden: 0
+  m_InitialEventName: 
+  m_InitialEventNameOverriden: 1
   m_StartSeed: 0
   m_ResetSeedOnPlay: 1
   m_AllowInstancing: 1

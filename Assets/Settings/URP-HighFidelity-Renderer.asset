@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 1
   Settings:
-    RenderPassEvent: 350
+    RenderPassEvent: 250
     RenderPassInput: 1
     RenderQueueLowerBound: 0
     RenderQueueUpperBound: 2499
@@ -182,10 +182,10 @@ MonoBehaviour:
   m_AssetVersion: 2
   m_OpaqueLayerMask:
     serializedVersion: 2
-    m_Bits: 87
+    m_Bits: 1111
   m_TransparentLayerMask:
     serializedVersion: 2
-    m_Bits: 87
+    m_Bits: 1111
   m_DefaultStencilState:
     overrideStencilState: 0
     stencilReference: 0
