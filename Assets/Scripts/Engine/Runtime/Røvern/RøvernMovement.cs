@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
 using UkensJoker.DataArchitecture;
-using UkensJoker.Data;
 
 namespace UkensJoker.Engine
 {

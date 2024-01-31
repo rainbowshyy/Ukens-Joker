@@ -1,4 +1,3 @@
-using UkensJoker.Data;
 using UnityEngine;
 
 namespace UkensJoker.Engine

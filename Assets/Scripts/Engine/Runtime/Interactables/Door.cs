@@ -1,7 +1,7 @@
 using UnityEngine;
 using UkensJoker.DataArchitecture;
-using System;
 using UnityEngine.Events;
+using System.Collections.Generic;
 
 namespace UkensJoker.Engine
 {
@@ -25,9 +25,15 @@ namespace UkensJoker.Engine
 
         private bool _openDoor = false;
 
+        [SerializeField] private List<PlayerRoom> _roomsConnected;
+
         private void Awake()
         {
             _yRotDefault = transform.eulerAngles.y;
+            foreach (PlayerRoom room in _roomsConnected)
+            {
+                room.AddDoor(this);
+            }
         }
 
         private void Update()
@@ -43,7 +49,11 @@ namespace UkensJoker.Engine
             {
                 _isTransitioning = false;
                 if (!_openDoor)
+                {
                     OnCloseDoor?.Invoke();
+                    foreach (PlayerRoom room in _roomsConnected)
+                        room.UpdateConnected();
+                }
             }
         }
 
@@ -57,10 +67,15 @@ namespace UkensJoker.Engine
             if (_isTransitioning)
                 return;
 
-            if (!_openDoor)
-                OnOpenDoor?.Invoke();
-
             _openDoor = !_openDoor;
+
+            if (_openDoor)
+            {
+                OnOpenDoor?.Invoke();
+                foreach (PlayerRoom room in _roomsConnected)
+                    room.UpdateConnected();
+            }
+
             _isTransitioning = true;
             _transitionTime = 0f;
             _yRotPrevious = _transform.eulerAngles.y;
@@ -74,6 +89,16 @@ namespace UkensJoker.Engine
             {
                 _yRotTarget = _yRotDefault;
             }
+        }
+
+        public bool IsOpen()
+        {
+            return _openDoor;
+        }
+
+        public List<PlayerRoom> GetRooms()
+        {
+            return _roomsConnected;
         }
     }
 }

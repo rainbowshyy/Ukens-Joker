@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace UkensJoker.Data
+namespace UkensJoker.Engine
 {
     [CreateAssetMenu(menuName = "Create Røvern Spot", fileName ="RøvernSport")]
     public class RøvernSpot : ScriptableObject

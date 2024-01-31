@@ -53,7 +53,16 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: fc6fe01695ff402478ca02a3a20fcca5, type: 2}
+  _lowPassNoPlayer:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 7b8ae66187c29fc42927ba6567efd6b2, type: 2}
+  _lowPassNotConnected:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: a8741c76e02cc1145947b5ff1735cff9, type: 2}
   _vfx: {fileID: 6476296262544015021}
+  _room: {fileID: 11400000, guid: 49888c460281214459efe5b24b776277, type: 2}
 --- !u!1 &8783321157784756162
 GameObject:
   m_ObjectHideFlags: 0
