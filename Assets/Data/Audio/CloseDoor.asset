@@ -14,6 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Loop: 0
   PlayOnAwake: 0
+  Reverb:
+    Room: -1000
+    RoomHF: -454
+    RoomLF: 0
+    DecayTime: 0.4
+    DecayHFRatio: 0.83
+    ReflectionsLevel: -1646
+    ReflectionsDelay: 0
+    ReverbLevel: 53
+    ReverbDelay: 0.003
+    HFReference: 5000
+    LFReference: 250
+    Diffusion: 100
+    Density: 100
   _clip: {fileID: 8300000, guid: bfa587066b2033f40b16fdbd376f956e, type: 3}
-  _volume: 1
+  _volume: 0.9
   _pitch: 1

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cba95d30ff87e041a14d1cef0b4a5f4, type: 3}
-  m_Name: ComputerStatic
+  m_Name: Printer
   m_EditorClassIdentifier: 
-  Loop: 1
-  PlayOnAwake: 1
+  Loop: 0
+  PlayOnAwake: 0
   Reverb:
     Room: -1000
     RoomHF: -454
@@ -28,6 +28,6 @@ MonoBehaviour:
     LFReference: 250
     Diffusion: 100
     Density: 100
-  _clip: {fileID: 8300000, guid: 4db6d29fa73f78940bd0e510d0f9b8aa, type: 3}
-  _volume: 0.8
+  _clip: {fileID: 8300000, guid: 1b4cf6aba987c4240954f66251c4f068, type: 3}
+  _volume: 1
   _pitch: 1

@@ -35,7 +35,7 @@ namespace UkensJoker.Engine
             if (!_isTransitioning)
                 return;
 
-            _transitionTime += Time.deltaTime / _doorOpenTime.Value;
+            _transitionTime += (Time.deltaTime / _doorOpenTime.Value) * (_openDoor ? 1f : 1.5f);
 
             _transform.eulerAngles = new Vector3(0f, Mathf.LerpAngle(_yRotPrevious, _yRotTarget, -(Mathf.Cos(Mathf.PI * _transitionTime) - 1f) / 2f), 0f);
 

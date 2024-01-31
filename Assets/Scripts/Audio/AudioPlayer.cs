@@ -19,7 +19,7 @@ namespace UkensJoker.Audio
             SetAudioData();
 
             if (_audio.PlayOnAwake)
-                _audioSource.Play();
+                Play();
         }
 
         protected void SetAudioData()
