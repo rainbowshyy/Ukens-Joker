@@ -4240,7 +4240,7 @@ Light:
     m_Strength: 1
     m_Bias: 0.05
     m_NormalBias: 0.4
-    m_NearPlane: 0.02
+    m_NearPlane: 0.01
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -4287,7 +4287,7 @@ Transform:
   m_GameObject: {fileID: 539252669}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.147, y: 1.081, z: -20.459}
+  m_LocalPosition: {x: -2.146, y: 1.083, z: -20.467}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10329,6 +10329,11 @@ PrefabInstance:
       propertyPath: _lights.Array.data[1]
       value: 
       objectReference: {fileID: 539252669}
+    - target: {fileID: 2578040057465481513, guid: 1551e123e87048549b89adc768fc584e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7653235937627520795, guid: 1551e123e87048549b89adc768fc584e,
         type: 3}
       propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Value
@@ -10397,7 +10402,15 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2578040057465481513, guid: 1551e123e87048549b89adc768fc584e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 1621946446673692685, guid: 1551e123e87048549b89adc768fc584e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 1551e123e87048549b89adc768fc584e, type: 3}
 --- !u!1001 &1287611987
 PrefabInstance:

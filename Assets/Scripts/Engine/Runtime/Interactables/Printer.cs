@@ -1,6 +1,7 @@
 using UkensJoker.DataArchitecture;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
 
 namespace UkensJoker.Engine
 {
@@ -17,6 +18,14 @@ namespace UkensJoker.Engine
         [SerializeField] private FloatReference _printTime;
         private float _printTimeCurrent;
 
+        [SerializeField] private Transform _paperTransform;
+        [SerializeField] private TMP_Text[] _paperTexts;
+        [SerializeField] private float _paperStartPos;
+
+        [SerializeField] private Transform _vibrateTransform;
+        [SerializeField] private FloatReference _vibrateIntensity;
+        [SerializeField] private FloatReference _vibrateFrequency;
+
         public string GetInteractText()
         {
             return _printing ? _printingText : _startPrintText;
@@ -29,6 +38,10 @@ namespace UkensJoker.Engine
 
             _printing = true;
             _onStartPrint.Invoke();
+
+            _paperTexts[1].text = _paperTexts[0].text;
+            _paperTexts[0].text = "test";
+            _paperTransform.localPosition = new Vector3(0f, _paperStartPos, 0f);
         }
 
         private void Update()
@@ -38,11 +51,16 @@ namespace UkensJoker.Engine
 
             _printTimeCurrent += Time.deltaTime;
 
+            _paperTransform.localPosition = new Vector3(0f, Mathf.Lerp(_paperStartPos, 0f, _printTimeCurrent / _printTime.Value), 0f);
+
+            _vibrateTransform.localPosition = new Vector3(0f, _printTimeCurrent % _vibrateFrequency.Value < _vibrateFrequency.Value / 2f ? 0f : _vibrateIntensity.Value, 0f);
+
             if (_printTimeCurrent >= _printTime.Value)
             {
                 _printTimeCurrent = 0;
                 _printing = false;
 
+                _vibrateTransform.localPosition = Vector3.zero;
                 _onCompletePrint.Invoke();
             }
         }
