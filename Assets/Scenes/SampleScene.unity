@@ -805,6 +805,12 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!4 &58673723 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2262185047031887656, guid: 857f86d6d0a5ab841a995c13a4866547,
+    type: 3}
+  m_PrefabInstance: {fileID: 2009477365}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &64557252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6560,6 +6566,7 @@ Transform:
   - {fileID: 588078904}
   - {fileID: 8699586495977539728}
   - {fileID: 6677485240981054758}
+  - {fileID: 58673723}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &808391486 stripped
@@ -17781,7 +17788,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 807439814}
     m_Modifications:
     - target: {fileID: 1254481268013628421, guid: 857f86d6d0a5ab841a995c13a4866547,
         type: 3}
@@ -17836,17 +17843,17 @@ PrefabInstance:
     - target: {fileID: 2262185047031887656, guid: 857f86d6d0a5ab841a995c13a4866547,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2262185047031887656, guid: 857f86d6d0a5ab841a995c13a4866547,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2262185047031887656, guid: 857f86d6d0a5ab841a995c13a4866547,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2262185047031887656, guid: 857f86d6d0a5ab841a995c13a4866547,
         type: 3}
@@ -19602,4 +19609,3 @@ SceneRoots:
   - {fileID: 1752988108}
   - {fileID: 1901202572}
   - {fileID: 1010882006}
-  - {fileID: 2009477365}
