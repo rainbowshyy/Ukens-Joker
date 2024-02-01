@@ -103,7 +103,7 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _PixelHeight: 270
-    - _PixelOffset: 0
+    - _PixelOffset: 2
     - _PixelWidth: 480
     - _QueueOffset: 0
     - _ReceiveShadows: 1
