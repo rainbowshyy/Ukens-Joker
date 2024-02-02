@@ -1307,7 +1307,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9074875805564994972}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.75, y: 0.5, z: -20.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1411,6 +1411,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PropertySheet.m_Bool.m_Array.Array.data[0].m_Name
       value: Burst
+      objectReference: {fileID: 0}
+    - target: {fileID: 7808151628608198116, guid: c275e756c55f06f4a969f8d0143a6334,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Value
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7808151628608198116, guid: c275e756c55f06f4a969f8d0143a6334,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[1].m_Value
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 7808151628608198116, guid: c275e756c55f06f4a969f8d0143a6334,
         type: 3}
