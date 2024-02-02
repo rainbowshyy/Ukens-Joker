@@ -16688,6 +16688,80 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1789647522}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1810548950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1810548952}
+  - component: {fileID: 1810548951}
+  - component: {fileID: 1810548953}
+  m_Layer: 0
+  m_Name: GlobalLogic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1810548951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810548950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80dfb8e3a9859e848b76a15636293a0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _password: {fileID: 11400000, guid: ecf3e4183777c0a4b8604713001dfc62, type: 2}
+--- !u!4 &1810548952
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810548950}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1810548953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810548950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9978dbcdb7d89b449b8088faf71e580b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameEvent: {fileID: 11400000, guid: 3d011992ded1ed54b853e18699aca87b, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1810548951}
+        m_TargetAssemblyTypeName: UkensJoker.Engine.PasswordGenerator, ukensjoker.engine
+        m_MethodName: SetNewPassword
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1814708779
 GameObject:
   m_ObjectHideFlags: 0
@@ -16738,10 +16812,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f6b969c521f9f45a5bffee13beb81f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveInput: {fileID: 11400000, guid: ff6b9ef2d5af23b4e9fd842913877bd3, type: 2}
-  lookInput: {fileID: 11400000, guid: ed6a99e70a9edfb4ab59f7cdf75ea2f0, type: 2}
-  interactTriggered: {fileID: 11400000, guid: 2815242713c3ff249b1a1fa30ac5daec, type: 2}
-  interactReleased: {fileID: 11400000, guid: 0900e746596306445b332a644dad89d6, type: 2}
+  _moveInput: {fileID: 11400000, guid: ff6b9ef2d5af23b4e9fd842913877bd3, type: 2}
+  _lookInput: {fileID: 11400000, guid: ed6a99e70a9edfb4ab59f7cdf75ea2f0, type: 2}
+  _interactTriggered: {fileID: 11400000, guid: 2815242713c3ff249b1a1fa30ac5daec, type: 2}
+  _interactReleased: {fileID: 11400000, guid: 0900e746596306445b332a644dad89d6, type: 2}
+  _numberPressed: {fileID: 11400000, guid: f9d1cf7fb5bb41047b66b10ca95f08d5, type: 2}
 --- !u!114 &1814708782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21219,3 +21294,4 @@ SceneRoots:
   - {fileID: 1752988108}
   - {fileID: 1901202572}
   - {fileID: 1010882006}
+  - {fileID: 1810548952}

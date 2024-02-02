@@ -9,10 +9,11 @@ namespace UkensJoker.Engine
 
         private PlayerControls _input;
 
-        [SerializeField] Vector2Variable moveInput;
-        [SerializeField] Vector2Variable lookInput;
-        [SerializeField] GameEvent interactTriggered;
-        [SerializeField] GameEvent interactReleased;
+        [SerializeField] private Vector2Variable _moveInput;
+        [SerializeField] private Vector2Variable _lookInput;
+        [SerializeField] private GameEvent _interactTriggered;
+        [SerializeField] private GameEvent _interactReleased;
+        [SerializeField] private GameEvent _numberPressed;
 
         public bool InteractValue { get; private set; }
         public float LongJump { get; private set; }
@@ -21,7 +22,7 @@ namespace UkensJoker.Engine
 
         private void Update()
         {
-            moveInput.Value = _input.Player.Move.ReadValue<Vector2>();
+            _moveInput.Value = _input.Player.Move.ReadValue<Vector2>();
 
             //lookInput.Value = _input.Player.Look.ReadValue<Vector2>();
             Vector2 rawLookInput = _input.Player.Look.ReadValue<Vector2>();
@@ -29,17 +30,22 @@ namespace UkensJoker.Engine
 
             // Adjust sensitivity based on aspect ratio
             Vector2 normalizedLookInput = new Vector2(rawLookInput.x / Screen.width * aspectRatio, rawLookInput.y / Screen.height) * 100f;
-            lookInput.Value = normalizedLookInput;
+            _lookInput.Value = normalizedLookInput;
         }
 
         private void InteractInput(InputAction.CallbackContext context)
         {
-            interactTriggered.Raise(this, null);
+            _interactTriggered.Raise(this, null);
         }
 
         private void InteractReleaseInput(InputAction.CallbackContext context)
         {
-            interactReleased.Raise(this, null);
+            _interactReleased.Raise(this, null);
+        }
+
+        private void NumberInput(int number)
+        {
+            _numberPressed.Raise(this, number);
         }
 
         private void OnEnable()
@@ -47,6 +53,16 @@ namespace UkensJoker.Engine
             _input.Enable();
             _input.Player.Interact.started += InteractInput;
             _input.Player.Interact.canceled += InteractReleaseInput;
+            _input.Player._0.started += (e) => { NumberInput(0); };
+            _input.Player._1.started += (e) => { NumberInput(1); };
+            _input.Player._2.started += (e) => { NumberInput(2); };
+            _input.Player._3.started += (e) => { NumberInput(3); };
+            _input.Player._4.started += (e) => { NumberInput(4); };
+            _input.Player._5.started += (e) => { NumberInput(5); };
+            _input.Player._6.started += (e) => { NumberInput(6); };
+            _input.Player._7.started += (e) => { NumberInput(7); };
+            _input.Player._8.started += (e) => { NumberInput(8); };
+            _input.Player._9.started += (e) => { NumberInput(9); };
         }
         private void OnDisable() { _input.Disable(); }
     }

@@ -2,6 +2,8 @@ using UkensJoker.DataArchitecture;
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
+using System;
+using System.Linq;
 
 namespace UkensJoker.Engine
 {
@@ -26,6 +28,8 @@ namespace UkensJoker.Engine
         [SerializeField] private FloatReference _vibrateIntensity;
         [SerializeField] private FloatReference _vibrateFrequency;
 
+        [SerializeField] private StringReference _password;
+
         public string GetInteractText()
         {
             return _printing ? _printingText : _startPrintText;
@@ -40,7 +44,7 @@ namespace UkensJoker.Engine
             _onStartPrint.Invoke();
 
             _paperTexts[1].text = _paperTexts[0].text;
-            _paperTexts[0].text = "test";
+            _paperTexts[0].text = "LOGIN:\n" + String.Join(" ",_password.Value.ToCharArray()).Insert(16, "\n").Insert(8, "\n");
             _paperTransform.localPosition = new Vector3(0f, _paperStartPos, 0f);
         }
 

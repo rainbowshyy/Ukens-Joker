@@ -1218,6 +1218,10 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: 25176a475c0665946a0b06400652c29b, type: 2}
+  _password:
+    UseConstant: 0
+    ConstantValue: 
+    Variable: {fileID: 11400000, guid: ecf3e4183777c0a4b8604713001dfc62, type: 2}
 --- !u!1 &8387592299224871974
 GameObject:
   m_ObjectHideFlags: 0
