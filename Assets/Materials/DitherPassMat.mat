@@ -54,15 +54,15 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BlackThreshold: 0.4
-    - _DoorHandleThreshold: 1.6
-    - _DoorThreshold: 0.5
+    - _BlackThreshold: 0.9
+    - _DoorHandleThreshold: 1.5
+    - _DoorThreshold: 0.65
     - _GreyThreshold: 0.3
     - _OutlineLightThreshold: 0.01
     - _OutlineThreshold: 0.55
     - _PixelHeight: 0
     - _PixelWidth: 0
-    - _Spread: 0.25
+    - _Spread: 0.65
     m_Colors:
     - _Black: {r: 0, g: 0, b: 0, a: 1}
     - _Door: {r: 0.29019603, g: 0.19999996, b: 0.07058824, a: 1}
