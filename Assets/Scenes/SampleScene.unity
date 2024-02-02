@@ -7621,16 +7621,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 807439814}
     m_Modifications:
-    - target: {fileID: 2827795753581131036, guid: b7c1196853a295546b2a8d0cd9ac936a,
-        type: 3}
-      propertyPath: m_VerticalAlignment
-      value: 512
-      objectReference: {fileID: 0}
-    - target: {fileID: 2827795753581131036, guid: b7c1196853a295546b2a8d0cd9ac936a,
-        type: 3}
-      propertyPath: m_HorizontalAlignment
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3931990226839002463, guid: b7c1196853a295546b2a8d0cd9ac936a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7685,16 +7675,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PC
-      objectReference: {fileID: 0}
-    - target: {fileID: 8895224341359381305, guid: b7c1196853a295546b2a8d0cd9ac936a,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8895224341359381305, guid: b7c1196853a295546b2a8d0cd9ac936a,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
