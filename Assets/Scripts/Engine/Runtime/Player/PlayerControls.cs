@@ -55,6 +55,96 @@ namespace UkensJoker.Engine
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""0"",
+                    ""type"": ""Button"",
+                    ""id"": ""026ca27b-2031-464f-8050-19f197d772ec"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""1"",
+                    ""type"": ""Button"",
+                    ""id"": ""f3532d58-2d7a-4f9d-a7ac-71f559576049"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""2"",
+                    ""type"": ""Button"",
+                    ""id"": ""a0b3695f-d564-4fe1-a2d5-ceffef2a1e5f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""3"",
+                    ""type"": ""Button"",
+                    ""id"": ""f5c065ed-ef2a-467d-b441-fc010bb192f4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""4"",
+                    ""type"": ""Button"",
+                    ""id"": ""1275936a-0a46-400d-921b-a13ec063f7c7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""5"",
+                    ""type"": ""Button"",
+                    ""id"": ""ef49af5d-f728-4823-9efc-7d6382067e68"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""6"",
+                    ""type"": ""Button"",
+                    ""id"": ""cafa2e62-d614-4864-8c7a-4bdd2b1d6b3f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""7"",
+                    ""type"": ""Button"",
+                    ""id"": ""ad7b4558-5fd3-4512-972d-08dc54f58709"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""8"",
+                    ""type"": ""Button"",
+                    ""id"": ""25d14856-635b-4018-9821-91a36aa24ae7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""9"",
+                    ""type"": ""Button"",
+                    ""id"": ""fa653493-be0d-4bfe-bf48-6a65441f414f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -145,6 +235,226 @@ namespace UkensJoker.Engine
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4c4202ad-7cf7-4a67-bcb9-853a092f406b"",
+                    ""path"": ""<Keyboard>/0"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""0"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ba3f2272-8222-430c-b4fa-0ee7dc467baf"",
+                    ""path"": ""<Keyboard>/numpad0"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""0"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ddf9a97c-9d26-47c6-9ea6-bb747a685455"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""31fa7317-b3ac-4e20-a44b-40c8fabe86b7"",
+                    ""path"": ""<Keyboard>/numpad0"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1139ea0a-1e32-471d-a0ca-c52d364e2aeb"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ad07d0bb-7c3b-48d1-83d8-4f70a9b25fe5"",
+                    ""path"": ""<Keyboard>/numpad2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3be94ed7-0595-49f4-a4ef-1f1ffb1f65f4"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d241b15b-c45c-440c-bb48-23f32f1d05b6"",
+                    ""path"": ""<Keyboard>/numpad3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5834ab61-7b7c-45b9-9c15-7a0050cf2907"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f0ac6073-35ea-4960-8f79-36735694b0c9"",
+                    ""path"": ""<Keyboard>/numpad4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3ddd03c0-0590-492f-adb8-ca9b8362cd20"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4395777b-9914-40d1-a9fa-35553daa5dd6"",
+                    ""path"": ""<Keyboard>/numpad5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""095d5895-5383-4099-8b4f-25f62748d8bf"",
+                    ""path"": ""<Keyboard>/6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""6"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""16fce438-0c4a-4131-b952-30cac4bc7f26"",
+                    ""path"": ""<Keyboard>/numpad6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""6"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6eb2bf42-9d79-4c28-901e-11dfcb8564b2"",
+                    ""path"": ""<Keyboard>/7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""7"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1f66e21b-6cab-4974-bfcf-6b47dec3d612"",
+                    ""path"": ""<Keyboard>/numpad7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""7"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eb0ec9f4-c3fa-4b72-bedd-0a29aad656dc"",
+                    ""path"": ""<Keyboard>/8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""8"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""34e1b7c2-b1e5-411a-96db-7dc94b5e9d72"",
+                    ""path"": ""<Keyboard>/numpad8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""8"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9de1306d-e539-4b56-8d0b-4a29a6e7a712"",
+                    ""path"": ""<Keyboard>/9"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""9"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d28da396-d5ab-40b4-bbb8-54f48881272e"",
+                    ""path"": ""<Keyboard>/numpad9"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""9"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -156,6 +466,16 @@ namespace UkensJoker.Engine
             m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
             m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
             m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
+            m_Player__0 = m_Player.FindAction("0", throwIfNotFound: true);
+            m_Player__1 = m_Player.FindAction("1", throwIfNotFound: true);
+            m_Player__2 = m_Player.FindAction("2", throwIfNotFound: true);
+            m_Player__3 = m_Player.FindAction("3", throwIfNotFound: true);
+            m_Player__4 = m_Player.FindAction("4", throwIfNotFound: true);
+            m_Player__5 = m_Player.FindAction("5", throwIfNotFound: true);
+            m_Player__6 = m_Player.FindAction("6", throwIfNotFound: true);
+            m_Player__7 = m_Player.FindAction("7", throwIfNotFound: true);
+            m_Player__8 = m_Player.FindAction("8", throwIfNotFound: true);
+            m_Player__9 = m_Player.FindAction("9", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -220,6 +540,16 @@ namespace UkensJoker.Engine
         private readonly InputAction m_Player_Interact;
         private readonly InputAction m_Player_Look;
         private readonly InputAction m_Player_Move;
+        private readonly InputAction m_Player__0;
+        private readonly InputAction m_Player__1;
+        private readonly InputAction m_Player__2;
+        private readonly InputAction m_Player__3;
+        private readonly InputAction m_Player__4;
+        private readonly InputAction m_Player__5;
+        private readonly InputAction m_Player__6;
+        private readonly InputAction m_Player__7;
+        private readonly InputAction m_Player__8;
+        private readonly InputAction m_Player__9;
         public struct PlayerActions
         {
             private @PlayerControls m_Wrapper;
@@ -227,6 +557,16 @@ namespace UkensJoker.Engine
             public InputAction @Interact => m_Wrapper.m_Player_Interact;
             public InputAction @Look => m_Wrapper.m_Player_Look;
             public InputAction @Move => m_Wrapper.m_Player_Move;
+            public InputAction @_0 => m_Wrapper.m_Player__0;
+            public InputAction @_1 => m_Wrapper.m_Player__1;
+            public InputAction @_2 => m_Wrapper.m_Player__2;
+            public InputAction @_3 => m_Wrapper.m_Player__3;
+            public InputAction @_4 => m_Wrapper.m_Player__4;
+            public InputAction @_5 => m_Wrapper.m_Player__5;
+            public InputAction @_6 => m_Wrapper.m_Player__6;
+            public InputAction @_7 => m_Wrapper.m_Player__7;
+            public InputAction @_8 => m_Wrapper.m_Player__8;
+            public InputAction @_9 => m_Wrapper.m_Player__9;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -245,6 +585,36 @@ namespace UkensJoker.Engine
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
+                @_0.started += instance.On_0;
+                @_0.performed += instance.On_0;
+                @_0.canceled += instance.On_0;
+                @_1.started += instance.On_1;
+                @_1.performed += instance.On_1;
+                @_1.canceled += instance.On_1;
+                @_2.started += instance.On_2;
+                @_2.performed += instance.On_2;
+                @_2.canceled += instance.On_2;
+                @_3.started += instance.On_3;
+                @_3.performed += instance.On_3;
+                @_3.canceled += instance.On_3;
+                @_4.started += instance.On_4;
+                @_4.performed += instance.On_4;
+                @_4.canceled += instance.On_4;
+                @_5.started += instance.On_5;
+                @_5.performed += instance.On_5;
+                @_5.canceled += instance.On_5;
+                @_6.started += instance.On_6;
+                @_6.performed += instance.On_6;
+                @_6.canceled += instance.On_6;
+                @_7.started += instance.On_7;
+                @_7.performed += instance.On_7;
+                @_7.canceled += instance.On_7;
+                @_8.started += instance.On_8;
+                @_8.performed += instance.On_8;
+                @_8.canceled += instance.On_8;
+                @_9.started += instance.On_9;
+                @_9.performed += instance.On_9;
+                @_9.canceled += instance.On_9;
             }
 
             private void UnregisterCallbacks(IPlayerActions instance)
@@ -258,6 +628,36 @@ namespace UkensJoker.Engine
                 @Move.started -= instance.OnMove;
                 @Move.performed -= instance.OnMove;
                 @Move.canceled -= instance.OnMove;
+                @_0.started -= instance.On_0;
+                @_0.performed -= instance.On_0;
+                @_0.canceled -= instance.On_0;
+                @_1.started -= instance.On_1;
+                @_1.performed -= instance.On_1;
+                @_1.canceled -= instance.On_1;
+                @_2.started -= instance.On_2;
+                @_2.performed -= instance.On_2;
+                @_2.canceled -= instance.On_2;
+                @_3.started -= instance.On_3;
+                @_3.performed -= instance.On_3;
+                @_3.canceled -= instance.On_3;
+                @_4.started -= instance.On_4;
+                @_4.performed -= instance.On_4;
+                @_4.canceled -= instance.On_4;
+                @_5.started -= instance.On_5;
+                @_5.performed -= instance.On_5;
+                @_5.canceled -= instance.On_5;
+                @_6.started -= instance.On_6;
+                @_6.performed -= instance.On_6;
+                @_6.canceled -= instance.On_6;
+                @_7.started -= instance.On_7;
+                @_7.performed -= instance.On_7;
+                @_7.canceled -= instance.On_7;
+                @_8.started -= instance.On_8;
+                @_8.performed -= instance.On_8;
+                @_8.canceled -= instance.On_8;
+                @_9.started -= instance.On_9;
+                @_9.performed -= instance.On_9;
+                @_9.canceled -= instance.On_9;
             }
 
             public void RemoveCallbacks(IPlayerActions instance)
@@ -280,6 +680,16 @@ namespace UkensJoker.Engine
             void OnInteract(InputAction.CallbackContext context);
             void OnLook(InputAction.CallbackContext context);
             void OnMove(InputAction.CallbackContext context);
+            void On_0(InputAction.CallbackContext context);
+            void On_1(InputAction.CallbackContext context);
+            void On_2(InputAction.CallbackContext context);
+            void On_3(InputAction.CallbackContext context);
+            void On_4(InputAction.CallbackContext context);
+            void On_5(InputAction.CallbackContext context);
+            void On_6(InputAction.CallbackContext context);
+            void On_7(InputAction.CallbackContext context);
+            void On_8(InputAction.CallbackContext context);
+            void On_9(InputAction.CallbackContext context);
         }
     }
 }
