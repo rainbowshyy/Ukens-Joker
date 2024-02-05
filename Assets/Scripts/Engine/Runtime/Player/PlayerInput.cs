@@ -13,6 +13,8 @@ namespace UkensJoker.Engine
         [SerializeField] private Vector2Variable _lookInput;
         [SerializeField] private GameEvent _interactTriggered;
         [SerializeField] private GameEvent _interactReleased;
+        [SerializeField] private GameEvent _backspaceTriggered;
+        [SerializeField] private GameEvent _enterTriggered;
         [SerializeField] private GameEvent _numberPressed;
 
         public bool InteractValue { get; private set; }
@@ -48,11 +50,23 @@ namespace UkensJoker.Engine
             _numberPressed.Raise(this, number);
         }
 
+        private void BackspaceInput(InputAction.CallbackContext context)
+        {
+            _backspaceTriggered.Raise(this, null);
+        }
+
+        private void EnterInput(InputAction.CallbackContext context)
+        {
+            _enterTriggered.Raise(this, null);
+        }
+
         private void OnEnable()
         {
             _input.Enable();
             _input.Player.Interact.started += InteractInput;
             _input.Player.Interact.canceled += InteractReleaseInput;
+            _input.Player.Backspace.started += BackspaceInput;
+            _input.Player.Enter.started += EnterInput;
             _input.Player._0.started += (e) => { NumberInput(0); };
             _input.Player._1.started += (e) => { NumberInput(1); };
             _input.Player._2.started += (e) => { NumberInput(2); };
