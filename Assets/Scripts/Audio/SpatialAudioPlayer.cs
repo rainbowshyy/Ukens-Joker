@@ -13,7 +13,7 @@ namespace UkensJoker.Audio
         [SerializeField] private FloatReference _lowPassNotConnected;
 
         [SerializeField] private VisualEffect _vfx;
-        [SerializeField] private float _vfxIntensity;
+        private float _vfxIntensity;
 
         [SerializeField] private PlayerRoom _room;
 

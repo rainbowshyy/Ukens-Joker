@@ -28,5 +28,15 @@ namespace UkensJoker.Engine
             _passwordCurrent += data.ToString();
             _passwordText.text = _passwordCurrent;
         }
+
+        public void InputBackspace()
+        {
+            _onKeyPress?.Invoke();
+            if (_passwordCurrent.Length > 0)
+            {
+                _passwordCurrent = _passwordCurrent.Substring(0,_passwordCurrent.Length-1);
+                _passwordText.text = _passwordCurrent;
+            }
+        }
     }
 }
