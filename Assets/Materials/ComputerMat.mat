@@ -59,13 +59,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Curvature: 4
+    - _Curvature: 6
     - _Emission_Intensity: 2
     - _Frequency: 200
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Speed: 0.06
     - _Vignette: 28.8
+    - _Wrong: 0
     m_Colors:
     - _Color: {r: 0, g: 0.8610005, b: 1, a: 1}
   m_BuildTextureStacks: []

@@ -11,7 +11,8 @@ namespace UkensJoker.Engine
 
         [SerializeField] private TMP_Text _passwordText;
 
-        [SerializeField] private UnityEvent _onKeyPress;
+        [SerializeField] private UnityEvent _onRightPassword;
+        [SerializeField] private UnityEvent _onWrongPassword;
 
         private string _passwordCurrent = "";
 
@@ -19,8 +20,6 @@ namespace UkensJoker.Engine
         {
             if (data is not int)
                 return;
-
-            _onKeyPress.Invoke();
 
             if (_passwordCurrent.Length >= 12)
                 return;
@@ -31,12 +30,19 @@ namespace UkensJoker.Engine
 
         public void InputBackspace()
         {
-            _onKeyPress?.Invoke();
             if (_passwordCurrent.Length > 0)
             {
                 _passwordCurrent = _passwordCurrent.Substring(0,_passwordCurrent.Length-1);
                 _passwordText.text = _passwordCurrent;
             }
+        }
+
+        public void InputEnter()
+        {
+            if (_passwordCurrent == _password.Value)
+                _onRightPassword.Invoke();
+            else
+                _onWrongPassword.Invoke();
         }
     }
 }
