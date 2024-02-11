@@ -7,7 +7,10 @@ namespace UkensJoker.Audio
         protected override void Awake()
         {
             base.Awake();
-            _audioSource.spatialBlend = 0f;
+            for (int i = 0; i < _audioSources.Length; i++)
+            {
+                _audioSources[i].spatialBlend = 0f;
+            }
         }
 
         public override void Play()

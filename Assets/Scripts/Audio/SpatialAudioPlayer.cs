@@ -26,7 +26,10 @@ namespace UkensJoker.Audio
         protected override void Awake()
         {
             base.Awake();
-            _audioSource.spatialBlend = 1f;
+            for (int i = 0; i < _audioSources.Length; i++)
+            {
+                _audioSources[i].spatialBlend = 1f;
+            }
 
             _reverb = gameObject.AddComponent<AudioReverbFilter>();
 

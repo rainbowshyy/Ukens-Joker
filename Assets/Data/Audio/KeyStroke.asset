@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Loop: 0
   PlayOnAwake: 0
+  CanOverlap: 1
   Reverb:
     Room: -1000
     RoomHF: -454

@@ -8,6 +8,8 @@ namespace UkensJoker.Audio
         public bool Loop;
         public bool PlayOnAwake;
 
+        public bool CanOverlap;
+
         public virtual AudioClip Clip { get; }
         public virtual float Volume { get; }
         public virtual float Pitch { get; }

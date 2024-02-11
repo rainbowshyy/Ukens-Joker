@@ -7,14 +7,28 @@ namespace UkensJoker.Audio
     {
         [SerializeField] protected AudioData _audio;
 
-        protected AudioSource _audioSource;
+        protected AudioSource[] _audioSources;
+
+        protected int _lastPlayedIndex = 0;
 
         protected virtual void Awake()
         {
-            _audioSource = gameObject.AddComponent<AudioSource>();
+            if (!_audio.CanOverlap)
+                _audioSources = new AudioSource[] { gameObject.AddComponent<AudioSource>() };
+            else
+            {
+                _audioSources = new AudioSource[2];
+                _audioSources[0] = gameObject.AddComponent<AudioSource>();
+                _audioSources[1] = gameObject.AddComponent<AudioSource>();
+            }
 
             if (_audio is not RandomAudioData)
-                _audioSource.loop = _audio.Loop;
+            {
+                for (int i = 0; i < _audioSources.Length; i++)
+                {
+                    _audioSources[i].loop = _audio.Loop;
+                }
+            }
 
             SetAudioData();
 
@@ -24,34 +38,38 @@ namespace UkensJoker.Audio
 
         protected void SetAudioData()
         {
-            _audioSource.clip = _audio.Clip;
-            _audioSource.volume = _audio.Volume;
-            _audioSource.pitch = _audio.Pitch;
+            _audioSources[_lastPlayedIndex].clip = _audio.Clip;
+            _audioSources[_lastPlayedIndex].volume = _audio.Volume;
+            _audioSources[_lastPlayedIndex].pitch = _audio.Pitch;
         }
 
         public virtual void Play()
         {
+            _lastPlayedIndex = _audio.CanOverlap ? 1 - _lastPlayedIndex : 0;
             if (_audio is RandomAudioData)
             {
                 SetAudioData();
                 if (_audio.Loop)
                     StartCoroutine(SetAudioDataIfLooped());
             }
-            _audioSource.Play();
+            _audioSources[_lastPlayedIndex].Play();
         }
 
         public virtual void Stop()
         {
-            _audioSource.Stop();
+            for (int i = 0; i < _audioSources.Length; i++)
+            {
+                _audioSources[i].Stop();
+            }
             StopAllCoroutines();
         }
 
         private IEnumerator SetAudioDataIfLooped()
         {
-            if (!_audioSource.isPlaying)
+            if (!_audioSources[_lastPlayedIndex].isPlaying)
             {
                 SetAudioData();
-                _audioSource.Play();
+                _audioSources[_lastPlayedIndex].Play();
             }
 
             yield return new WaitForEndOfFrame();
