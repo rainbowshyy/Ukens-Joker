@@ -13,8 +13,14 @@ namespace UkensJoker.Engine
 
         [SerializeField] private UnityEvent _onRightPassword;
         [SerializeField] private UnityEvent _onWrongPassword;
+        [SerializeField] private UnityEvent _onEnable;
 
         private string _passwordCurrent = "";
+
+        private void OnEnable()
+        {
+            _onEnable.Invoke();
+        }
 
         public void InputCharacter(Component sender, object data)
         {
