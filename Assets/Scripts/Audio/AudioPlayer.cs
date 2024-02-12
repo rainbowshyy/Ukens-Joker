@@ -14,12 +14,17 @@ namespace UkensJoker.Audio
         protected virtual void Awake()
         {
             if (!_audio.CanOverlap)
+            {
                 _audioSources = new AudioSource[] { gameObject.AddComponent<AudioSource>() };
+                _audioSources[0].playOnAwake = _audio.PlayOnAwake;
+            }
             else
             {
                 _audioSources = new AudioSource[2];
                 _audioSources[0] = gameObject.AddComponent<AudioSource>();
                 _audioSources[1] = gameObject.AddComponent<AudioSource>();
+                _audioSources[0].playOnAwake = _audio.PlayOnAwake;
+                _audioSources[1].playOnAwake = _audio.PlayOnAwake;
             }
 
             if (_audio is not RandomAudioData)

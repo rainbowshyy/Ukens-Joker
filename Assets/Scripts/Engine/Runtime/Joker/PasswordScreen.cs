@@ -31,7 +31,7 @@ namespace UkensJoker.Engine
                 return;
 
             _passwordCurrent += data.ToString();
-            _passwordText.text = _passwordCurrent;
+            _passwordText.text = (_passwordCurrent == "") ? "<color=#808080>ex: 1234567890</color>" : _passwordCurrent;
         }
 
         public void InputBackspace()
@@ -39,7 +39,7 @@ namespace UkensJoker.Engine
             if (_passwordCurrent.Length > 0)
             {
                 _passwordCurrent = _passwordCurrent.Substring(0,_passwordCurrent.Length-1);
-                _passwordText.text = _passwordCurrent;
+                _passwordText.text = (_passwordCurrent == "") ? "<color=#808080>ex: 1234567890</color>" : _passwordCurrent;
             }
         }
 

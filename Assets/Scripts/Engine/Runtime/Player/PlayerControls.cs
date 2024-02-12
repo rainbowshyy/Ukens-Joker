@@ -163,6 +163,24 @@ namespace UkensJoker.Engine
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""W"",
+                    ""type"": ""Button"",
+                    ""id"": ""a7612462-01ad-42c3-8fce-f690a56d49e3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""S"",
+                    ""type"": ""Button"",
+                    ""id"": ""8f727add-e2e9-483e-ba24-e48d0e780770"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -495,6 +513,28 @@ namespace UkensJoker.Engine
                     ""action"": ""Enter"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""16002e21-df45-44b2-8f5a-9a49ca6cbd41"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""W"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7e49708f-29a4-4394-b6e4-9da76c57d820"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""S"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -518,6 +558,8 @@ namespace UkensJoker.Engine
             m_Player__9 = m_Player.FindAction("9", throwIfNotFound: true);
             m_Player_Backspace = m_Player.FindAction("Backspace", throwIfNotFound: true);
             m_Player_Enter = m_Player.FindAction("Enter", throwIfNotFound: true);
+            m_Player_W = m_Player.FindAction("W", throwIfNotFound: true);
+            m_Player_S = m_Player.FindAction("S", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -594,6 +636,8 @@ namespace UkensJoker.Engine
         private readonly InputAction m_Player__9;
         private readonly InputAction m_Player_Backspace;
         private readonly InputAction m_Player_Enter;
+        private readonly InputAction m_Player_W;
+        private readonly InputAction m_Player_S;
         public struct PlayerActions
         {
             private @PlayerControls m_Wrapper;
@@ -613,6 +657,8 @@ namespace UkensJoker.Engine
             public InputAction @_9 => m_Wrapper.m_Player__9;
             public InputAction @Backspace => m_Wrapper.m_Player_Backspace;
             public InputAction @Enter => m_Wrapper.m_Player_Enter;
+            public InputAction @W => m_Wrapper.m_Player_W;
+            public InputAction @S => m_Wrapper.m_Player_S;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -667,6 +713,12 @@ namespace UkensJoker.Engine
                 @Enter.started += instance.OnEnter;
                 @Enter.performed += instance.OnEnter;
                 @Enter.canceled += instance.OnEnter;
+                @W.started += instance.OnW;
+                @W.performed += instance.OnW;
+                @W.canceled += instance.OnW;
+                @S.started += instance.OnS;
+                @S.performed += instance.OnS;
+                @S.canceled += instance.OnS;
             }
 
             private void UnregisterCallbacks(IPlayerActions instance)
@@ -716,6 +768,12 @@ namespace UkensJoker.Engine
                 @Enter.started -= instance.OnEnter;
                 @Enter.performed -= instance.OnEnter;
                 @Enter.canceled -= instance.OnEnter;
+                @W.started -= instance.OnW;
+                @W.performed -= instance.OnW;
+                @W.canceled -= instance.OnW;
+                @S.started -= instance.OnS;
+                @S.performed -= instance.OnS;
+                @S.canceled -= instance.OnS;
             }
 
             public void RemoveCallbacks(IPlayerActions instance)
@@ -750,6 +808,8 @@ namespace UkensJoker.Engine
             void On_9(InputAction.CallbackContext context);
             void OnBackspace(InputAction.CallbackContext context);
             void OnEnter(InputAction.CallbackContext context);
+            void OnW(InputAction.CallbackContext context);
+            void OnS(InputAction.CallbackContext context);
         }
     }
 }

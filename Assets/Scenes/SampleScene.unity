@@ -8113,6 +8113,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 807439814}
     m_Modifications:
+    - target: {fileID: 1580303382297826478, guid: b7c1196853a295546b2a8d0cd9ac936a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580303382297826478, guid: b7c1196853a295546b2a8d0cd9ac936a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -48
+      objectReference: {fileID: 0}
     - target: {fileID: 2240496777781001786, guid: b7c1196853a295546b2a8d0cd9ac936a,
         type: 3}
       propertyPath: _lights.Array.data[0]
@@ -16829,6 +16839,8 @@ MonoBehaviour:
     type: 2}
   _enterTriggered: {fileID: 11400000, guid: 7866fd7d8a9fec94cbc215f20170aff4, type: 2}
   _numberPressed: {fileID: 11400000, guid: f9d1cf7fb5bb41047b66b10ca95f08d5, type: 2}
+  _wTriggered: {fileID: 11400000, guid: 8f88459f957d12c4eaffd1a6691f7db3, type: 2}
+  _sTriggered: {fileID: 11400000, guid: f86037af6617d4c488bd91b2a1fa3910, type: 2}
 --- !u!114 &1814708782
 MonoBehaviour:
   m_ObjectHideFlags: 0

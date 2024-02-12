@@ -2680,6 +2680,158 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &3540364956341969918
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3955412883759228572}
+  - component: {fileID: 2003443415670745367}
+  m_Layer: 0
+  m_Name: JokerLogic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3955412883759228572
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3540364956341969918}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3931990226839002463}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2003443415670745367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3540364956341969918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ec9dc6477e9da4597e19d5a631d2e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _emptyNumberFrame: {fileID: 21300000, guid: 9828dcac833e9c84583c631c72eea397, type: 3}
+  _filledNumberFrame: {fileID: 21300000, guid: e296ef5e48bdb8f4f9bda404e78326f7, type: 3}
+  _baseNumbers:
+  - UseConstant: 1
+    ConstantValue: 0
+    Variable: {fileID: 0}
+  - UseConstant: 1
+    ConstantValue: 0
+    Variable: {fileID: 0}
+  - UseConstant: 1
+    ConstantValue: 0
+    Variable: {fileID: 0}
+  - UseConstant: 1
+    ConstantValue: 0
+    Variable: {fileID: 0}
+  - UseConstant: 1
+    ConstantValue: 0
+    Variable: {fileID: 0}
+  _rightNumbers:
+  - UseConstant: 1
+    ConstantValue: 0
+    Variable: {fileID: 0}
+  - UseConstant: 1
+    ConstantValue: 0
+    Variable: {fileID: 0}
+  - UseConstant: 1
+    ConstantValue: 0
+    Variable: {fileID: 0}
+  - UseConstant: 1
+    ConstantValue: 0
+    Variable: {fileID: 0}
+  - UseConstant: 1
+    ConstantValue: 0
+    Variable: {fileID: 0}
+  _anticipationTime:
+    UseConstant: 1
+    ConstantValue: 1
+    Variable: {fileID: 0}
+  _onStartAnticipation:
+    m_PersistentCalls:
+      m_Calls: []
+  _onEndAnticipation:
+    m_PersistentCalls:
+      m_Calls: []
+  _columns:
+  - Up:
+      Image: {fileID: 5047270590697393708}
+      Text: {fileID: 8521087035406328206}
+      Number: 0
+    Down:
+      Image: {fileID: 4493954100865490363}
+      Text: {fileID: 3653856602805352520}
+      Number: 0
+    Text: {fileID: 758855921331658365}
+  - Up:
+      Image: {fileID: 8225339297266364429}
+      Text: {fileID: 5422140481454960834}
+      Number: 0
+    Down:
+      Image: {fileID: 8947703083153659743}
+      Text: {fileID: 8325970259033252172}
+      Number: 0
+    Text: {fileID: 2988398903379491895}
+  - Up:
+      Image: {fileID: 7817662719294622424}
+      Text: {fileID: 2401457443684216120}
+      Number: 0
+    Down:
+      Image: {fileID: 5928151929932611182}
+      Text: {fileID: 6157227911548898326}
+      Number: 0
+    Text: {fileID: 5520536155021681081}
+  - Up:
+      Image: {fileID: 5998177497475504305}
+      Text: {fileID: 802922178336039610}
+      Number: 0
+    Down:
+      Image: {fileID: 6707817640547831042}
+      Text: {fileID: 5435095319406107280}
+      Number: 0
+    Text: {fileID: 6422145611960005793}
+  - Up:
+      Image: {fileID: 6484234143666147736}
+      Text: {fileID: 2828202726053192046}
+      Number: 0
+    Down:
+      Image: {fileID: 5681314258605702358}
+      Text: {fileID: 3043681307012400993}
+      Number: 0
+    Text: {fileID: 7737394123680752432}
+  _onWrong:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2240496777781001786}
+        m_TargetAssemblyTypeName: UkensJoker.Engine.ComputerWrong, ukensjoker.engine
+        m_MethodName: DoPasswordWrong
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onCorrect:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3684098864214704320
 GameObject:
   m_ObjectHideFlags: 0
@@ -2859,7 +3011,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: '<color=#808080>ex: 1234567890</color>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 346b18ddb817b084e92e4ac31ad05d28, type: 2}
   m_sharedMaterial: {fileID: 1091473985511703747, guid: 346b18ddb817b084e92e4ac31ad05d28,
@@ -3865,6 +4017,95 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &5965258390180400058
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5766481063637291110}
+  - component: {fileID: 8173623833371584794}
+  - component: {fileID: 1032042172581017808}
+  m_Layer: 0
+  m_Name: JokerLogicInput
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &5766481063637291110
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5965258390180400058}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5570231220446444082}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8173623833371584794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5965258390180400058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9978dbcdb7d89b449b8088faf71e580b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameEvent: {fileID: 11400000, guid: 8f88459f957d12c4eaffd1a6691f7db3, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2003443415670745367}
+        m_TargetAssemblyTypeName: UkensJoker.Engine.JokerScreen, ukensjoker.engine
+        m_MethodName: OnPressW
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1032042172581017808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5965258390180400058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9978dbcdb7d89b449b8088faf71e580b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameEvent: {fileID: 11400000, guid: f86037af6617d4c488bd91b2a1fa3910, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2003443415670745367}
+        m_TargetAssemblyTypeName: UkensJoker.Engine.JokerScreen, ukensjoker.engine
+        m_MethodName: OnPressS
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6122880121349381607
 GameObject:
   m_ObjectHideFlags: 0
@@ -5254,7 +5495,67 @@ MonoBehaviour:
   _passwordText: {fileID: 1821150479962214753}
   _onRightPassword:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7380474736548866410}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5965258390180400058}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 8631459870384593694}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2003443415670745367}
+        m_TargetAssemblyTypeName: UkensJoker.Engine.JokerScreen, ukensjoker.engine
+        m_MethodName: ResetColumns
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 495160238500570122}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   _onWrongPassword:
     m_PersistentCalls:
       m_Calls:
@@ -5996,6 +6297,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4199326924802394366}
+  - {fileID: 5766481063637291110}
   m_Father: {fileID: 3931990226839002463}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8778258854805875033
@@ -7222,6 +7524,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6203368957091135779}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: e38882fe73ddafe43aea6779addbb360,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3955412883759228572}
     - targetCorrespondingSourceObject: {fileID: 4890883910592187065, guid: e38882fe73ddafe43aea6779addbb360,
         type: 3}
       insertIndex: -1

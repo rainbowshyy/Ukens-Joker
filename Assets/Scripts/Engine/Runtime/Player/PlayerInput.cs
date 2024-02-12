@@ -16,6 +16,8 @@ namespace UkensJoker.Engine
         [SerializeField] private GameEvent _backspaceTriggered;
         [SerializeField] private GameEvent _enterTriggered;
         [SerializeField] private GameEvent _numberPressed;
+        [SerializeField] private GameEvent _wTriggered;
+        [SerializeField] private GameEvent _sTriggered;
 
         public bool InteractValue { get; private set; }
         public float LongJump { get; private set; }
@@ -60,6 +62,16 @@ namespace UkensJoker.Engine
             _enterTriggered.Raise(this, null);
         }
 
+        private void WInput(InputAction.CallbackContext context)
+        {
+            _wTriggered.Raise(this, null);
+        }
+
+        private void SInput(InputAction.CallbackContext context)
+        {
+            _sTriggered.Raise(this, null);
+        }
+
         private void OnEnable()
         {
             _input.Enable();
@@ -77,6 +89,8 @@ namespace UkensJoker.Engine
             _input.Player._7.started += (e) => { NumberInput(7); };
             _input.Player._8.started += (e) => { NumberInput(8); };
             _input.Player._9.started += (e) => { NumberInput(9); };
+            _input.Player.W.started += WInput;
+            _input.Player.S.started += SInput;
         }
         private void OnDisable() { _input.Disable(); }
     }
