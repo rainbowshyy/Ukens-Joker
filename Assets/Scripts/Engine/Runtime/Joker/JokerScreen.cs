@@ -62,6 +62,8 @@ namespace UkensJoker.Engine
         [SerializeField] private UnityEvent _onWrong;
         [SerializeField] private UnityEvent _onCorrect;
 
+        [SerializeField] private UnityEvent _onFinished;
+
         public void ResetColumns()
         {
             _currentNumber = 0;
@@ -99,6 +101,9 @@ namespace UkensJoker.Engine
                 _onWrong.Invoke();
             _currentNumber++;
             _anticipating = false;
+
+            if (_currentNumber >= _rightNumbers.Length)
+                _onFinished.Invoke();
         }
     }
 }
