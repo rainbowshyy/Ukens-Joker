@@ -16708,6 +16708,7 @@ GameObject:
   - component: {fileID: 1810548952}
   - component: {fileID: 1810548951}
   - component: {fileID: 1810548953}
+  - component: {fileID: 1810548954}
   m_Layer: 0
   m_Name: GlobalLogic
   m_TagString: Untagged
@@ -16771,6 +16772,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1810548954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810548950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65592c1a721294f488f0ffdd748b84c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _baseNumbers:
+  - {fileID: 11400000, guid: 910d9e7c9df861a4bb0a7c95269bcc79, type: 2}
+  - {fileID: 11400000, guid: 365dc4820954fcc4e8c6cd85dc9260e0, type: 2}
+  - {fileID: 11400000, guid: 2f2c8cd439e8d7c4ca7079da28879b59, type: 2}
+  - {fileID: 11400000, guid: e855fcf51112c9949a4a8be81b9b73b6, type: 2}
+  - {fileID: 11400000, guid: 959dc12b57193dc43be6ccb35d7dea44, type: 2}
+  _rightNumbers:
+  - {fileID: 11400000, guid: 6bf331ce2caab0243b597dfde0e534ab, type: 2}
+  - {fileID: 11400000, guid: f447b5ba09d00374b9208c011b358abf, type: 2}
+  - {fileID: 11400000, guid: 8efc6696778eecc428cac132e8a72691, type: 2}
+  - {fileID: 11400000, guid: 73516ef09450c7848b8935dddadf0a5e, type: 2}
+  - {fileID: 11400000, guid: d8f72dde2168c1e49af51648ed135d42, type: 2}
 --- !u!1 &1814708779
 GameObject:
   m_ObjectHideFlags: 0

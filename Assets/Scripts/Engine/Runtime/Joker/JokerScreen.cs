@@ -63,6 +63,7 @@ namespace UkensJoker.Engine
         [SerializeField] private UnityEvent _onCorrect;
 
         [SerializeField] private UnityEvent _onFinished;
+        [SerializeField] private GameEvent _generateNewPassword;
 
         public void ResetColumns()
         {
@@ -104,6 +105,11 @@ namespace UkensJoker.Engine
 
             if (_currentNumber >= _rightNumbers.Length)
                 _onFinished.Invoke();
+        }
+
+        public void DoGenerateNewPassword()
+        {
+            _generateNewPassword.Raise(this, null);
         }
     }
 }

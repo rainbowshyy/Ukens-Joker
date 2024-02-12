@@ -2848,41 +2848,41 @@ MonoBehaviour:
   _emptyNumberFrame: {fileID: 21300000, guid: 9828dcac833e9c84583c631c72eea397, type: 3}
   _filledNumberFrame: {fileID: 21300000, guid: e296ef5e48bdb8f4f9bda404e78326f7, type: 3}
   _baseNumbers:
-  - UseConstant: 1
+  - UseConstant: 0
     ConstantValue: 0
-    Variable: {fileID: 0}
-  - UseConstant: 1
+    Variable: {fileID: 11400000, guid: 910d9e7c9df861a4bb0a7c95269bcc79, type: 2}
+  - UseConstant: 0
     ConstantValue: 0
-    Variable: {fileID: 0}
-  - UseConstant: 1
+    Variable: {fileID: 11400000, guid: 365dc4820954fcc4e8c6cd85dc9260e0, type: 2}
+  - UseConstant: 0
     ConstantValue: 0
-    Variable: {fileID: 0}
-  - UseConstant: 1
+    Variable: {fileID: 11400000, guid: 2f2c8cd439e8d7c4ca7079da28879b59, type: 2}
+  - UseConstant: 0
     ConstantValue: 0
-    Variable: {fileID: 0}
-  - UseConstant: 1
+    Variable: {fileID: 11400000, guid: e855fcf51112c9949a4a8be81b9b73b6, type: 2}
+  - UseConstant: 0
     ConstantValue: 0
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: 959dc12b57193dc43be6ccb35d7dea44, type: 2}
   _rightNumbers:
-  - UseConstant: 1
+  - UseConstant: 0
     ConstantValue: 0
-    Variable: {fileID: 0}
-  - UseConstant: 1
+    Variable: {fileID: 11400000, guid: 6bf331ce2caab0243b597dfde0e534ab, type: 2}
+  - UseConstant: 0
     ConstantValue: 0
-    Variable: {fileID: 0}
-  - UseConstant: 1
+    Variable: {fileID: 11400000, guid: f447b5ba09d00374b9208c011b358abf, type: 2}
+  - UseConstant: 0
     ConstantValue: 0
-    Variable: {fileID: 0}
-  - UseConstant: 1
+    Variable: {fileID: 11400000, guid: 8efc6696778eecc428cac132e8a72691, type: 2}
+  - UseConstant: 0
     ConstantValue: 0
-    Variable: {fileID: 0}
-  - UseConstant: 1
+    Variable: {fileID: 11400000, guid: 73516ef09450c7848b8935dddadf0a5e, type: 2}
+  - UseConstant: 0
     ConstantValue: 0
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: d8f72dde2168c1e49af51648ed135d42, type: 2}
   _anticipationTime:
-    UseConstant: 1
+    UseConstant: 0
     ConstantValue: 1
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: 47646b998f7d3544fb16d7764be6720c, type: 2}
   _onStartAnticipation:
     m_PersistentCalls:
       m_Calls: []
@@ -3004,6 +3004,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2003443415670745367}
+        m_TargetAssemblyTypeName: UkensJoker.Engine.JokerScreen, ukensjoker.engine
+        m_MethodName: DoGenerateNewPassword
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _generateNewPassword: {fileID: 11400000, guid: 3d011992ded1ed54b853e18699aca87b,
+    type: 2}
 --- !u!1 &3684098864214704320
 GameObject:
   m_ObjectHideFlags: 0
