@@ -30,9 +30,9 @@ namespace UkensJoker.Engine
         private void Awake()
         {
             _yRotDefault = transform.eulerAngles.y;
-            foreach (PlayerRoom room in _roomsConnected)
+            for (int i = 0; i < _roomsConnected.Count; i++)
             {
-                room.AddDoor(this);
+                _roomsConnected[i].AddDoor(this);
             }
         }
 

@@ -11,7 +11,7 @@ namespace UkensJoker.Engine
         public event Action<bool> PlayerInRoom;
         public event Action<bool> PlayerConnectedToRoom;
 
-        private List<Door> _doors;
+        private List<Door> _doors = new List<Door>();
 
         private bool _hasPlayer;
 
