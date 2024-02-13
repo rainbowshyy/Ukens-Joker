@@ -13,9 +13,6 @@ namespace UkensJoker.Engine
         [SerializeField] private FloatReference _playerAcceleration;
         private float _currentSpeed = 0f;
 
-        [Header("Current Player Position")]
-        [SerializeField] private Vector3Variable _playerPosition;
-
         private float horizontalInput;
         private float verticalInput;
 
@@ -33,7 +30,6 @@ namespace UkensJoker.Engine
         private void Start()
         {
             rb = GetComponent<Rigidbody>();
-            _playerPosition.Value = transform.position;
             rb.drag = _playerDrag.Value;
         }
 
@@ -71,8 +67,6 @@ namespace UkensJoker.Engine
 
             if (movement.magnitude == 0)
             {
-                UpdatePlayerPosition();
-
                 _currentSpeed = 0f;
 
                 return;
@@ -81,13 +75,6 @@ namespace UkensJoker.Engine
             _currentSpeed = Mathf.Clamp(_currentSpeed + _playerAcceleration.Value, 0f, _playerSpeed.Value * movement.magnitude);
 
             rb.velocity = movement * _currentSpeed;
-
-            _playerPosition.Value = transform.position;
-        }
-
-        private void UpdatePlayerPosition()
-        {
-            _playerPosition.Value = transform.position;
         }
 
         public void PlayerControlsChanged(Component sender, object enabled)

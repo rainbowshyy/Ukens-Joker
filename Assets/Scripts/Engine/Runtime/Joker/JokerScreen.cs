@@ -22,7 +22,10 @@ namespace UkensJoker.Engine
         [SerializeField] private UnityEvent _onStartAnticipation;
         [SerializeField] private UnityEvent _onEndAnticipation;
 
+        [SerializeField] private FloatReference _wrongTime;
+
         private bool _anticipating;
+        private bool _finishing;
 
         [Serializable]
         class Column
@@ -88,7 +91,7 @@ namespace UkensJoker.Engine
 
         private IEnumerator AnticipationBeforeReveal(Func<bool> revealAction)
         {
-            if (_anticipating)
+            if (_anticipating || _finishing)
                 yield break;
 
             _anticipating = true;
@@ -104,7 +107,15 @@ namespace UkensJoker.Engine
             _anticipating = false;
 
             if (_currentNumber >= _rightNumbers.Length)
-                _onFinished.Invoke();
+                StartCoroutine(Finish());
+        }
+
+        private IEnumerator Finish()
+        {
+            _finishing = true;
+            yield return new WaitForSeconds(_wrongTime.Value);
+            _finishing = false;
+            _onFinished.Invoke();
         }
 
         public void DoGenerateNewPassword()

@@ -48,6 +48,11 @@ namespace UkensJoker.Engine
             _paperTransform.localPosition = new Vector3(0f, _paperStartPos, 0f);
         }
 
+        public void NoParameterInteract()
+        {
+            Interact(Vector3.zero);
+        }
+
         private void Update()
         {
             if (!_printing)

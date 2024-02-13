@@ -91,6 +91,11 @@ namespace UkensJoker.Engine
             }
         }
 
+        public void NoParameterInteract()
+        {
+            Interact(Vector3.forward);
+        }
+
         public bool IsOpen()
         {
             return _openDoor;
