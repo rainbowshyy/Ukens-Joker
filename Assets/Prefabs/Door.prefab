@@ -156,6 +156,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1231018545689356658}
+        m_TargetAssemblyTypeName: UkensJoker.VisualBehaviour.ChromaticNoiseEmitter,
+          ukensjoker.visualbehaviour
+        m_MethodName: Emit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _roomsConnected: []
 --- !u!1 &4974962373672127958
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,7 +306,16 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: fc6fe01695ff402478ca02a3a20fcca5, type: 2}
+  _lowPassNoPlayer:
+    UseConstant: 1
+    ConstantValue: 0
+    Variable: {fileID: 0}
+  _lowPassNotConnected:
+    UseConstant: 1
+    ConstantValue: 0
+    Variable: {fileID: 0}
   _vfx: {fileID: 9070941195934646542}
+  _room: {fileID: 0}
 --- !u!1 &8280648458649347344
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,7 +369,66 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: fc6fe01695ff402478ca02a3a20fcca5, type: 2}
+  _lowPassNoPlayer:
+    UseConstant: 1
+    ConstantValue: 0
+    Variable: {fileID: 0}
+  _lowPassNotConnected:
+    UseConstant: 1
+    ConstantValue: 0
+    Variable: {fileID: 0}
   _vfx: {fileID: 1553203425816097423}
+  _room: {fileID: 0}
+--- !u!1 &9079502787894840077
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8761432091066143953}
+  - component: {fileID: 1231018545689356658}
+  m_Layer: 0
+  m_Name: ChromaticNoise
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8761432091066143953
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9079502787894840077}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4858579473320003745}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1231018545689356658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9079502787894840077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8864078c9bcd5244babb69f8a3e94ba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _chromaticNoise: {fileID: 11400000, guid: 5eb12d0d9553fdd4d8a8291264d89f6d, type: 2}
+  _chromaticNoiseStop: {fileID: 11400000, guid: 2997fc3d331ff8a4a85e841978c8b3de,
+    type: 2}
+  _continuous: 0
+  _baseValue: 2
+  _decayValue: 6
 --- !u!1001 &1278552237344298218
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -591,6 +673,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6701590805717501878}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0f7dd456fdd1be146b5f111459ccb321,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8761432091066143953}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f7dd456fdd1be146b5f111459ccb321, type: 3}
 --- !u!4 &4858579473320003745 stripped

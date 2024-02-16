@@ -43,7 +43,7 @@ namespace UkensJoker.VisualBehaviour
         private void SetMaterialValues(float value)
         {
             _dangerMat.SetFloat("_Threshold", 10f - (1f - Mathf.Pow(1f - value, 5)) * _dangerThresholdMultiplier.Value);
-            _aberrationMat.SetFloat("_PixelOffset", Mathf.Floor(0.99f + _aberrationPixelMultiplier.Value * value));
+            _aberrationMat.SetFloat("_Danger", 0.99f + _aberrationPixelMultiplier.Value * value);
             _ditherMat.SetFloat("_BlackThreshold", _ditherBlackThresholdDefault.Value + value * _ditherBlackThresholdMultiplier.Value);
         }
 

@@ -19,6 +19,7 @@ namespace UkensJoker.Engine
 
         private float _wrongTimeCurrent;
         private bool _wrong;
+        private bool _computerIsInteractedWith;
 
         private void Awake()
         {
@@ -42,7 +43,7 @@ namespace UkensJoker.Engine
                     {
                         _lights[i].color = _lightColors[i];
                     }
-                    _logic.SetActive(true);
+                    _logic.SetActive(_computerIsInteractedWith);
                 }
             }
         }
@@ -69,6 +70,11 @@ namespace UkensJoker.Engine
             }
             _wrong = true;
             _logic.SetActive(false);
+        }
+
+        public void SetComputerInteracted(bool interacted)
+        {
+            _computerIsInteractedWith = interacted;
         }
     }
 }

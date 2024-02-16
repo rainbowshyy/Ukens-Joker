@@ -9,6 +9,11 @@ namespace UkensJoker.Engine
 
         [SerializeField] private PlayerRoom _room;
 
+        private void Awake()
+        {
+            _room.SetPlayer(false);
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             _room.SetPlayer(true);

@@ -1183,12 +1183,38 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8663958820665007845}
+        m_TargetAssemblyTypeName: UkensJoker.VisualBehaviour.ChromaticNoiseEmitter,
+          ukensjoker.visualbehaviour
+        m_MethodName: Emit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onCompletePrint:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3782476359529047104}
         m_TargetAssemblyTypeName: UkensJoker.Audio.SpatialAudioPlayer, ukensjoker.audio
         m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8663958820665007845}
+        m_TargetAssemblyTypeName: UkensJoker.VisualBehaviour.ChromaticNoiseEmitter,
+          ukensjoker.visualbehaviour
+        m_MethodName: ForceStop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1222,6 +1248,56 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 
     Variable: {fileID: 11400000, guid: ecf3e4183777c0a4b8604713001dfc62, type: 2}
+--- !u!1 &8307735915670237844
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 60725309201362547}
+  - component: {fileID: 8663958820665007845}
+  m_Layer: 0
+  m_Name: ChromaticNoise
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &60725309201362547
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8307735915670237844}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8555642862187667238}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8663958820665007845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8307735915670237844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8864078c9bcd5244babb69f8a3e94ba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _chromaticNoise: {fileID: 11400000, guid: 5eb12d0d9553fdd4d8a8291264d89f6d, type: 2}
+  _chromaticNoiseStop: {fileID: 11400000, guid: 2997fc3d331ff8a4a85e841978c8b3de,
+    type: 2}
+  _continuous: 1
+  _baseValue: 3
+  _decayValue: 0
 --- !u!1 &8387592299224871974
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,7 +1360,6 @@ MonoBehaviour:
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: a8741c76e02cc1145947b5ff1735cff9, type: 2}
   _vfx: {fileID: 7653235937627520795}
-  _vfxIntensity: 0
   _room: {fileID: 11400000, guid: a357cb4399ccbb945ab3d6641b5f583a, type: 2}
 --- !u!1 &9074875805564994972
 GameObject:
@@ -1322,6 +1397,7 @@ Transform:
   - {fileID: 5265478539997194237}
   - {fileID: 5392884806306380195}
   - {fileID: 246377717821146223}
+  - {fileID: 60725309201362547}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &577447765060692750

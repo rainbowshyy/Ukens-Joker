@@ -64,6 +64,7 @@ Transform:
   - {fileID: 8335355963821118224}
   - {fileID: 1248744771798644001}
   - {fileID: 6576469112744850058}
+  - {fileID: 4250283231592851973}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1467913710815126602
@@ -157,6 +158,56 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.002644411, y: 0.011569475, z: 0.00002698414}
     m_Extent: {x: 0.009318885, y: 0.017925084, z: 0.003400658}
   m_DirtyAABB: 0
+--- !u!1 &2816281822393385078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4250283231592851973}
+  - component: {fileID: 682011144689662637}
+  m_Layer: 0
+  m_Name: ChromaticNoise
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4250283231592851973
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2816281822393385078}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8510394830766403415}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &682011144689662637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2816281822393385078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8864078c9bcd5244babb69f8a3e94ba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _chromaticNoise: {fileID: 11400000, guid: 5eb12d0d9553fdd4d8a8291264d89f6d, type: 2}
+  _chromaticNoiseStop: {fileID: 11400000, guid: 2997fc3d331ff8a4a85e841978c8b3de,
+    type: 2}
+  _continuous: 1
+  _baseValue: 1.5
+  _decayValue: 0
 --- !u!1 &3465696865591960126
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,8 +476,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4, y: 2, z: 2.5}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 4, y: 2, z: 4}
+  m_Center: {x: 0, y: 0, z: 1}
 --- !u!114 &6985350612159879426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -466,6 +517,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 682011144689662637}
+        m_TargetAssemblyTypeName: UkensJoker.VisualBehaviour.ChromaticNoiseEmitter,
+          ukensjoker.visualbehaviour
+        m_MethodName: Emit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   _stopPlay:
     m_PersistentCalls:
       m_Calls:
@@ -484,6 +548,19 @@ MonoBehaviour:
       - m_Target: {fileID: 8702429839030261866}
         m_TargetAssemblyTypeName: UkensJoker.Audio.SpatialAudioPlayer, ukensjoker.audio
         m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 682011144689662637}
+        m_TargetAssemblyTypeName: UkensJoker.VisualBehaviour.ChromaticNoiseEmitter,
+          ukensjoker.visualbehaviour
+        m_MethodName: ForceStop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

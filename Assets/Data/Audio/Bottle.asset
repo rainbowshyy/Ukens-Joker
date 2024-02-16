@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed228b35f5896094faafd891aa039028, type: 3}
-  m_Name: PlayerFootsteps
+  m_Name: Bottle
   m_EditorClassIdentifier: 
   Loop: 0
   PlayOnAwake: 0
@@ -30,8 +30,13 @@ MonoBehaviour:
     Diffusion: 100
     Density: 100
   _audioClips:
-  - {fileID: 8300000, guid: 284d3909bbe64a448b55ce35291882ca, type: 3}
+  - {fileID: 8300000, guid: e8ece6fd6e3f96c4abc0557a7ea1c541, type: 3}
+  - {fileID: 8300000, guid: 82ce76cd764d9b2418db46172ff8b4c0, type: 3}
+  - {fileID: 8300000, guid: 3ef6f70cc8814e04ba1c0918637d2652, type: 3}
+  - {fileID: 8300000, guid: 2dd4b0c55e2f02640840bc20084369fe, type: 3}
+  - {fileID: 8300000, guid: 5b9d6c81f9062df4bbe1cb83c95d580d, type: 3}
+  - {fileID: 8300000, guid: e8fdd52edd28e9b4fbacf2aa0faabc10, type: 3}
   _pitchMin: 0.7
-  _pitchMax: 0.9
-  _volumeMin: 0.7
-  _volumeMax: 0.9
+  _pitchMax: 1
+  _volumeMin: 0.6
+  _volumeMax: 0.8

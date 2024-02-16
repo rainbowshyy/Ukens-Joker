@@ -23,6 +23,11 @@ namespace UkensJoker.Engine
 
         [SerializeField] private UnityEvent OnStartMove;
         [SerializeField] private UnityEvent OnStopMove;
+
+        [SerializeField] private FloatReference _footstepFrequency;
+        [SerializeField] private UnityEvent _onFootstep;
+        private float _footstepTimeCurrent;
+
         private bool _moving = false;
 
         private bool _canMove = true;
@@ -36,6 +41,15 @@ namespace UkensJoker.Engine
         private void Update()
         {
             Input();
+            if (_moving)
+            {
+                _footstepTimeCurrent += Time.deltaTime;
+                if (_footstepTimeCurrent > _footstepFrequency.Value)
+                {
+                    _footstepTimeCurrent -= _footstepFrequency.Value;
+                    _onFootstep.Invoke();
+                }
+            }
         }
 
         private void FixedUpdate()
@@ -47,6 +61,7 @@ namespace UkensJoker.Engine
             if (rb.velocity.magnitude > 0.5f && !_moving)
             {
                 _moving = true;
+                _footstepTimeCurrent = _footstepFrequency.Value;
                 OnStartMove.Invoke();
             }
             else if (rb.velocity.magnitude <= 0.5f && _moving)

@@ -26,6 +26,11 @@ namespace UkensJoker.Engine
             PlayerInRoom?.Invoke(value);
         }
 
+        public bool HasPlayer()
+        {
+            return _hasPlayer;
+        }
+
         public void UpdateConnected()
         {
             if (_hasPlayer)

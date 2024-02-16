@@ -96,6 +96,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 2240496777781001786}
+        m_TargetAssemblyTypeName: UkensJoker.Engine.ComputerWrong, ukensjoker.engine
+        m_MethodName: SetComputerInteracted
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   OnStopComputer:
     m_PersistentCalls:
       m_Calls:
@@ -114,6 +126,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1268731679323421255}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2240496777781001786}
+        m_TargetAssemblyTypeName: UkensJoker.Engine.ComputerWrong, ukensjoker.engine
+        m_MethodName: SetComputerInteracted
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3920,6 +3944,56 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &5592898447364692906
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1507630033268333591}
+  - component: {fileID: 3109879977141371224}
+  m_Layer: 0
+  m_Name: JokerChromaticNoise
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1507630033268333591
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5592898447364692906}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7578004629098787114}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3109879977141371224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5592898447364692906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8864078c9bcd5244babb69f8a3e94ba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _chromaticNoise: {fileID: 11400000, guid: 5eb12d0d9553fdd4d8a8291264d89f6d, type: 2}
+  _chromaticNoiseStop: {fileID: 11400000, guid: 2997fc3d331ff8a4a85e841978c8b3de,
+    type: 2}
+  _continuous: 0
+  _baseValue: 3
+  _decayValue: 2
 --- !u!1 &5681151690589632824
 GameObject:
   m_ObjectHideFlags: 0
@@ -6264,6 +6338,56 @@ MonoBehaviour:
     Variable: {fileID: 11400000, guid: a8741c76e02cc1145947b5ff1735cff9, type: 2}
   _vfx: {fileID: 0}
   _room: {fileID: 11400000, guid: 49888c460281214459efe5b24b776277, type: 2}
+--- !u!1 &8418148449096500599
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6252070160261681224}
+  - component: {fileID: 8872504177718397220}
+  m_Layer: 0
+  m_Name: PasswordChromaticNoise
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6252070160261681224
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8418148449096500599}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7578004629098787114}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8872504177718397220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8418148449096500599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8864078c9bcd5244babb69f8a3e94ba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _chromaticNoise: {fileID: 11400000, guid: 5eb12d0d9553fdd4d8a8291264d89f6d, type: 2}
+  _chromaticNoiseStop: {fileID: 11400000, guid: 2997fc3d331ff8a4a85e841978c8b3de,
+    type: 2}
+  _continuous: 0
+  _baseValue: 2
+  _decayValue: 2
 --- !u!1 &8432336860643877587
 GameObject:
   m_ObjectHideFlags: 0
@@ -6803,6 +6927,8 @@ Transform:
   - {fileID: 662813145736733168}
   - {fileID: 7259006379849637476}
   - {fileID: 5644519592789686821}
+  - {fileID: 6252070160261681224}
+  - {fileID: 1507630033268333591}
   m_Father: {fileID: 3931990226839002463}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2240496777781001786
@@ -6836,12 +6962,38 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8872504177718397220}
+        m_TargetAssemblyTypeName: UkensJoker.VisualBehaviour.ChromaticNoiseEmitter,
+          ukensjoker.visualbehaviour
+        m_MethodName: Emit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onJokerWrong:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7176710765382874745}
         m_TargetAssemblyTypeName: UkensJoker.Audio.SpatialAudioPlayer, ukensjoker.audio
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3109879977141371224}
+        m_TargetAssemblyTypeName: UkensJoker.VisualBehaviour.ChromaticNoiseEmitter,
+          ukensjoker.visualbehaviour
+        m_MethodName: Emit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
