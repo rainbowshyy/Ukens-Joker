@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c16be4ec549ddb74faa9379354f4ce50, type: 3}
   m_Name: Outside
   m_EditorClassIdentifier: 
-  Position: {x: 0, y: 0, z: 0}
+  Position: {x: -5.5, y: 9.5, z: -13.5}
   <Connections>k__BackingField:
   - {fileID: 11400000, guid: c4d812ce24646364b8832e978278a5d9, type: 2}
   - {fileID: 11400000, guid: 06149ee31b12fba468c8f64597c8fb9b, type: 2}
   - {fileID: 11400000, guid: 8847c924e0c43de498e45844c8854542, type: 2}
+  - {fileID: 11400000}
   <PathfindingEnabled>k__BackingField: 0
-  Interest: 0
+  HasPlayer: 0

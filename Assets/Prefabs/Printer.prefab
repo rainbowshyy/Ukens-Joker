@@ -1,5 +1,60 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &987862680763375140
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3754139153206471837}
+  - component: {fileID: 5290468584000292626}
+  m_Layer: 0
+  m_Name: InterestEmitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3754139153206471837
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987862680763375140}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8555642862187667238}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5290468584000292626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987862680763375140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b371b793ab10fa24f924664069ddfa94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "_r\xF8vernSpots":
+  - {fileID: 11400000, guid: e67fe176825957644ad2f2a5db456500, type: 2}
+  _spread: 1
+  _interest:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: adcb748f7d36bf548b3f3a4a01563824, type: 2}
+  _interestSpreadMultiplier:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 51d55018ce86d9f49a42bb10702cb703, type: 2}
 --- !u!1 &1621946446673692685
 GameObject:
   m_ObjectHideFlags: 0
@@ -1196,6 +1251,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5290468584000292626}
+        m_TargetAssemblyTypeName: UkensJoker.Engine.SpotInterestEmitter, ukensjoker.engine
+        m_MethodName: EmitInterest
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onCompletePrint:
     m_PersistentCalls:
       m_Calls:
@@ -1398,6 +1465,7 @@ Transform:
   - {fileID: 5392884806306380195}
   - {fileID: 246377717821146223}
   - {fileID: 60725309201362547}
+  - {fileID: 3754139153206471837}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &577447765060692750

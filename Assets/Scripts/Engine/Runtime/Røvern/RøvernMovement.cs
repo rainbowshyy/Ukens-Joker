@@ -12,7 +12,8 @@ namespace UkensJoker.Engine
         private RøvernSpot _spotCurrent;
 
         [SerializeField] private Vector3Reference _playerPosition;
-        [SerializeField] private FloatReference _røvernAnger;
+        [SerializeField] private FloatReference _willpower;
+        [SerializeField] private FloatReference _willpowerMax;
 
         [Header("Røvern Variables")]
         [SerializeField] private FloatReference _røvernUpdateTime;
@@ -45,7 +46,7 @@ namespace UkensJoker.Engine
                 SetNewCurrentSpot();
                 MoveToCurrentSpot();
                 UpdateInterests();
-                _timeBeforeUpdate = _røvernUpdateTime.Value - _røvernAnger.Value * _røvernUpdateAngerTime.Value;
+                _timeBeforeUpdate = _røvernUpdateTime.Value + (_willpower.Value - _willpowerMax.Value) * _røvernUpdateAngerTime.Value;
             }
         }
 
@@ -65,13 +66,17 @@ namespace UkensJoker.Engine
 
         private void SetNewCurrentSpot()
         {
+            string debugMessage = "Spots to evaluate: ";
             float range = 0f;
             for (int i = 0; i < _spotCurrent.Connections.Length; i++)
             {
                 range += Mathf.Clamp(_spotCurrent.Connections[i].Interest, _spotInterestMin.Value, _spotInterestMax.Value);
+                debugMessage += $"{_spotCurrent.Connections[i].name}: {range}, ";
             }
 
             float rand = Random.Range(0f, range);
+            debugMessage += $"Rolled {rand}";
+            Debug.Log(debugMessage);
             range = 0f;
             for (int i = 0; i < _spotCurrent.Connections.Length; i++)
             {

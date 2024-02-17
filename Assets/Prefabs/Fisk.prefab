@@ -65,6 +65,7 @@ Transform:
   - {fileID: 1248744771798644001}
   - {fileID: 6576469112744850058}
   - {fileID: 4250283231592851973}
+  - {fileID: 3357397763723158099}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1467913710815126602
@@ -158,6 +159,61 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.002644411, y: 0.011569475, z: 0.00002698414}
     m_Extent: {x: 0.009318885, y: 0.017925084, z: 0.003400658}
   m_DirtyAABB: 0
+--- !u!1 &1776598640255559214
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3357397763723158099}
+  - component: {fileID: 8147689082570350231}
+  m_Layer: 0
+  m_Name: InterestEmitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3357397763723158099
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776598640255559214}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8510394830766403415}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8147689082570350231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776598640255559214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b371b793ab10fa24f924664069ddfa94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "_r\xF8vernSpots":
+  - {fileID: 11400000, guid: d980ae86b3e83a642b4bb55b4cbfae56, type: 2}
+  _spread: 0
+  _interest:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 232ca49ad4d125b4a904b9bd15fc6e98, type: 2}
+  _interestSpreadMultiplier:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 51d55018ce86d9f49a42bb10702cb703, type: 2}
 --- !u!1 &2816281822393385078
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,6 +627,22 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _animator: {fileID: 6281490971069435403}
+  _playTimeTick: 1
+  _playTick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8147689082570350231}
+        m_TargetAssemblyTypeName: UkensJoker.Engine.SpotInterestEmitter, ukensjoker.engine
+        m_MethodName: EmitInterest
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6433066228279049984
 GameObject:
   m_ObjectHideFlags: 0
