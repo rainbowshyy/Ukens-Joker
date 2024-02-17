@@ -36,7 +36,6 @@ namespace UkensJoker.UI
             _shakeCurrent -= Time.deltaTime;
             if (_shakeCurrent <= 0)
             {
-                Debug.Log(_shakesLeft);
                 _shakeCurrent = _shakeCooldown.Value;
                 _shakesLeft -= 1;
                 if (_shakesLeft <= 0)

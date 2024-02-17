@@ -7624,6 +7624,10 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: 72de17ca490010a4881a87e300a28f04, type: 2}
+  _willpowerOutsideRatioThreshold:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 3eed5e54f99f4534a9e0febc223ae573, type: 2}
   "_r\xF8vernUpdateTime":
     UseConstant: 0
     ConstantValue: 5
