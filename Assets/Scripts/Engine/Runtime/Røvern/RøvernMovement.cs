@@ -31,6 +31,7 @@ namespace UkensJoker.Engine
         private void Start()
         {
             _spotCurrent = _røvernSpots[0];
+            _spotCurrent.OnInterestChanged += RemoveTimeOnInterest;
             MoveToCurrentSpot();
             _timeBeforeUpdate = _røvernUpdateTime.Value;
         }
@@ -67,17 +68,21 @@ namespace UkensJoker.Engine
             float range = 0f;
             for (int i = 0; i < _spotCurrent.Connections.Length; i++)
             {
-                range += _spotCurrent.Connections[i].Interest;
+                range += Mathf.Clamp(_spotCurrent.Connections[i].Interest, _spotInterestMin.Value, _spotInterestMax.Value);
             }
 
             float rand = Random.Range(0f, range);
             range = 0f;
             for (int i = 0; i < _spotCurrent.Connections.Length; i++)
             {
-                range += _spotCurrent.Connections[i].Interest;
+                range += Mathf.Clamp(_spotCurrent.Connections[i].Interest, _spotInterestMin.Value, _spotInterestMax.Value);
                 if (rand <= range)
                 {
+                    _spotCurrent.OnInterestChanged -= RemoveTimeOnInterest;
+
                     _spotCurrent = _spotCurrent.Connections[i];
+
+                    _spotCurrent.OnInterestChanged += RemoveTimeOnInterest;
 
                     Debug.Log($"Set new spot to {_spotCurrent.name}");
                     return;
@@ -87,12 +92,18 @@ namespace UkensJoker.Engine
             return;
         }
 
+        private void RemoveTimeOnInterest(float interest)
+        {
+            _timeBeforeUpdate -= interest;
+            Debug.Log($"Sped up Røvern by {interest}");
+        }
+
         private void UpdateInterests()
         {
-            _spotCurrent.Interest = _spotInterestMin.Value;
+            _spotCurrent.SetInterest(_spotInterestMin.Value);
             for (int i = 0; i < _røvernSpots.Length; i++)
             {
-                _røvernSpots[i].Interest = Mathf.Clamp(_røvernSpots[i].Interest * _spotInterestDecay.Value, _spotInterestMin.Value, _spotInterestMax.Value);
+                _røvernSpots[i].SetInterest(Mathf.Clamp(_røvernSpots[i].Interest * _spotInterestDecay.Value, _spotInterestMin.Value, _spotInterestMax.Value));
             }
         }
     }

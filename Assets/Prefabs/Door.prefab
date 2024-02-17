@@ -53,6 +53,62 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 2.5, z: 0.125}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &2625478412267296655
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7501375209066879524}
+  - component: {fileID: 8032332978815433798}
+  m_Layer: 0
+  m_Name: InterestOpen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7501375209066879524
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2625478412267296655}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4858579473320003745}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8032332978815433798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2625478412267296655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b371b793ab10fa24f924664069ddfa94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "_r\xF8vernSpots":
+  - {fileID: 0}
+  - {fileID: 0}
+  _spread: 0
+  _interest:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 706c2358bf609a841a1ec68766e0c9a5, type: 2}
+  _interestSpreadMultiplier:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 51d55018ce86d9f49a42bb10702cb703, type: 2}
 --- !u!1 &3200959573057985441
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,6 +197,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8032332978815433798}
+        m_TargetAssemblyTypeName: UkensJoker.Engine.SpotInterestEmitter, ukensjoker.engine
+        m_MethodName: EmitInterest
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnCloseDoor:
     m_PersistentCalls:
       m_Calls:
@@ -160,6 +228,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UkensJoker.VisualBehaviour.ChromaticNoiseEmitter,
           ukensjoker.visualbehaviour
         m_MethodName: Emit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4475142131846372928}
+        m_TargetAssemblyTypeName: UkensJoker.Engine.SpotInterestEmitter, ukensjoker.engine
+        m_MethodName: EmitInterest
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -379,6 +459,62 @@ MonoBehaviour:
     Variable: {fileID: 0}
   _vfx: {fileID: 1553203425816097423}
   _room: {fileID: 0}
+--- !u!1 &8544839146811601165
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3739431609056063418}
+  - component: {fileID: 4475142131846372928}
+  m_Layer: 0
+  m_Name: InterestClose
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3739431609056063418
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8544839146811601165}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4858579473320003745}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4475142131846372928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8544839146811601165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b371b793ab10fa24f924664069ddfa94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "_r\xF8vernSpots":
+  - {fileID: 0}
+  - {fileID: 0}
+  _spread: 0
+  _interest:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: e3996c26a7191cb43a69902448e969f2, type: 2}
+  _interestSpreadMultiplier:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 51d55018ce86d9f49a42bb10702cb703, type: 2}
 --- !u!1 &9079502787894840077
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,6 +813,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8761432091066143953}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0f7dd456fdd1be146b5f111459ccb321,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3739431609056063418}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0f7dd456fdd1be146b5f111459ccb321,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7501375209066879524}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f7dd456fdd1be146b5f111459ccb321, type: 3}
 --- !u!4 &4858579473320003745 stripped
