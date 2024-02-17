@@ -8,7 +8,7 @@ namespace UkensJoker.Engine
     {
         [SerializeField] private NavMeshAgent _agent;
 
-        [SerializeField] private RøvernSpot[] _røvernSpots;
+        [SerializeField] private RøvernSpot[] _røvernSpots; // Outside is index 0
         private RøvernSpot _spotCurrent;
 
         [SerializeField] private Vector3Reference _playerPosition;
@@ -106,7 +106,8 @@ namespace UkensJoker.Engine
         private void UpdateInterests()
         {
             _spotCurrent.SetInterest(_spotInterestMin.Value);
-            for (int i = 0; i < _røvernSpots.Length; i++)
+            _røvernSpots[0].SetInterest(_spotInterestMax.Value - (_willpower.Value / _willpowerMax.Value) * _spotInterestMax.Value); //Outside is unique
+            for (int i = 1; i < _røvernSpots.Length; i++)
             {
                 _røvernSpots[i].SetInterest(Mathf.Clamp(_røvernSpots[i].Interest * _spotInterestDecay.Value, _spotInterestMin.Value, _spotInterestMax.Value));
             }
