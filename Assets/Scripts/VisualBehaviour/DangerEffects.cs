@@ -8,6 +8,8 @@ namespace UkensJoker.VisualBehaviour
     public class DangerEffects : MonoBehaviour
     {
         [SerializeField] private FloatReference _danger;
+        [SerializeField] private FloatReference _willpower;
+        [SerializeField] private FloatReference _willpowerMax;
         [SerializeField] private Vector2Reference _sightPosition;
 
         [Header("Material References")]
@@ -22,22 +24,30 @@ namespace UkensJoker.VisualBehaviour
         [SerializeField] private FloatReference _dangerThresholdMultiplier;
         [SerializeField] private FloatReference _aberrationPixelMultiplier;
         [SerializeField] private FloatReference _ditherBlackThresholdMultiplier;
+        [SerializeField] private FloatReference _willpowerDitherBlackMultipler;
 
         private void OnEnable()
         {
             _danger.RegisterListener(SetMaterialValues);
+            _willpower.RegisterListener(SetWillpowerValues);
             _sightPosition.RegisterListener(SetSightPosition);
         }
 
         private void OnDisable()
         {
             _danger.UnregisterListener(SetMaterialValues);
+            _willpower.UnregisterListener(SetWillpowerValues);
             _sightPosition?.UnregisterListener(SetSightPosition);
         }
 
         private void OnValidate()
         {
             SetMaterialValues(_danger.Value);
+        }
+
+        private void SetWillpowerValues(float value)
+        {
+            _ditherMat.SetFloat("_Willpower", (1f - value / _willpowerMax.Value) * _willpowerDitherBlackMultipler.Value);
         }
 
         private void SetMaterialValues(float value)

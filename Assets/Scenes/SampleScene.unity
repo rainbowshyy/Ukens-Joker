@@ -8760,6 +8760,14 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: 3f9a76c8d95dd2248acc4bbda7ca4713, type: 2}
+  _willpower:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 4520a9a13fedf8a47949717fbb50f1ae, type: 2}
+  _willpowerMax:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 72de17ca490010a4881a87e300a28f04, type: 2}
   _sightPosition:
     UseConstant: 0
     ConstantValue: {x: 0, y: 0}
@@ -8783,6 +8791,10 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 1
     Variable: {fileID: 11400000, guid: 4a6c8fae15d526e458480f22f8c5500b, type: 2}
+  _willpowerDitherBlackMultipler:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: e275938a9d6ff624986aebfe2ec7a48d, type: 2}
 --- !u!4 &705378724
 Transform:
   m_ObjectHideFlags: 0
