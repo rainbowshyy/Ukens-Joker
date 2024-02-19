@@ -978,7 +978,7 @@ GameObject:
   - component: {fileID: 53554965}
   - component: {fileID: 53554967}
   - component: {fileID: 53554966}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: OutlineUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4402,7 +4402,7 @@ GameObject:
   - component: {fileID: 330585550}
   - component: {fileID: 330585552}
   - component: {fileID: 330585553}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -7812,6 +7812,7 @@ Transform:
   - {fileID: 1033523907}
   - {fileID: 593451442}
   - {fileID: 2086690449}
+  - {fileID: 1134497572}
   m_Father: {fileID: 807439814}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &583535726
@@ -9586,7 +9587,7 @@ GameObject:
   m_Component:
   - component: {fileID: 740851891}
   - component: {fileID: 740851892}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Footsteps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9723,7 +9724,7 @@ GameObject:
   m_Component:
   - component: {fileID: 750413390}
   - component: {fileID: 750413389}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: InterestEmitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12474,7 +12475,7 @@ GameObject:
   - component: {fileID: 987650007}
   - component: {fileID: 987650006}
   - component: {fileID: 987650008}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BottleFootstep
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14366,6 +14367,77 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1133534783}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1134497571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1134497572}
+  - component: {fileID: 1134497574}
+  - component: {fileID: 1134497573}
+  m_Layer: 11
+  m_Name: Killzone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1134497572
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134497571}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 583535725}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1134497573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134497571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8a874039713c894f89c5bc8e9b225ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onKill:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!136 &1134497574
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134497571}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.75
+  m_Height: 3
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1135802450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15977,6 +16049,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Noise
+      objectReference: {fileID: 0}
+    - target: {fileID: 1439221000661356107, guid: c275e756c55f06f4a969f8d0143a6334,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052746107826543445, guid: c275e756c55f06f4a969f8d0143a6334,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3387798866200345231, guid: c275e756c55f06f4a969f8d0143a6334,
         type: 3}
@@ -22875,7 +22957,7 @@ GameObject:
   - component: {fileID: 1724110355}
   - component: {fileID: 1724110357}
   - component: {fileID: 1724110356}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Effects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23932,7 +24014,7 @@ GameObject:
   - component: {fileID: 1814708783}
   - component: {fileID: 1814708782}
   - component: {fileID: 1814708785}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25596,7 +25678,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1894534663}
   - component: {fileID: 1894534664}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28288,7 +28370,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2112666599}
   - component: {fileID: 2112666600}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: InterestEmitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28675,7 +28757,7 @@ GameObject:
   - component: {fileID: 2139625126}
   - component: {fileID: 2139625125}
   - component: {fileID: 2139625130}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -28807,7 +28889,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 471
+    m_Bits: 4567
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
