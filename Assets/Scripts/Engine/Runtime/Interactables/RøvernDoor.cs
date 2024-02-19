@@ -7,7 +7,7 @@ namespace UkensJoker.Engine
     {
         [SerializeField] private UnityEvent<Vector3> _onRøvernEnter;
 
-        private void OnTriggerEnter(Collider other)
+        private void OnTriggerStay(Collider other)
         {
             _onRøvernEnter.Invoke(transform.position - other.transform.position);
         }
