@@ -3,18 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UkensJoker.UI;
 using UkensJoker.DataArchitecture;
+using TMPro;
+using Unity.VisualScripting.YamlDotNet.Core.Tokens;
 
 namespace UkensJoker.Engine
 {
     public class BudgetManager : MonoBehaviour
     {
+        [SerializeField] private IntVariable _money;
+        [SerializeField] private FloatVariable _willpower; 
+
         [SerializeField] private IntReference _day;
         [SerializeField] private Day[] _days;
         [SerializeField] private BudgetElementUI[] _uiElements;
         [SerializeField] private BudgetElement[] _currentBudgetElements;
 
+        [SerializeField] private TMP_Text _savingsText;
+        [SerializeField] private TMP_Text _needText;
+
+        private bool[] _actives;
+        private float _startWillpower;
+
         private void Start()
         {
+            _startWillpower = _willpower.Value;
             RollBudgetElementsForDay(_day.Value);
             UpdateUI();
         }
@@ -28,27 +40,39 @@ namespace UkensJoker.Engine
             }
 
             _currentBudgetElements = new BudgetElement[count];
+            _actives = new bool[count];
             for (int i = 0; i < _days[day].BudgetTypeTables.Length; i++)
             {
                 BudgetElement[] roll = _days[day].BudgetTypeTables[i].BudgetType.GetRandomElements(_days[day].BudgetTypeTables[i].Count);
                 for (int x = 0; x < roll.Length; x++)
                 {
                     _currentBudgetElements[i + x] = roll[x];
+                    _actives[i + x] = _currentBudgetElements[i + x].Required;
                 }
             }
         }
 
         private void UpdateUI()
         {
+            string savingsText = "";
+            for (int i = 0; i < _money.Value.ToString().Length; i++)
+            {
+                if ((_money.Value.ToString().Length - i) % 3 == 0)
+                    savingsText += " ";
+
+                savingsText += _money.Value.ToString()[i];
+            }
+            _savingsText.text = "+" + savingsText + " kr";
+
             for (int i = 0; i < _uiElements.Length; i++)
             {
                 if (i < _currentBudgetElements.Length)
                 {
                     _uiElements[i].SetValues(
-                        _currentBudgetElements[i].Required,
+                        _actives[i],
                         _currentBudgetElements[i].Name,
                         _currentBudgetElements[i].Delta,
-                        _currentBudgetElements[i].Required ? _currentBudgetElements[i].WillpowerActive : _currentBudgetElements[i].WillpowerNotActive,
+                        _actives[i] ? _currentBudgetElements[i].WillpowerActive : _currentBudgetElements[i].WillpowerNotActive,
                         _currentBudgetElements[i].Required
                         );
                 }
@@ -56,6 +80,52 @@ namespace UkensJoker.Engine
                 {
                     _uiElements[i].ResetValues();
                 }
+            }
+
+            string needText = "";
+            string needNumber = GetNeededSum().ToString();
+            for (int i = 0; i < needNumber.Length; i++)
+            {
+                if ((needNumber.Length - i) % 3 == 0)
+                    needText += " ";
+
+                needText += needNumber[i];
+            }
+            _needText.text = "Total : " + needText + " kr";
+
+            UpdateWillpower();
+        }
+
+        private void UpdateWillpower()
+        {
+            float newWillPower = _startWillpower;
+            for (int i = 0; i < _currentBudgetElements.Length; i++)
+            {
+                newWillPower += _actives[i] ? _currentBudgetElements[i].WillpowerActive : _currentBudgetElements[i].WillpowerNotActive;
+            }
+
+            _willpower.Value = newWillPower;
+        }
+
+        private int GetNeededSum()
+        {
+            int delta = _money.Value;
+            for (int i = 0; i < _currentBudgetElements.Length; i++)
+            {
+                if (_actives[i])
+                {
+                    delta += _currentBudgetElements[i].Delta;
+                }
+            }
+            return delta;
+        }
+
+        public void ToggleActive(int activeIndex)
+        {
+            if (activeIndex < _actives.Length)
+            {
+                _actives[activeIndex] = !_actives[activeIndex];
+                UpdateUI();
             }
         }
     }

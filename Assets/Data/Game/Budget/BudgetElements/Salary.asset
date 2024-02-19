@@ -9,7 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e396329c649987b44a6e0df4225739ed, type: 3}
-  m_Name: Willpower
+  m_Script: {fileID: 11500000, guid: 9229d79ed85032047ae18cd75b663d4e, type: 3}
+  m_Name: Salary
   m_EditorClassIdentifier: 
-  _float: 6
+  Name: Salary
+  Delta: 4000
+  WillpowerActive: 1
+  WillpowerNotActive: 0
+  Required: 1

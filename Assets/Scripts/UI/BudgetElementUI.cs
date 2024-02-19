@@ -21,14 +21,17 @@ namespace UkensJoker.UI
             string deltaText = "";
             for (int i = 0; i < delta.ToString().Length; i++)
             {
-                if ((delta.ToString().Length - i) % 3 == 0)
+                if (i != 0 && (delta.ToString().Length - i) % 3 == 0 && (i != 1 || delta.ToString()[0].ToString() != "-"))
                     deltaText += " ";
 
                 deltaText += delta.ToString()[i];
             }
-            _delta.text = deltaText;
+            if (delta > 0)
+                deltaText = "+" + deltaText;
 
-            _delta.color = delta < 0 ? _negativeColor : Color.white;
+            _delta.text = deltaText + " kr";
+
+            _delta.color = active ? (delta < 0 ? _negativeColor : Color.white) : _notActiveColor;
 
             if (willpower == 0)
             {
@@ -36,7 +39,7 @@ namespace UkensJoker.UI
             }
             else
             {
-                string willpowerChar = willpower < 0 ? "- " : "+ ";
+                string willpowerChar = willpower < 0 ? "-" : "+";
                 string willpowerText = "";
                 _willpower.color = willpower < 0 ? _negativeColor : Color.white;
 

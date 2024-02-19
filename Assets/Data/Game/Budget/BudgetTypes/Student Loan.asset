@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e396329c649987b44a6e0df4225739ed, type: 3}
-  m_Name: Willpower
+  m_Script: {fileID: 11500000, guid: 6126cf31a64066844ba62ca1e18f3520, type: 3}
+  m_Name: Student Loan
   m_EditorClassIdentifier: 
-  _float: 6
+  BudgetElements:
+  - {fileID: 11400000, guid: c88119e752e3c50438b6566986fca42a, type: 2}

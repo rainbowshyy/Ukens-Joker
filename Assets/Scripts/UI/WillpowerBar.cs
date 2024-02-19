@@ -35,7 +35,7 @@ namespace UkensJoker.UI
 
         private void UpdateWillpower(float willpower)
         {
-            float ratio = _willpower.Value / _willpowerMax.Value;
+            float ratio = Mathf.Clamp01( _willpower.Value / _willpowerMax.Value);
             int newSize = Mathf.FloorToInt(ratio * _maxHeight);
 
             if (newSize != _previousHeight)

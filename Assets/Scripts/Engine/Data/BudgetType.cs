@@ -14,7 +14,7 @@ namespace UkensJoker.Engine
         public BudgetElement[] GetRandomElements(int count)
         {
             List<int> available = new List<int>();
-            for (int i = 0; i < count; i++)
+            for (int i = 0; i < BudgetElements.Length; i++)
             {
                 available.Add(i);
             }
