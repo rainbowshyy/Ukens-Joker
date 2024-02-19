@@ -26,7 +26,7 @@ namespace UkensJoker.UI
             string valueText = "", goalText = "";
             for (int i = 0; i < value.ToString().Length; i++)
             {
-                if (i % 3 == 0 && i != 0)
+                if ((value.ToString().Length - i) % 3 == 0)
                     valueText += " ";
 
                 valueText += value.ToString()[i];
@@ -34,7 +34,7 @@ namespace UkensJoker.UI
 
             for (int i = 0; i < _moneyGoal.Value.ToString().Length; i++)
             {
-                if (i % 3 == 0 && i != 0)
+                if ((_moneyGoal.Value.ToString().Length - i) % 3 == 0)
                     goalText += " ";
 
                 goalText += _moneyGoal.Value.ToString()[i];
