@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 using UkensJoker.DataArchitecture;
+using UnityEngine.Events;
 
 namespace UkensJoker.Engine
 {
@@ -20,7 +21,6 @@ namespace UkensJoker.Engine
         [SerializeField] private FloatReference _røvernUpdateTime;
         [SerializeField] private FloatReference _røvernUpdateAngerTime;
         [SerializeField] private FloatReference _røvernSpeedIdle;
-        [SerializeField] private FloatReference _røvernSpeedCurious;
         [SerializeField] private FloatReference _røvernSpeedChase;
 
         [Header("Spot Variables")]
@@ -29,6 +29,9 @@ namespace UkensJoker.Engine
         [SerializeField] private FloatReference _spotInterestMax;
 
         private float _timeBeforeUpdate;
+        private bool _chasing;
+
+        [SerializeField] private UnityEvent _onPlayerSpot;
 
         private void Start()
         {
@@ -36,11 +39,21 @@ namespace UkensJoker.Engine
             _spotCurrent.OnInterestChanged += RemoveTimeOnInterest;
             MoveToCurrentSpot();
             _timeBeforeUpdate = _røvernUpdateTime.Value;
+            _agent.speed = _røvernSpeedIdle.Value;
         }
 
         private void Update()
         {
+            if (_spotCurrent.HasPlayer && !_chasing)
+                _onPlayerSpot.Invoke();
+
             _timeBeforeUpdate -= Time.deltaTime;
+
+            if (_chasing)
+            {
+                _agent.destination = _playerPosition.Value;
+                return;
+            }
 
             if (_timeBeforeUpdate <= 0)
             {
@@ -111,6 +124,51 @@ namespace UkensJoker.Engine
             for (int i = 1; i < _røvernSpots.Length; i++)
             {
                 _røvernSpots[i].SetInterest(Mathf.Clamp(_røvernSpots[i].Interest * _spotInterestDecay.Value, _spotInterestMin.Value, _spotInterestMax.Value));
+            }
+        }
+
+        public void Chase(bool chase)
+        {
+            _chasing = chase;
+
+            _agent.enabled = chase;
+            _agent.speed = chase ? _røvernSpeedChase.Value : _røvernSpeedIdle.Value;
+
+            if (chase)
+            {
+                return;
+            }
+
+            SetNewSpotFromPosition();
+            MoveToCurrentSpot();
+            UpdateInterests();
+            _timeBeforeUpdate = _røvernUpdateTime.Value + (_willpower.Value - _willpowerMax.Value) * _røvernUpdateAngerTime.Value;
+        }
+
+        private void SetNewSpotFromPosition()
+        {
+            float minLength = 100;
+            int minIndex = -1;
+            for (int i = 0; i < _røvernSpots.Length; i++)
+            {
+                if (_røvernSpots[i].PathfindingEnabled)
+                {
+                    float length = (_røvernSpots[i].Position - transform.position).magnitude;
+                    if (length < minLength)
+                    {
+                        minLength = length;
+                        minIndex = i;
+                    }
+                }
+            }
+
+            if (minIndex != -1)
+            {
+                _spotCurrent.OnInterestChanged -= RemoveTimeOnInterest;
+
+                _spotCurrent = _røvernSpots[minIndex];
+
+                _spotCurrent.OnInterestChanged += RemoveTimeOnInterest;
             }
         }
     }

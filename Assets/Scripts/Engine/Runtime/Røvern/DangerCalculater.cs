@@ -9,6 +9,11 @@ namespace UkensJoker.Engine
 
         [SerializeField] private FloatReference _sightDanger;
 
+        private void Awake()
+        {
+            _danger.Value = 0f;
+        }
+
         private void OnEnable()
         {
             _sightDanger.RegisterListener(CalculateDanger);

@@ -28,12 +28,12 @@ namespace UkensJoker.Engine
 
             _hiding = !_hiding;
 
-            _virtualCamera.Priority = _hiding ? 100 : 0;
-
             if (_hiding)
                 OnStartHide?.Invoke();
             else
                 OnStopHide?.Invoke();
+
+            _virtualCamera.Priority = _hiding ? 100 : 0;
         }
     }
 }

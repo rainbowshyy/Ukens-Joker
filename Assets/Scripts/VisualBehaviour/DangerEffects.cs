@@ -26,6 +26,12 @@ namespace UkensJoker.VisualBehaviour
         [SerializeField] private FloatReference _ditherBlackThresholdMultiplier;
         [SerializeField] private FloatReference _willpowerDitherBlackMultipler;
 
+        private void Awake()
+        {
+            SetMaterialValues(0f);
+            SetWillpowerValues(_willpower.Value);
+        }
+
         private void OnEnable()
         {
             _danger.RegisterListener(SetMaterialValues);
