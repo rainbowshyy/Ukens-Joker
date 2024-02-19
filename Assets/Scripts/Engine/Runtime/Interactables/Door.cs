@@ -105,5 +105,13 @@ namespace UkensJoker.Engine
         {
             return _roomsConnected;
         }
+
+        public void OnRøvernEnter(Vector3 direction)
+        {
+            if (_openDoor)
+                return;
+
+            Interact(direction);
+        }
     }
 }

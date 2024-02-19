@@ -95,7 +95,11 @@ namespace UkensJoker.Engine
         public void PlayerControlsChanged(Component sender, object enabled)
         {
             if (enabled is bool)
+            {
                 _canMove = (bool)enabled;
+                rb.isKinematic = !(bool)enabled;
+                GetComponent<Collider>().enabled = _canMove;
+            }
         }
     }
 }

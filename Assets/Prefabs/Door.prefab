@@ -250,6 +250,87 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _roomsConnected: []
+--- !u!1 &3662714657398381530
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3360928208929183068}
+  - component: {fileID: 2452495883029830389}
+  - component: {fileID: 1889512347612620269}
+  m_Layer: 0
+  m_Name: "R\xF8vernTrigger"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3360928208929183068
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3662714657398381530}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4858579473320003745}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2452495883029830389
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3662714657398381530}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 3831
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1889512347612620269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3662714657398381530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a989f4104cb9a134d9a121da36e9beae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "_onR\xF8vernEnter":
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5140987655861532970}
+        m_TargetAssemblyTypeName: UkensJoker.Engine.Door, ukensjoker.engine
+        m_MethodName: "OnR\xF8vernEnter"
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4974962373672127958
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,6 +902,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 7501375209066879524}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0f7dd456fdd1be146b5f111459ccb321,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3360928208929183068}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f7dd456fdd1be146b5f111459ccb321, type: 3}
 --- !u!4 &4858579473320003745 stripped

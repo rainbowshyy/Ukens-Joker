@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,8 +16,22 @@ namespace UkensJoker.Engine
         private float _playTimeCurrent;
         [SerializeField] private UnityEvent _playTick;
 
+        private HashSet<Collider> _colliders = new HashSet<Collider>();
+
         private void Update()
         {
+            if (_playing && GetActiveColliderCount() <= 0)
+            {
+                _stopPlay.Invoke();
+                _playing = false;
+            }
+            else if (!_playing && GetActiveColliderCount() > 0)
+            {
+                _startPlay.Invoke();
+                _playing = true;
+                _playTimeCurrent = 0;
+            }
+
             if (!_playing)
                 return;
 
@@ -29,15 +45,24 @@ namespace UkensJoker.Engine
 
         private void OnTriggerEnter(Collider other)
         {
-            _startPlay.Invoke();
-            _playing = true;
-            _playTimeCurrent = 0;
+            if (!_colliders.Contains(other))
+            {
+                _colliders.Add(other);
+            }
         }
 
         private void OnTriggerExit(Collider other)
         {
-            _stopPlay.Invoke();
-            _playing = false;
+            if (_colliders.Contains(other))
+            {
+                _colliders.Remove(other);
+            }
+        }
+
+        private int GetActiveColliderCount()
+        {
+            if (_colliders.Count == 0 ) return 0;
+            return _colliders.Where(x => x.enabled).Count();
         }
 
         public void SetAnimation(bool active)

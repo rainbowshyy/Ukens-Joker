@@ -45,7 +45,10 @@ namespace UkensJoker.Engine
         private void Update()
         {
             if (_spotCurrent.HasPlayer && !_chasing)
+            {
+                Debug.Log("Is in same spot as player...");
                 _onPlayerSpot.Invoke();
+            }
 
             _timeBeforeUpdate -= Time.deltaTime;
 

@@ -32,7 +32,6 @@ namespace UkensJoker.Engine
 
         private void Update()
         {
-            Debug.Log(IsInSight());
             _sightPosition.Value = GetScreenPos();
 
             if (_chasing)
@@ -69,6 +68,7 @@ namespace UkensJoker.Engine
 
             if (_sightTimeCurrent >= _sightTimeBeforeChase.Value)
             {
+                Debug.Log("Seen player for entire chase time...");
                 Chase(true);
             }
 
@@ -93,6 +93,7 @@ namespace UkensJoker.Engine
 
         public void Chase(bool chase)
         {
+            Debug.Log("Started chasing...");
             _chasing = chase;
             _sightTimeCurrent = 0f;
             _onSightChase.Invoke(chase);
