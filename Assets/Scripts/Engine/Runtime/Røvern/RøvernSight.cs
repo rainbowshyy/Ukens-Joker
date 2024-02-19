@@ -24,6 +24,8 @@ namespace UkensJoker.Engine
         [SerializeField] private UnityEvent<bool> _onSightChase;
         private float _sightTimeCurrent;
         private bool _chasing;
+        private bool _hasSeen;
+        [SerializeField] private UnityEvent _onHasSeen;
 
         private void Awake()
         {
@@ -59,11 +61,18 @@ namespace UkensJoker.Engine
             {
                 _sightTimeCurrent += _agent.enabled ? Time.deltaTime : Time.deltaTime * _sightTimeWindowMultipler.Value;
                 value += Time.deltaTime * _sightDangerMultiplier.Value;
+                if (!_hasSeen)
+                {
+                    _hasSeen = true;
+                    _onHasSeen.Invoke();
+                }
             }
             else
             {
                 _sightTimeCurrent = 0f;
                 value -= Time.deltaTime * _sightDangerDecayMultiplier.Value;
+                if (_hasSeen)
+                    _hasSeen = false;
             }
 
             if (_sightTimeCurrent >= _sightTimeBeforeChase.Value)
