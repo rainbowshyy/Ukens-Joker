@@ -9,5 +9,17 @@ namespace UkensJoker.Engine
     {
         [SerializeField] private IntReference _money;
         [SerializeField] private IntReference _moneyMax;
+        [SerializeField] private GameEvent _enoughMoney;
+
+        private bool _hasBroadcasted;
+
+        private void Update()
+        {
+            if (_money.Value >= _moneyMax.Value && !_hasBroadcasted)
+            {
+                _hasBroadcasted = true;
+                _enoughMoney.Raise(this, null);
+            }
+        }
     }
 }

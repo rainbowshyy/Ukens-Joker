@@ -26,6 +26,9 @@ namespace UkensJoker.Engine
 
         private void Start()
         {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
             _startWillpower = _willpower.Value;
             RollBudgetElementsForDay(_day.Value);
             UpdateUI();

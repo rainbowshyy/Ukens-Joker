@@ -458,6 +458,7 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: 8b3d8e86d1d7b254691ce0a2a04d0d7c, type: 2}
+  _day: {fileID: 11400000, guid: 37c6699460b57c549b2288c6cfc3de39, type: 2}
 --- !u!114 &369953812
 MonoBehaviour:
   m_ObjectHideFlags: 0

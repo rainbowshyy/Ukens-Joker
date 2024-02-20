@@ -24048,6 +24048,7 @@ GameObject:
   - component: {fileID: 1810548951}
   - component: {fileID: 1810548953}
   - component: {fileID: 1810548954}
+  - component: {fileID: 1810548955}
   m_Layer: 0
   m_Name: GlobalLogic
   m_TagString: Untagged
@@ -24147,6 +24148,27 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8efc6696778eecc428cac132e8a72691, type: 2}
   - {fileID: 11400000, guid: 73516ef09450c7848b8935dddadf0a5e, type: 2}
   - {fileID: 11400000, guid: d8f72dde2168c1e49af51648ed135d42, type: 2}
+--- !u!114 &1810548955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810548950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 001300430246f4a4dab43f439753b648, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _money:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 2fd83dd5ee1963b40b4cba9509441f20, type: 2}
+  _moneyMax:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: b6eee1d2d7d4c4c4f8ea4f5cbf52d444, type: 2}
+  _enoughMoney: {fileID: 11400000, guid: 7e858568959ebff46930f2a0c6c61098, type: 2}
 --- !u!1001 &1814433561
 PrefabInstance:
   m_ObjectHideFlags: 0

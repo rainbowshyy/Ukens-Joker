@@ -12,6 +12,7 @@ namespace UkensJoker.Engine
         [SerializeField] FloatReference _willpowerMax;
         [SerializeField] IntVariable _money;
         [SerializeField] IntReference _moneyStart;
+        [SerializeField] IntVariable _day;
 
         private void Awake()
         {
@@ -23,6 +24,7 @@ namespace UkensJoker.Engine
         {
             _willpower.Value = _willpowerMax.Value;
             _money.Value = _moneyStart.Value;
+            _day.Value = 0;
 
             SceneManager.LoadScene(1);
         }
