@@ -100,6 +100,14 @@ namespace UkensJoker.Engine
             return _camera.WorldToViewportPoint(transform.position);
         }
 
+        public void ChaseIfSeen()
+        {
+            if (IsInSight())
+            {
+                Chase(true);
+            }
+        }
+
         public void Chase(bool chase)
         {
             Debug.Log("Started chasing...");

@@ -8195,8 +8195,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1033523912}
         m_TargetAssemblyTypeName: "UkensJoker.Engine.R\xF8vernSight, ukensjoker.engine"
-        m_MethodName: Chase
-        m_Mode: 6
+        m_MethodName: ChaseIfSeen
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
