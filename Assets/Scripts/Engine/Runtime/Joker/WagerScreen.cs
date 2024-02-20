@@ -17,7 +17,10 @@ namespace UkensJoker.Engine
                 if ((int)data * 100 > _money.Value)
                     return;
 
-                _wager.Value = (int)data * 100;
+                if ((int)data == 0)
+                    _wager.Value = 1000;
+                else
+                    _wager.Value = (int)data * 100;
                 _onWagerSet.Invoke();
             }
         }
