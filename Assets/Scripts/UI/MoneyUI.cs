@@ -21,6 +21,11 @@ namespace UkensJoker.UI
             _money.UnregisterListener(UpdateMoney);
         }
 
+        private void Start()
+        {
+            UpdateMoney(_money.Value);
+        }
+
         private void UpdateMoney(int value)
         {
             string valueText = "", goalText = "";

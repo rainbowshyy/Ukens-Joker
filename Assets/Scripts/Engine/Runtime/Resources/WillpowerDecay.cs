@@ -9,11 +9,6 @@ namespace UkensJoker.Engine
         [SerializeField] private FloatReference _willpowerMax;
         [SerializeField] private FloatReference _willpowerDecay;
 
-        private void Awake()
-        {
-            _willpower.Value = _willpowerMax.Value;
-        }
-
         private void Update()
         {
             if (_willpower.Value <= 0)

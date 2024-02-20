@@ -1,17 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UkensJoker.UI;
 using UkensJoker.DataArchitecture;
 using TMPro;
-using Unity.VisualScripting.YamlDotNet.Core.Tokens;
+using UnityEngine.SceneManagement;
 
 namespace UkensJoker.Engine
 {
     public class BudgetManager : MonoBehaviour
     {
         [SerializeField] private IntVariable _money;
-        [SerializeField] private FloatVariable _willpower; 
+        [SerializeField] private IntVariable _moneyNeeded;
+        [SerializeField] private FloatVariable _willpower;
+        [SerializeField] private FloatReference _willpowerMax;
 
         [SerializeField] private IntReference _day;
         [SerializeField] private Day[] _days;
@@ -127,6 +127,25 @@ namespace UkensJoker.Engine
                 _actives[activeIndex] = !_actives[activeIndex];
                 UpdateUI();
             }
+        }
+
+        public void FinalizeBudget()
+        {
+            int neededSum = GetNeededSum();
+            if (neededSum < 0)
+            {
+                _money.Value = 0;
+                _moneyNeeded.Value = Mathf.Abs(neededSum);
+            }
+            else
+            {
+                _money.Value = neededSum;
+                _moneyNeeded.Value = _money.Value;
+            }
+
+            _willpower.Value = Mathf.Clamp(_willpower.Value, 0f, _willpowerMax.Value);
+
+            SceneManager.LoadScene(2);
         }
     }
 }
