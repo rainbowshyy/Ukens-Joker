@@ -19,7 +19,7 @@ namespace UkensJoker.Engine
             {
                 _baseNumbers[i].Value = Mathf.FloorToInt(Random.Range(1, 9));
 
-                _rightNumbers[i].Value = (Random.Range(0f, 1f) > 0.5f) ? Mathf.FloorToInt(Random.Range(_baseNumbers[i].Value, 10)) : Mathf.FloorToInt(Random.Range(0, _baseNumbers[i].Value));
+                _rightNumbers[i].Value = (Random.Range(0f, 1f) > 0.5f) ? Mathf.CeilToInt(Random.Range(_baseNumbers[i].Value, 10)) : Mathf.FloorToInt(Random.Range(0, _baseNumbers[i].Value));
             }
         }
     }

@@ -2812,6 +2812,7 @@ GameObject:
   - component: {fileID: 140405689}
   - component: {fileID: 140405688}
   - component: {fileID: 140405687}
+  - component: {fileID: 140405690}
   m_Layer: 5
   m_Name: Money
   m_TagString: Untagged
@@ -2859,6 +2860,21 @@ MonoBehaviour:
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: b6eee1d2d7d4c4c4f8ea4f5cbf52d444, type: 2}
   _text: {fileID: 140405688}
+  _onNewMoney:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 140405690}
+        m_TargetAssemblyTypeName: UkensJoker.UI.ShakeUI, ukensjoker.ui
+        m_MethodName: DoShake
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &140405688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2959,6 +2975,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 140405685}
   m_CullTransparentMesh: 1
+--- !u!114 &140405690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140405685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edc2047bc011f754385309d03a4c89a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rectTransform: {fileID: 140405686}
+  _shakePixelIntensity:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: d809bd7fefc3766468e948f7191fe4e9, type: 2}
+  _shakeCooldown:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: cc4ffe69ab963684ea82407ba6a643c5, type: 2}
+  _shakeAmount:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: d7ad48c15895cb1438ba92f37f98d623, type: 2}
 --- !u!1001 &160488347
 PrefabInstance:
   m_ObjectHideFlags: 0
