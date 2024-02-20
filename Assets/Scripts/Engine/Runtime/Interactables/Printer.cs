@@ -73,5 +73,14 @@ namespace UkensJoker.Engine
                 _onCompletePrint.Invoke();
             }
         }
+
+        public void ForceStop()
+        {
+            _printTimeCurrent = 0;
+            _printing = false;
+
+            _vibrateTransform.localPosition = Vector3.zero;
+            _onCompletePrint.Invoke();
+        }
     }
 }
