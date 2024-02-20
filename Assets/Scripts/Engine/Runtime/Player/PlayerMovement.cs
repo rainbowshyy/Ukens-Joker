@@ -99,6 +99,11 @@ namespace UkensJoker.Engine
                 _canMove = (bool)enabled;
                 rb.isKinematic = !(bool)enabled;
                 GetComponent<Collider>().enabled = _canMove;
+                if (!(bool)enabled && _moving)
+                {
+                    _moving = false;
+                    OnStopMove.Invoke();
+                }
             }
         }
     }
