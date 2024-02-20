@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-1878332245247344467
+--- !u!114 &-7884562310357976579
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,32 +9,127 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f62c9c65cf3354c93be831c8bc075510, type: 3}
-  m_Name: SSAO
+  m_Script: {fileID: 11500000, guid: 40d85c13a013a184586f57350c13e326, type: 3}
+  m_Name: Door Depth
   m_EditorClassIdentifier: 
   m_Active: 1
-  m_Settings:
-    AOMethod: 1
-    Downsample: 0
-    AfterOpaque: 0
-    Source: 1
-    NormalSamples: 1
-    Intensity: 0.5
-    DirectLightingStrength: 0.25
-    Radius: 0.25
-    Samples: 0
-    BlurQuality: 0
-    Falloff: 100
-    SampleCount: -1
-  m_BlueNoise256Textures:
-  - {fileID: 2800000, guid: 36f118343fc974119bee3d09e2111500, type: 3}
-  - {fileID: 2800000, guid: 4b7b083e6b6734e8bb2838b0b50a0bc8, type: 3}
-  - {fileID: 2800000, guid: c06cc21c692f94f5fb5206247191eeee, type: 3}
-  - {fileID: 2800000, guid: cb76dd40fa7654f9587f6a344f125c9a, type: 3}
-  - {fileID: 2800000, guid: e32226222ff144b24bf3a5a451de54bc, type: 3}
-  - {fileID: 2800000, guid: 3302065f671a8450b82c9ddf07426f3a, type: 3}
-  - {fileID: 2800000, guid: 56a77a3e8d64f47b6afe9e3c95cb57d5, type: 3}
-  m_Shader: {fileID: 4800000, guid: 0849e84e3d62649e8882e9d6f056a017, type: 3}
+  Settings:
+    RenderPassEvent: 250
+    RenderPassInput: 1
+    RenderQueueLowerBound: 0
+    RenderQueueUpperBound: 2499
+    ColorFormat: 11
+    SortingCriteria: 0
+    LayerMask:
+      serializedVersion: 2
+      m_Bits: 64
+    TextureName: _DoorDepth
+    LightMode: 48
+    GlobalShaderKeywords: []
+--- !u!114 &-6753999167794996730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40d85c13a013a184586f57350c13e326, type: 3}
+  m_Name: Rovern Texture
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  Settings:
+    RenderPassEvent: 350
+    RenderPassInput: 4
+    RenderQueueLowerBound: 0
+    RenderQueueUpperBound: 2499
+    ColorFormat: 0
+    SortingCriteria: 0
+    LayerMask:
+      serializedVersion: 2
+      m_Bits: 256
+    TextureName: _RovernTexture
+    LightMode: 15
+    GlobalShaderKeywords: []
+--- !u!114 &-6047643463003555328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40d85c13a013a184586f57350c13e326, type: 3}
+  m_Name: Rovern Depth
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  Settings:
+    RenderPassEvent: 350
+    RenderPassInput: 1
+    RenderQueueLowerBound: 0
+    RenderQueueUpperBound: 2499
+    ColorFormat: 11
+    SortingCriteria: 0
+    LayerMask:
+      serializedVersion: 2
+      m_Bits: 256
+    TextureName: _RovernDepth
+    LightMode: 48
+    GlobalShaderKeywords: []
+--- !u!114 &-4591885355251826285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d613f08f173d4dd895bb07b3230baa9, type: 3}
+  m_Name: Dither
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  injectionPoint: 600
+  fetchColorBuffer: 1
+  requirements: -1
+  passMaterial: {fileID: 2100000, guid: 0207d29feb3455540aa1a894916c0638, type: 2}
+  passIndex: 0
+  bindDepthStencilAttachment: 1
+  m_Version: 1
+--- !u!114 &-3478725335755539918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86ad8300660ba504aa90f2b3ca877d59, type: 3}
+  m_Name: TemplateFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  passSettings:
+    renderPassEvent: 500
+    spread: 0.198
+--- !u!114 &-931125661689249424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 800968f0875ad2a4292cef5481819366, type: 3}
+  m_Name: PixelizeFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  _settings:
+    renderPassEvent: 300
+    screenHeight: 270
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50,11 +145,21 @@ MonoBehaviour:
   debugShaders:
     debugReplacementPS: {fileID: 4800000, guid: cf852408f2e174538bcd9b7fda1c5ae7,
       type: 3}
+    hdrDebugViewPS: {fileID: 4800000, guid: 573620ae32aec764abd4d728906d2587, type: 3}
   m_RendererFeatures:
-  - {fileID: -1878332245247344467}
-  m_RendererFeatureMap: adc0de57c6d2eee5
+  - {fileID: -931125661689249424}
+  - {fileID: -7884562310357976579}
+  - {fileID: 1621733887873112762}
+  - {fileID: -6753999167794996730}
+  - {fileID: -6047643463003555328}
+  - {fileID: -4591885355251826285}
+  - {fileID: 530964998034661522}
+  - {fileID: 5239272616932575092}
+  - {fileID: 2892469469260955489}
+  m_RendererFeatureMap: 7001c3dd24fa13f3fdf9ad595a689492badae3f2608e8116069a4b868af944a200ba75eb4f7412ac9381e526995846c092a00540da5d5e077487b2adafa2b548613ff646a81d2428
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
+  xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
   shaders:
     blitPS: {fileID: 4800000, guid: c17132b1f77d20942aa75f8429c0f8bc, type: 3}
     copyDepthPS: {fileID: 4800000, guid: d6dae50ee9e1bfa4db75f19f99355220, type: 3}
@@ -67,17 +172,20 @@ MonoBehaviour:
     coreBlitPS: {fileID: 4800000, guid: 93446b5c5339d4f00b85c159e1159b7c, type: 3}
     coreBlitColorAndDepthPS: {fileID: 4800000, guid: d104b2fc1ca6445babb8e90b0758136b,
       type: 3}
+    blitHDROverlay: {fileID: 4800000, guid: a89bee29cffa951418fc1e2da94d1959, type: 3}
     cameraMotionVector: {fileID: 4800000, guid: c56b7e0d4c7cb484e959caeeedae9bbf,
       type: 3}
     objectMotionVector: {fileID: 4800000, guid: 7b3ede40266cd49a395def176e1bc486,
       type: 3}
+    dataDrivenLensFlare: {fileID: 4800000, guid: 6cda457ac28612740adb23da5d39ea92,
+      type: 3}
   m_AssetVersion: 2
   m_OpaqueLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 87
   m_TransparentLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 87
   m_DefaultStencilState:
     overrideStencilState: 0
     stencilReference: 0
@@ -86,8 +194,113 @@ MonoBehaviour:
     failOperation: 0
     zFailOperation: 0
   m_ShadowTransparentReceive: 1
-  m_RenderingMode: 0
+  m_RenderingMode: 2
   m_DepthPrimingMode: 0
   m_CopyDepthMode: 0
-  m_AccurateGbufferNormals: 0
+  m_AccurateGbufferNormals: 1
   m_IntermediateTextureMode: 1
+--- !u!114 &530964998034661522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d613f08f173d4dd895bb07b3230baa9, type: 3}
+  m_Name: Rovern
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  injectionPoint: 600
+  fetchColorBuffer: 1
+  requirements: 5
+  passMaterial: {fileID: 2100000, guid: 1c141797dd1ea974ea7329047d5c8fa0, type: 2}
+  passIndex: 0
+  bindDepthStencilAttachment: 1
+  m_Version: 1
+--- !u!114 &1621733887873112762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40d85c13a013a184586f57350c13e326, type: 3}
+  m_Name: Door Texture
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  Settings:
+    RenderPassEvent: 350
+    RenderPassInput: 4
+    RenderQueueLowerBound: 0
+    RenderQueueUpperBound: 2499
+    ColorFormat: 0
+    SortingCriteria: 0
+    LayerMask:
+      serializedVersion: 2
+      m_Bits: 64
+    TextureName: _DoorTexture
+    LightMode: 15
+    GlobalShaderKeywords: []
+--- !u!114 &2892469469260955489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d613f08f173d4dd895bb07b3230baa9, type: 3}
+  m_Name: Chromatic Aberration
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  injectionPoint: 600
+  fetchColorBuffer: 1
+  requirements: 4
+  passMaterial: {fileID: 2100000, guid: 5d9924d66d4d0db49942dc9ee15fb5f5, type: 2}
+  passIndex: 0
+  bindDepthStencilAttachment: 0
+  m_Version: 1
+--- !u!114 &5239272616932575092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d613f08f173d4dd895bb07b3230baa9, type: 3}
+  m_Name: Danger
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  injectionPoint: 600
+  fetchColorBuffer: 1
+  requirements: 5
+  passMaterial: {fileID: 2100000, guid: 65f0f5f5ff7586b458d9a9625934c3bb, type: 2}
+  passIndex: 0
+  bindDepthStencilAttachment: 0
+  m_Version: 1
+--- !u!114 &8987887835790182560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42c3efa557d31b54dadaa693779d5b5b, type: 3}
+  m_Name: RenderObjectsToTextureFeature
+  m_EditorClassIdentifier: 
+  m_Active: 0
+  Settings: {Material: {fileID: 0}, MaterialPassIndex: -1, BlitMaterial: {fileID: 0},
+    BlitMaterialPassIndex: -1, RenderPassEvent: 300, RenderPassInput: -1, RenderQueueLowerBound: 0,
+    RenderQueueUpperBound: 2499, ColorFormat: 0, SortingCriteria: 59, LayerMask:
+      m_Bits: 64
+, TextureName: _MyTexture, LightMode: 15, GlobalShaderKeywords: []
+}

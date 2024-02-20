@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c16be4ec549ddb74faa9379354f4ce50, type: 3}
+  m_Name: Bedroom
+  m_EditorClassIdentifier: 
+  Position: {x: 0, y: 0, z: 0}
+  <Connections>k__BackingField:
+  - {fileID: 11400000, guid: 01475eec8df5d134ca2b7d94077b5612, type: 2}
+  - {fileID: 11400000, guid: d980ae86b3e83a642b4bb55b4cbfae56, type: 2}
+  - {fileID: 11400000, guid: bab7921976e5f8f4c8d139cde46d0f83, type: 2}
+  <PathfindingEnabled>k__BackingField: 1
+  Interest: 0

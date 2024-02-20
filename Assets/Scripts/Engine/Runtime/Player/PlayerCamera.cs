@@ -1,0 +1,61 @@
+using UkensJoker.DataArchitecture;
+using UnityEngine;
+
+namespace UkensJoker.Engine
+{
+    public class PlayerCamera : MonoBehaviour
+    {
+        private float _xRotation;
+        private float _yRotation;
+
+        [Header("Move Input Vector")]
+        [SerializeField] private Vector2Variable _lookInput;
+
+        [Header("Player Direction Vector")]
+        [SerializeField] private Vector3Variable _playerDirection;
+
+        [Header("Look Sensitivity Variables")]
+        [SerializeField] private FloatReference _playerLookSensitivityX;
+        [SerializeField] private FloatReference _playerLookSensitivityY;
+
+        [SerializeField] private Rigidbody rb;
+
+        private bool _canLook = true;
+
+        private void Start()
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+
+        private void LateUpdate()
+        {
+            if (!_canLook)
+                return;
+
+            if (_lookInput.Value == Vector2.zero)
+            {
+                rb.angularVelocity = Vector3.zero;
+                return;
+            }
+
+            float mouseX = _lookInput.Value.x * Time.deltaTime * _playerLookSensitivityX.Value;
+            float mouseY = _lookInput.Value.y * Time.deltaTime * _playerLookSensitivityY.Value;
+
+            _yRotation += mouseX;
+            _xRotation -= mouseY;
+            _xRotation = Mathf.Clamp(_xRotation, -90f, 90f);
+
+            transform.rotation = Quaternion.Euler(_xRotation, _yRotation, 0);
+            rb.MoveRotation(Quaternion.Euler(0, _yRotation, 0));
+
+            _playerDirection.Value = transform.forward;
+        }
+
+        public void PlayerControlsChanged(Component sender, object enabled)
+        {
+            if (enabled is bool)
+                _canLook = (bool)enabled;
+        }
+    }
+}

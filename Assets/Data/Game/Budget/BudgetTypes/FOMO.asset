@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6126cf31a64066844ba62ca1e18f3520, type: 3}
+  m_Name: FOMO
+  m_EditorClassIdentifier: 
+  BudgetElements:
+  - {fileID: 11400000, guid: ce818ec880a1cb74fb90faa837a1b51e, type: 2}
+  - {fileID: 11400000, guid: c62804cd25307564b9a8f0d72fff378f, type: 2}
+  - {fileID: 11400000, guid: c59ba3d37fb8f7b439ee37dda990d951, type: 2}
+  - {fileID: 11400000, guid: 96d314678ceafde49bc58595769dd685, type: 2}
+  - {fileID: 11400000, guid: 5604b151925010443b16063dec080c6c, type: 2}

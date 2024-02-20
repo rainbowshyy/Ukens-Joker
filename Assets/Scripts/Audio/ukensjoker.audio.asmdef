@@ -1,0 +1,17 @@
+{
+    "name": "ukensjoker.audio",
+    "rootNamespace": "UkensJoker.Audio",
+    "references": [
+        "GUID:3a515e7fd63ea754b9a772509d75c51f",
+        "GUID:5c2553a4b75fa874ba2d3446dbda4499"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
