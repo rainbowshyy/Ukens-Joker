@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18e5cbc049737e942a0bfed5ff977d12, type: 3}
   m_Name: MoneyStart
   m_EditorClassIdentifier: 
-  _int: 500
+  _int: 0

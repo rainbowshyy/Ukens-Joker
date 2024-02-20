@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e396329c649987b44a6e0df4225739ed, type: 3}
-  m_Name: WillpowerBlackThresholdMultiplier
+  m_Script: {fileID: 11500000, guid: 6126cf31a64066844ba62ca1e18f3520, type: 3}
+  m_Name: Addiction
   m_EditorClassIdentifier: 
-  _float: 0.15
+  BudgetElements:
+  - {fileID: 11400000, guid: f5a74d96a0ed9ad4ca2f86008308af56, type: 2}

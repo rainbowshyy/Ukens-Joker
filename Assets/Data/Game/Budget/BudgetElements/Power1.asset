@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Power
   Delta: -400
-  WillpowerActive: -1
+  WillpowerActive: 0
   WillpowerNotActive: 0
   Required: 1

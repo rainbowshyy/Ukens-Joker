@@ -3,6 +3,7 @@ using UkensJoker.UI;
 using UkensJoker.DataArchitecture;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace UkensJoker.Engine
 {
@@ -20,6 +21,11 @@ namespace UkensJoker.Engine
 
         [SerializeField] private TMP_Text _savingsText;
         [SerializeField] private TMP_Text _needText;
+
+        [SerializeField] private Button _startButton;
+        [SerializeField] private TMP_Text _startText;
+        [SerializeField] private string _cannotStartText;
+        [SerializeField] private string _canStartText;
 
         private bool[] _actives;
         private float _startWillpower;
@@ -44,13 +50,15 @@ namespace UkensJoker.Engine
 
             _currentBudgetElements = new BudgetElement[count];
             _actives = new bool[count];
+            count = 0;
             for (int i = 0; i < _days[day].BudgetTypeTables.Length; i++)
             {
                 BudgetElement[] roll = _days[day].BudgetTypeTables[i].BudgetType.GetRandomElements(_days[day].BudgetTypeTables[i].Count);
                 for (int x = 0; x < roll.Length; x++)
                 {
-                    _currentBudgetElements[i + x] = roll[x];
-                    _actives[i + x] = _currentBudgetElements[i + x].Required;
+                    _currentBudgetElements[count] = roll[x];
+                    _actives[count] = _currentBudgetElements[count].Required;
+                    count++;
                 }
             }
         }
@@ -60,7 +68,7 @@ namespace UkensJoker.Engine
             string savingsText = "";
             for (int i = 0; i < _money.Value.ToString().Length; i++)
             {
-                if ((_money.Value.ToString().Length - i) % 3 == 0)
+                if (i != 0 && (_money.Value.ToString().Length - i) % 3 == 0)
                     savingsText += " ";
 
                 savingsText += _money.Value.ToString()[i];
@@ -97,6 +105,10 @@ namespace UkensJoker.Engine
             _needText.text = "Total : " + needText + " kr";
 
             UpdateWillpower();
+
+            _startButton.interactable = _willpower.Value > 0f;
+            _startButton.GetComponent<Image>().enabled = _willpower.Value > 0f;
+            _startText.text = _willpower.Value > 0f ? _canStartText : _cannotStartText;
         }
 
         private void UpdateWillpower()

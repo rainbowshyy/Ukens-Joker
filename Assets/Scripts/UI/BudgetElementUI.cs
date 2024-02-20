@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UkensJoker.UI
 {
@@ -12,6 +13,9 @@ namespace UkensJoker.UI
 
         [SerializeField] private Color _negativeColor;
         [SerializeField] private Color _notActiveColor;
+
+        [SerializeField] private Sprite _activeSprite;
+        [SerializeField] private Sprite _notActiveSprite;
 
         public void SetValues(bool active, string name, int delta, float willpower, bool required)
         {
@@ -52,6 +56,7 @@ namespace UkensJoker.UI
             }
 
             _toggleButton.SetActive(!required);
+            _toggleButton.GetComponent<Image>().sprite = active ? _activeSprite : _notActiveSprite;
         }
         
         public void ResetValues()

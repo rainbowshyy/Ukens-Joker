@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 301f64aff74e7114583fd91ac2b15a01
+guid: 2f6a49b580f3d4b4e831ba7ff48f7690
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -49,7 +49,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 8
-  spriteBorder: {x: 0, y: 2, z: 0, w: 11}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -136,34 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Willpower_0
+      name: Checkbox_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 8
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 2, z: 0, w: 11}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 95c016fdcce0063498af7e077619c338
-      internalID: 1735741291
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Willpower_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 10
-        width: 8
-        height: 6
+        width: 12
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,8 +150,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdc2b82f9330dd244b3605e08ac16558
-      internalID: -1265462583
+      spriteID: 8ec6029f063063f47afb54e9639dac34
+      internalID: -1889255723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Checkbox_1
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 0
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb56c7353b1cd3543be74585d5193d91
+      internalID: -141214371
       vertices: []
       indices: 
       edges: []
@@ -181,15 +181,15 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Willpower_0: 1735741291
-      Willpower_1: -1265462583
+      Checkbox_0: -1889255723
+      Checkbox_1: -141214371
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

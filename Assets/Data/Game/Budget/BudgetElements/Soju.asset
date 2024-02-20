@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9229d79ed85032047ae18cd75b663d4e, type: 3}
   m_Name: Soju
   m_EditorClassIdentifier: 
-  Name: Soju
+  Name: Alcohol
   Delta: -119
   WillpowerActive: 2
   WillpowerNotActive: -1

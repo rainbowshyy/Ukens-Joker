@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9229d79ed85032047ae18cd75b663d4e, type: 3}
   m_Name: Mango IPA
   m_EditorClassIdentifier: 
-  Name: Mango IPA
+  Name: Alcohol
   Delta: -299
   WillpowerActive: 2
   WillpowerNotActive: -1
