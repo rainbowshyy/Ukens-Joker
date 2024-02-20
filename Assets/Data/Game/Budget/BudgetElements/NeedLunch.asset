@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Need lunch!
   Delta: -300
-  WillpowerActive: -1
+  WillpowerActive: 0
   WillpowerNotActive: -2
   Required: 0
+  Bought: 0

@@ -86,6 +86,8 @@ namespace UkensJoker.Engine
                         _actives[i] ? _currentBudgetElements[i].WillpowerActive : _currentBudgetElements[i].WillpowerNotActive,
                         _currentBudgetElements[i].Required
                         );
+
+                    _currentBudgetElements[i].Bought = _actives[i];
                 }
                 else
                 {
@@ -94,15 +96,26 @@ namespace UkensJoker.Engine
             }
 
             string needText = "";
-            string needNumber = GetNeededSum().ToString();
-            for (int i = 0; i < needNumber.Length; i++)
+            int moneyNumber, needNumber;
+            (moneyNumber, needNumber) = GetNeededSum();
+
+            for (int i = 0; i < moneyNumber.ToString().Length; i++)
             {
-                if ((needNumber.Length - i) % 3 == 0)
+                if ((moneyNumber.ToString().Length - i) % 3 == 0)
                     needText += " ";
 
-                needText += needNumber[i];
+                needText += moneyNumber.ToString()[i];
             }
-            _needText.text = "Total : " + needText + " kr";
+            needText += " kr / ";
+
+            for (int i = 0; i < needNumber.ToString().Length; i++)
+            {
+                if ((needNumber.ToString().Length - i) % 3 == 0)
+                    needText += " ";
+
+                needText += needNumber.ToString()[i];
+            }
+            _needText.text = needText + " kr";
 
             UpdateWillpower();
 
@@ -122,17 +135,21 @@ namespace UkensJoker.Engine
             _willpower.Value = newWillPower;
         }
 
-        private int GetNeededSum()
+        private (int, int) GetNeededSum()
         {
-            int delta = _money.Value;
+            int money = _money.Value;
+            int loss = 0;
             for (int i = 0; i < _currentBudgetElements.Length; i++)
             {
                 if (_actives[i])
                 {
-                    delta += _currentBudgetElements[i].Delta;
+                    if (_currentBudgetElements[i].Delta > 0)
+                        money += _currentBudgetElements[i].Delta;
+                    else
+                        loss += Mathf.Abs(_currentBudgetElements[i].Delta);
                 }
             }
-            return delta;
+            return (money, loss);
         }
 
         public void ToggleActive(int activeIndex)
@@ -146,17 +163,11 @@ namespace UkensJoker.Engine
 
         public void FinalizeBudget()
         {
-            int neededSum = GetNeededSum();
-            if (neededSum < 0)
-            {
-                _money.Value = 0;
-                _moneyNeeded.Value = Mathf.Abs(neededSum);
-            }
-            else
-            {
-                _money.Value = neededSum;
-                _moneyNeeded.Value = _money.Value;
-            }
+            int moneySum, neededSum;
+            (moneySum, neededSum) = GetNeededSum();
+
+            _money.Value = moneySum;
+            _moneyNeeded.Value = neededSum;
 
             _willpower.Value = Mathf.Clamp(_willpower.Value, 0f, _willpowerMax.Value);
 

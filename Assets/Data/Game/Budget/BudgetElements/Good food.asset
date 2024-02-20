@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9229d79ed85032047ae18cd75b663d4e, type: 3}
   m_Name: Good food
   m_EditorClassIdentifier: 
-  Name: Fast food delivery
+  Name: Better food
   Delta: -1600
-  WillpowerActive: 2
-  WillpowerNotActive: -2
+  WillpowerActive: 1
+  WillpowerNotActive: -1
   Required: 0
+  Bought: 0

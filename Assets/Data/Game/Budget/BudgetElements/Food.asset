@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Food
   Delta: -1600
-  WillpowerActive: -1
+  WillpowerActive: 0
   WillpowerNotActive: 0
   Required: 1
+  Bought: 0

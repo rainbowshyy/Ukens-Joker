@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Saving plan for house / future
   Delta: -2000
-  WillpowerActive: 0
+  WillpowerActive: 3
   WillpowerNotActive: -5
   Required: 0
+  Bought: 0
