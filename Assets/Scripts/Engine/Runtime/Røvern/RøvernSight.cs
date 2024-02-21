@@ -28,6 +28,18 @@ namespace UkensJoker.Engine
         private bool _hasSeen;
         [SerializeField] private UnityEvent _onHasSeen;
 
+        private bool _visible;
+
+        private void OnBecameVisible()
+        {
+            _visible = true;
+        }
+
+        private void OnBecameInvisible()
+        {
+            _visible = false;
+        }
+
         private void Awake()
         {
             _sightDanger.Value = 0f;
@@ -62,7 +74,7 @@ namespace UkensJoker.Engine
             {
                 _sightTimeCurrent += _agent.enabled ? Time.deltaTime : Time.deltaTime * _sightTimeWindowMultipler.Value;
                 value += _agent.enabled ? Time.deltaTime * _sightDangerMultiplier.Value : Time.deltaTime * _sightDangerMultiplier.Value * _sightDangerWindowMultiplier.Value;
-                if (!_hasSeen)
+                if (!_hasSeen && _visible)
                 {
                     _hasSeen = true;
                     _onHasSeen.Invoke();
@@ -72,7 +84,7 @@ namespace UkensJoker.Engine
             {
                 _sightTimeCurrent = 0f;
                 value -= Time.deltaTime * _sightDangerDecayMultiplier.Value;
-                if (_hasSeen)
+                if (_hasSeen && !_visible && value <= 0f)
                     _hasSeen = false;
             }
 
