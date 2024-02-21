@@ -123,7 +123,7 @@ namespace UkensJoker.Engine
         private void UpdateInterests()
         {
             _spotCurrent.SetInterest(_spotInterestMin.Value);
-            _røvernSpots[0].SetInterest(_spotInterestMax.Value - (_willpower.Value / _willpowerMax.Value + _willpowerOutsideRatioThreshold.Value) * _spotInterestMax.Value); //Outside is unique
+            _røvernSpots[0].SetInterest((_willpower.Value / _willpowerMax.Value + _willpowerOutsideRatioThreshold.Value) * _spotInterestMax.Value); //Outside is unique
             for (int i = 1; i < _røvernSpots.Length; i++)
             {
                 _røvernSpots[i].SetInterest(Mathf.Clamp(_røvernSpots[i].Interest * _spotInterestDecay.Value, _spotInterestMin.Value, _spotInterestMax.Value));
