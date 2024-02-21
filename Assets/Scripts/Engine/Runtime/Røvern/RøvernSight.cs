@@ -73,11 +73,14 @@ namespace UkensJoker.Engine
             if (IsInSight())
             {
                 _sightTimeCurrent += _agent.enabled ? Time.deltaTime : Time.deltaTime * _sightTimeWindowMultipler.Value;
-                value += _agent.enabled ? Time.deltaTime * _sightDangerMultiplier.Value : Time.deltaTime * _sightDangerMultiplier.Value * _sightDangerWindowMultiplier.Value;
-                if (!_hasSeen && _visible)
+                if (_visible)
                 {
-                    _hasSeen = true;
-                    _onHasSeen.Invoke();
+                    value += _agent.enabled ? Time.deltaTime * _sightDangerMultiplier.Value : Time.deltaTime * _sightDangerMultiplier.Value * _sightDangerWindowMultiplier.Value;
+                    if (!_hasSeen)
+                    {
+                        _hasSeen = true;
+                        _onHasSeen.Invoke();
+                    }
                 }
             }
             else
