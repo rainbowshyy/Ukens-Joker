@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28a775006efe19b4c94335498fcefa43, type: 3}
+  m_Name: Day2
+  m_EditorClassIdentifier: 
+  BudgetTypeTables:
+  - BudgetType: {fileID: 11400000, guid: 863fae60548228f4fa858eaec90cd0d0, type: 2}
+    Count: 1
+  - BudgetType: {fileID: 11400000, guid: 3bb44fe3e8257294dac26c4a7b8bd7f9, type: 2}
+    Count: 1
+  - BudgetType: {fileID: 11400000, guid: 3576e96669b40b247a115608ce732c8e, type: 2}
+    Count: 1
+  - BudgetType: {fileID: 11400000, guid: a73d029b31357c841960fbf371788e37, type: 2}
+    Count: 1
+  - BudgetType: {fileID: 11400000, guid: a1cf6805292b5604a9cdbd58ed16f31c, type: 2}
+    Count: 1
+  - BudgetType: {fileID: 11400000, guid: 279ab4889b9bd1949a71d7f4052367ca, type: 2}
+    Count: 1
+  - BudgetType: {fileID: 11400000, guid: 6e1ec4cffb3c2444a8966cb1bd28c5f9, type: 2}
+    Count: 1
+  - BudgetType: {fileID: 11400000, guid: f79818038d5d7074d849edaed5d64a3f, type: 2}
+    Count: 1
+  - BudgetType: {fileID: 11400000, guid: acc078507c16bf741b65f5b1e5a5eb73, type: 2}
+    Count: 2
+  - BudgetType: {fileID: 11400000, guid: 96ca962ba9fe3b74fb23401ee99abc17, type: 2}
+    Count: 1
+  - BudgetType: {fileID: 11400000, guid: d49a93a5f4e473f4e85b280cef716dd0, type: 2}
+    Count: 1
+  - BudgetType: {fileID: 11400000, guid: fe85801280dd9e44496bac89a84b5b21, type: 2}
+    Count: 1

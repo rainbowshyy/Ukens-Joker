@@ -169,6 +169,8 @@ MonoBehaviour:
     Variable: {fileID: 11400000, guid: b6eee1d2d7d4c4c4f8ea4f5cbf52d444, type: 2}
   _BSU:
   - {fileID: 11400000, guid: cf2fd0d08f7e2944a8ac37518f9e0596, type: 2}
+  - {fileID: 11400000, guid: 4e0158fa48d927141a11b437bcfb8378, type: 2}
+  - {fileID: 11400000, guid: 206354eaf81b8f94ea1e63fc6ecb3f2d, type: 2}
 --- !u!1 &2823892381847777630
 GameObject:
   m_ObjectHideFlags: 0
