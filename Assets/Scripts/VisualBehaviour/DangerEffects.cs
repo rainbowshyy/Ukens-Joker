@@ -26,6 +26,8 @@ namespace UkensJoker.VisualBehaviour
         [SerializeField] private FloatReference _ditherBlackThresholdMultiplier;
         [SerializeField] private FloatReference _willpowerDitherBlackMultipler;
 
+        private bool _clamp;
+
         private void Awake()
         {
             SetMaterialValues(0f);
@@ -59,7 +61,7 @@ namespace UkensJoker.VisualBehaviour
         private void SetMaterialValues(float value)
         {
             _dangerMat.SetFloat("_Threshold", 10f - (1f - Mathf.Pow(1f - value, 5)) * _dangerThresholdMultiplier.Value);
-            _aberrationMat.SetFloat("_Danger", 0.99f + _aberrationPixelMultiplier.Value * value);
+            _aberrationMat.SetFloat("_Danger", _clamp ? Mathf.Clamp(0.99f + _aberrationPixelMultiplier.Value * value, 0f, 2f) :  0.99f + _aberrationPixelMultiplier.Value * value);
             _ditherMat.SetFloat("_BlackThreshold", _ditherBlackThresholdDefault.Value + value * _ditherBlackThresholdMultiplier.Value);
         }
 
@@ -67,6 +69,11 @@ namespace UkensJoker.VisualBehaviour
         {
             _dangerMat.SetVector("_RovernPosition", value);
             _aberrationMat.SetVector("_RovernPosition", value);
+        }
+
+        public void ClampAberration(bool clamp)
+        {
+            _clamp = clamp;
         }
     }
 }

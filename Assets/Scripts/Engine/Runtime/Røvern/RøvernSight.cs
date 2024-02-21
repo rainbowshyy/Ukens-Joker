@@ -31,6 +31,10 @@ namespace UkensJoker.Engine
 
         private bool _visible;
 
+        [SerializeField] private UnityEvent _onSawHide;
+        private bool _knowHide;
+        private bool _hide;
+
         private void OnBecameVisible()
         {
             _visible = true;
@@ -53,7 +57,7 @@ namespace UkensJoker.Engine
             if (_chasing)
             {
                 _sightDanger.Value = _sightDangerMax.Value;
-                if (IsInSight())
+                if ((IsInSight() && !_hide) || _knowHide)
                 {
                     _sightTimeCurrent = 0f;
                 }
@@ -71,7 +75,7 @@ namespace UkensJoker.Engine
 
             float value = _sightDanger.Value;
 
-            if (IsInSight())
+            if (IsInSight() || _knowHide)
             {
                 _sightTimeCurrent += _agent.enabled ? Time.deltaTime : Time.deltaTime * _sightTimeWindowMultipler.Value;
                 if (_visible)
@@ -122,7 +126,7 @@ namespace UkensJoker.Engine
 
         public void ChaseIfSeen()
         {
-            if (IsInSight())
+            if (IsInSight() && !_hide)
             {
                 Chase(true);
             }
@@ -134,6 +138,24 @@ namespace UkensJoker.Engine
             _chasing = chase;
             _sightTimeCurrent = 0f;
             _onSightChase.Invoke(chase);
+        }
+
+        public void TrySeeHide(Component sender, object hide)
+        {
+            if (hide is bool)
+            {
+                _hide = (bool) hide;
+                if ((bool)hide && IsInSight())
+                {
+                    _onSawHide.Invoke();
+                    _knowHide = true;
+                }
+                else if (!(bool)hide)
+                {
+                    _knowHide = false;
+                }
+            }
+
         }
     }
 }

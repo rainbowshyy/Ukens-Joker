@@ -11,6 +11,9 @@ namespace UkensJoker.Engine
 
         [SerializeField] private CinemachineVirtualCamera _virtualCamera;
         [SerializeField] private GameEvent _setPlayerControls;
+        [SerializeField] private GameEvent _setHiding;
+        [SerializeField] private Transform _røvernFoundLocation;
+        [SerializeField] private GameEvent _setHidingLocation;
 
         [SerializeField] private UnityEvent OnStartHide;
         [SerializeField] private UnityEvent OnStopHide;
@@ -32,6 +35,9 @@ namespace UkensJoker.Engine
                 OnStartHide?.Invoke();
             else
                 OnStopHide?.Invoke();
+
+            _setHiding.Raise(this, _hiding);
+            _setHidingLocation.Raise(this, _røvernFoundLocation.position);
 
             _virtualCamera.Priority = _hiding ? 100 : 0;
         }

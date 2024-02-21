@@ -45,6 +45,10 @@ namespace UkensJoker.Engine
         private float _footstepTimeCurrent;
 
         private bool _pause;
+        private Vector3 _hideLocation;
+        private bool _sawHide;
+
+        [SerializeField] private GameEvent _lose;
 
         private void Start()
         {
@@ -68,7 +72,18 @@ namespace UkensJoker.Engine
 
             if (_chasing)
             {
-                _agent.destination = _playerPosition.Value;
+                if (_sawHide)
+                {
+                    _agent.destination = _hideLocation;
+                    if ((transform.position - _hideLocation).magnitude < 0.1f)
+                    {
+                        _lose.Raise(this, null);
+                    }
+                }
+                else
+                {
+                    _agent.destination = _playerPosition.Value;
+                }
                 _footstepTimeCurrent += Time.deltaTime * _footstepFrequencyChase.Value;
                 if (_footstepTimeCurrent >= 1f)
                 {
@@ -215,6 +230,31 @@ namespace UkensJoker.Engine
         public void PauseUpdateTime(bool pause)
         {
             _pause = pause;
+        }
+
+        public void SetHideLocation(Component sender, object location)
+        {
+            if (location is Vector3)
+            {
+                _hideLocation = (Vector3)location;
+            }
+        }
+
+        public void ResetHideLocation(Component sender, object hide)
+        {
+            if (hide is bool)
+            {
+                if (!(bool)hide)
+                {
+                    _hideLocation = Vector3.zero;
+                    _sawHide = false;
+                }
+            }
+        }
+
+        public void SawHide()
+        {
+            _sawHide = true;
         }
     }
 }
