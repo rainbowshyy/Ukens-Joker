@@ -82,7 +82,12 @@ namespace UkensJoker.Engine
                 _timeBeforeUpdate = _røvernUpdateTime.Value + (_willpower.Value - _willpowerMax.Value) * _røvernUpdateAngerTime.Value;
             }
 
-            _footstepTimeCurrent += Time.deltaTime * _footstepFrequencyIdle.Value;
+            if (!_agent.enabled)
+                return;
+
+            if (_agent.velocity.magnitude > 0.1f)
+                _footstepTimeCurrent += Time.deltaTime * _footstepFrequencyIdle.Value;
+
             if (_footstepTimeCurrent >= 1f)
             {
                 _footstepTimeCurrent -= 1f;
