@@ -28,7 +28,6 @@ namespace UkensJoker.Engine
             if (_timeCurrent > _powerOffCheckFrequency.Value)
             {
                 _timeCurrent -= _powerOffCheckFrequency.Value;
-                Debug.Log("chance to power" + _powerOffChance.Value + _powerOffWillpowerPenaltyMultiplier.Value * (1f - _willpower.Value / _willpowerMax.Value));
                 if (Random.Range(0f, 1f) < _powerOffChance.Value + _powerOffWillpowerPenaltyMultiplier.Value * (1f - _willpower.Value / _willpowerMax.Value))
                 {
                     _powerChanged.Raise(this, false);

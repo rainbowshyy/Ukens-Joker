@@ -6777,7 +6777,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 518352441}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ef0a672feb5cdb4ca272da5f1491403, type: 3}
+  m_Script: {fileID: 11500000, guid: fc6c4c9a24c7d5647bc298c283ce7178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _audio: {fileID: 11400000, guid: 067e42ca7d155e245852daf9c6b0aa7a, type: 2}
@@ -8296,8 +8296,23 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 518352443}
-        m_TargetAssemblyTypeName: UkensJoker.Audio.GlobalAudioPlayer, ukensjoker.audio
+        m_TargetAssemblyTypeName: "UkensJoker.Audio.R\xF8vernChaseSound, ukensjoker.audio"
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onStopChase:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 518352443}
+        m_TargetAssemblyTypeName: "UkensJoker.Audio.R\xF8vernChaseSound, ukensjoker.audio"
+        m_MethodName: Stop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

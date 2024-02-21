@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cba95d30ff87e041a14d1cef0b4a5f4, type: 3}
   m_Name: "R\xF8vernChase"
   m_EditorClassIdentifier: 
-  Loop: 0
+  Loop: 1
   PlayOnAwake: 0
   CanOverlap: 0
   Reverb:
@@ -29,6 +29,6 @@ MonoBehaviour:
     LFReference: 250
     Diffusion: 100
     Density: 100
-  _clip: {fileID: 8300000, guid: ae9bba01d28a83b479975fcaa5eb4bda, type: 3}
-  _volume: 0.8
+  _clip: {fileID: 8300000, guid: e9dc988b04eba9e4b9cd35d9d9f30c62, type: 3}
+  _volume: 0.4
   _pitch: 0.8

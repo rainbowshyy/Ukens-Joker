@@ -36,6 +36,7 @@ namespace UkensJoker.Engine
         [SerializeField] private UnityEvent _onWindow;
 
         [SerializeField] private UnityEvent _onStartChase;
+        [SerializeField] private UnityEvent _onStopChase;
 
         [SerializeField] private FloatReference _footstepFrequencyIdle;
         [SerializeField] private FloatReference _footstepFrequencyChase;
@@ -177,6 +178,7 @@ namespace UkensJoker.Engine
                 return;
             }
 
+            _onStopChase.Invoke();
             SetNewSpotFromPosition();
             MoveToCurrentSpot();
             UpdateInterests();
