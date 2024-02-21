@@ -14,6 +14,7 @@ namespace UkensJoker.Engine
         [SerializeField] private FloatVariable _sightDanger;
         [SerializeField] private FloatReference _sightDangerMax;
         [SerializeField] private FloatReference _sightDangerMultiplier;
+        [SerializeField] private FloatReference _sightDangerWindowMultiplier;
         [SerializeField] private FloatReference _sightDangerDecayMultiplier;
         [SerializeField] private Vector2Variable _sightPosition;
 
@@ -60,7 +61,7 @@ namespace UkensJoker.Engine
             if (IsInSight())
             {
                 _sightTimeCurrent += _agent.enabled ? Time.deltaTime : Time.deltaTime * _sightTimeWindowMultipler.Value;
-                value += Time.deltaTime * _sightDangerMultiplier.Value;
+                value += _agent.enabled ? Time.deltaTime * _sightDangerMultiplier.Value : Time.deltaTime * _sightDangerMultiplier.Value * _sightDangerWindowMultiplier.Value;
                 if (!_hasSeen)
                 {
                     _hasSeen = true;

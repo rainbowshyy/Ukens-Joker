@@ -13512,6 +13512,10 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: 49b9aeb958ff616439b747296478e426, type: 2}
+  _sightDangerWindowMultiplier:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 92b0cafa99ddd564f8098f682215ce4f, type: 2}
   _sightDangerDecayMultiplier:
     UseConstant: 0
     ConstantValue: 0
