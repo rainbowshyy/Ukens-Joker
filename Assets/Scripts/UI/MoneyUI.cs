@@ -47,7 +47,7 @@ namespace UkensJoker.UI
 
                 goalText += _moneyGoal.Value.ToString()[i];
             }
-            _text.text = $"{valueText} / {goalText} kr";
+            _text.text = $"{valueText} kr / {goalText} kr";
             if (value >= _moneyGoal.Value)
                 _text.text += "\nYou can now go to sleep!";
 
