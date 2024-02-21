@@ -43,6 +43,8 @@ namespace UkensJoker.Engine
         [SerializeField] private UnityEvent _onFootstepChase;
         private float _footstepTimeCurrent;
 
+        private bool _pause;
+
         private void Start()
         {
             _spotCurrent = _røvernSpots[0];
@@ -60,7 +62,8 @@ namespace UkensJoker.Engine
                 _onPlayerSpot.Invoke();
             }
 
-            _timeBeforeUpdate -= Time.deltaTime;
+            if (!_pause)
+                _timeBeforeUpdate -= Time.deltaTime;
 
             if (_chasing)
             {
@@ -205,6 +208,11 @@ namespace UkensJoker.Engine
 
                 _spotCurrent.OnInterestChanged += RemoveTimeOnInterest;
             }
+        }
+        
+        public void PauseUpdateTime(bool pause)
+        {
+            _pause = pause;
         }
     }
 }

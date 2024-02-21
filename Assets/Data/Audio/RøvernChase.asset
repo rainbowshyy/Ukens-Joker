@@ -31,4 +31,4 @@ MonoBehaviour:
     Density: 100
   _clip: {fileID: 0}
   _volume: 0.8
-  _pitch: 0.8
+  _pitch: 1

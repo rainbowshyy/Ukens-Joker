@@ -27,6 +27,7 @@ namespace UkensJoker.Engine
         private bool _chasing;
         private bool _hasSeen;
         [SerializeField] private UnityEvent _onHasSeen;
+        [SerializeField] private UnityEvent _onStopSeen;
 
         private bool _visible;
 
@@ -88,7 +89,10 @@ namespace UkensJoker.Engine
                 _sightTimeCurrent = 0f;
                 value -= Time.deltaTime * _sightDangerDecayMultiplier.Value;
                 if (_hasSeen && !_visible && value <= 0f)
+                {
                     _hasSeen = false;
+                    _onStopSeen.Invoke();
+                }
             }
 
             if (_sightTimeCurrent >= _sightTimeBeforeChase.Value)
