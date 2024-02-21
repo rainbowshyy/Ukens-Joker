@@ -13160,7 +13160,7 @@ MonoBehaviour:
   _chromaticNoiseStop: {fileID: 11400000, guid: 2997fc3d331ff8a4a85e841978c8b3de,
     type: 2}
   _continuous: 0
-  _baseValue: 1
+  _baseValue: 0.5
   _decayValue: 2
 --- !u!4 &1000311589 stripped
 Transform:

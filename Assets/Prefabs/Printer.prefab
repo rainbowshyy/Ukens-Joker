@@ -1534,7 +1534,7 @@ MonoBehaviour:
   _chromaticNoiseStop: {fileID: 11400000, guid: 2997fc3d331ff8a4a85e841978c8b3de,
     type: 2}
   _continuous: 1
-  _baseValue: 3
+  _baseValue: 2
   _decayValue: 0
 --- !u!1 &8387592299224871974
 GameObject:
