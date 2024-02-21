@@ -33,6 +33,16 @@ namespace UkensJoker.Engine
 
         [SerializeField] private UnityEvent _onPlayerSpot;
 
+        [SerializeField] private UnityEvent _onWindow;
+
+        [SerializeField] private UnityEvent _onStartChase;
+
+        [SerializeField] private FloatReference _footstepFrequencyIdle;
+        [SerializeField] private FloatReference _footstepFrequencyChase;
+        [SerializeField] private UnityEvent _onFootstepIdle;
+        [SerializeField] private UnityEvent _onFootstepChase;
+        private float _footstepTimeCurrent;
+
         private void Start()
         {
             _spotCurrent = _røvernSpots[0];
@@ -55,6 +65,12 @@ namespace UkensJoker.Engine
             if (_chasing)
             {
                 _agent.destination = _playerPosition.Value;
+                _footstepTimeCurrent += Time.deltaTime * _footstepFrequencyChase.Value;
+                if (_footstepTimeCurrent >= 1f)
+                {
+                    _footstepTimeCurrent -= 1f;
+                    _onFootstepChase.Invoke();
+                }
                 return;
             }
 
@@ -65,10 +81,20 @@ namespace UkensJoker.Engine
                 UpdateInterests();
                 _timeBeforeUpdate = _røvernUpdateTime.Value + (_willpower.Value - _willpowerMax.Value) * _røvernUpdateAngerTime.Value;
             }
+
+            _footstepTimeCurrent += Time.deltaTime * _footstepFrequencyIdle.Value;
+            if (_footstepTimeCurrent >= 1f)
+            {
+                _footstepTimeCurrent -= 1f;
+                _onFootstepIdle.Invoke();
+            }
         }
 
         private void MoveToCurrentSpot()
         {
+            if (_agent.enabled != _spotCurrent.PathfindingEnabled)
+                _onWindow.Invoke();
+
             if (_spotCurrent.PathfindingEnabled)
             {
                 _agent.enabled = true;
@@ -139,6 +165,7 @@ namespace UkensJoker.Engine
 
             if (chase)
             {
+                _onStartChase.Invoke();
                 return;
             }
 
