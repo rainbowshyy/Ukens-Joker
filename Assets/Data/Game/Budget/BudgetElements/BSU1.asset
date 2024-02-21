@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: Saving plan for house / future
   Delta: -2000
   WillpowerActive: 3
-  WillpowerNotActive: -5
+  WillpowerNotActive: -1
   Required: 0
   Bought: 0

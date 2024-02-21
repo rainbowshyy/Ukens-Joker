@@ -31,7 +31,7 @@ MonoBehaviour:
     Density: 100
   _audioClips:
   - {fileID: 8300000, guid: bf7319cd54ec5264aacab9966fb95aaa, type: 3}
-  _pitchMin: 0.3
-  _pitchMax: 0.6
-  _volumeMin: 0.7
+  _pitchMin: 0.5
+  _pitchMax: 0.7
+  _volumeMin: 0.8
   _volumeMax: 0.9

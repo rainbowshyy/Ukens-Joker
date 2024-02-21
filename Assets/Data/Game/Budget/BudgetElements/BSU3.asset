@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: Try to save money
   Delta: -6000
   WillpowerActive: 1
-  WillpowerNotActive: -3
+  WillpowerNotActive: -1
   Required: 0
   Bought: 0

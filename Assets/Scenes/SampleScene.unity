@@ -6777,28 +6777,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 518352441}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da40c789842763a4184034d7c8065a2f, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ef0a672feb5cdb4ca272da5f1491403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _audio: {fileID: 11400000, guid: 067e42ca7d155e245852daf9c6b0aa7a, type: 2}
-  _playerPosition:
-    UseConstant: 0
-    ConstantValue: {x: 0, y: 0, z: 0}
-    Variable: {fileID: 11400000, guid: ce2e96dbefabec446979e58150c41dba, type: 2}
-  _dryLevelDistanceModifier:
-    UseConstant: 0
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: fc6fe01695ff402478ca02a3a20fcca5, type: 2}
-  _lowPassNoPlayer:
-    UseConstant: 0
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: 7b8ae66187c29fc42927ba6567efd6b2, type: 2}
-  _lowPassNotConnected:
-    UseConstant: 0
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: a8741c76e02cc1145947b5ff1735cff9, type: 2}
-  _vfx: {fileID: 0}
-  _room: {fileID: 0}
 --- !u!4 &519633925 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2263723657399775766, guid: 0d91fecbd125ff14ebb8b1b6470e06d1,
@@ -8314,7 +8296,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 518352443}
-        m_TargetAssemblyTypeName: UkensJoker.Audio.SpatialAudioPlayer, ukensjoker.audio
+        m_TargetAssemblyTypeName: UkensJoker.Audio.GlobalAudioPlayer, ukensjoker.audio
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:

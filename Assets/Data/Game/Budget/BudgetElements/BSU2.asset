@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: Try to save for house / future
   Delta: -4000
   WillpowerActive: 2
-  WillpowerNotActive: -4
+  WillpowerNotActive: -1
   Required: 0
   Bought: 0

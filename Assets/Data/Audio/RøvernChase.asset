@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Loop: 0
   PlayOnAwake: 0
-  CanOverlap: 1
+  CanOverlap: 0
   Reverb:
     Room: -1000
     RoomHF: -454
@@ -29,6 +29,6 @@ MonoBehaviour:
     LFReference: 250
     Diffusion: 100
     Density: 100
-  _clip: {fileID: 0}
+  _clip: {fileID: 8300000, guid: ae9bba01d28a83b479975fcaa5eb4bda, type: 3}
   _volume: 0.8
-  _pitch: 1
+  _pitch: 0.8
