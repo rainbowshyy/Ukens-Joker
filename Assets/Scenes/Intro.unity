@@ -594,8 +594,8 @@ MonoBehaviour:
 
     where contestants
     could win money.'
-  "_r\xF8vernExplanation": "The game had a characted called R\xF8ver'n\nIf he showed
-    up, the contestant lost."
+  "_r\xF8vernExplanation": "The game had a character called R\xF8ver'n\nIf he showed
+    up, the contestant instantly lost."
   "_r\xF8vernInDepth": 'Whenever he was on screen,
 
     I had to run and hide.'
@@ -1616,6 +1616,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4771552803585323, guid: 943125c4338db934b8b9d4122c66f1f7, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 632659357812964338, guid: 943125c4338db934b8b9d4122c66f1f7,
         type: 3}
       propertyPath: _onKill.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -1630,6 +1634,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _onKill.m_PersistentCalls.m_Calls.Array.data[5].m_Target
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1644587462182764096, guid: 943125c4338db934b8b9d4122c66f1f7,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1933146386587277028, guid: 943125c4338db934b8b9d4122c66f1f7,
         type: 3}
@@ -1716,9 +1725,19 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4864076176272389756, guid: 943125c4338db934b8b9d4122c66f1f7,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5583865957779563721, guid: 943125c4338db934b8b9d4122c66f1f7,
         type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560976873027585525, guid: 943125c4338db934b8b9d4122c66f1f7,
+        type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8074588466650468453, guid: 943125c4338db934b8b9d4122c66f1f7,

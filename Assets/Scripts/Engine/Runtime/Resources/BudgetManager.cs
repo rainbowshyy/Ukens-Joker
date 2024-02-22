@@ -181,13 +181,27 @@ namespace UkensJoker.Engine
 
         IEnumerator LoadTimelapse()
         {
-            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(4);
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(4, LoadSceneMode.Additive);
             asyncLoad.allowSceneActivation = false;
             while (!_start)
             {
                 yield return null;
             }
             asyncLoad.allowSceneActivation = true;
+            while (!asyncLoad.isDone)
+            {
+                yield return null;
+            }
+            asyncLoad = SceneManager.UnloadSceneAsync(SceneManager.GetSceneByBuildIndex(5));
+            while (!asyncLoad.isDone)
+            {
+                yield return null;
+            }
+            asyncLoad = SceneManager.UnloadSceneAsync(SceneManager.GetSceneByBuildIndex(1));
+            while (!asyncLoad.isDone)
+            {
+                yield return null;
+            }
         }
     }
 }

@@ -84,6 +84,12 @@ namespace UkensJoker.Engine
 
         IEnumerator DoTimelapse()
         {
+            while (SceneManager.GetSceneByBuildIndex(1).isLoaded)
+                yield return null;
+
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
             _playing = true;
             _timeCurrent = _timelapseTime.Value;
 

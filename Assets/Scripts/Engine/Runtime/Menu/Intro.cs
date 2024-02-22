@@ -40,6 +40,8 @@ namespace UkensJoker.Engine
             _danger.Value = 0f;
             _tvMat.SetInt("_Wrong", 0);
             StartCoroutine(TV());
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
 
         private void Update()
@@ -118,6 +120,8 @@ namespace UkensJoker.Engine
             _subtitle.text = "";
             yield return new WaitForSeconds(4f);
             _subtitle.text = _finalStatement;
+            yield return new WaitForSeconds(2f);
+            _blackPanel.SetActive(true);
             yield return new WaitForSeconds(2f);
             asyncLoad.allowSceneActivation = true;
            
