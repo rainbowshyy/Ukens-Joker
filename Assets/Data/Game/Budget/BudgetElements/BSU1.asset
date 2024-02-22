@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BSU1
   m_EditorClassIdentifier: 
   Name: Saving plan for house / future
-  Delta: -2000
+  Delta: -3000
   WillpowerActive: 3
   WillpowerNotActive: -1
   Required: 0

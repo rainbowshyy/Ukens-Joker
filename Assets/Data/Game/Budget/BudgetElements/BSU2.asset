@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BSU2
   m_EditorClassIdentifier: 
   Name: Try to save for house / future
-  Delta: -4000
+  Delta: -6000
   WillpowerActive: 2
   WillpowerNotActive: -1
   Required: 0

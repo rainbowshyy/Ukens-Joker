@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BSU3
   m_EditorClassIdentifier: 
   Name: Try to save money
-  Delta: -6000
+  Delta: -9000
   WillpowerActive: 1
   WillpowerNotActive: -1
   Required: 0
