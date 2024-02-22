@@ -30,22 +30,31 @@ namespace UkensJoker.VisualBehaviour
 
         private void Awake()
         {
-            SetMaterialValues(0f);
+            if (_danger.Variable != null)
+                SetMaterialValues(0f);
             SetWillpowerValues(_willpower.Value);
         }
 
         private void OnEnable()
         {
-            _danger.RegisterListener(SetMaterialValues);
-            _willpower.RegisterListener(SetWillpowerValues);
-            _sightPosition.RegisterListener(SetSightPosition);
+            if (_danger.Variable != null)
+                _danger.RegisterListener(SetMaterialValues);
+            if (_willpower.Variable != null)
+                _willpower.RegisterListener(SetWillpowerValues);
+            if (_sightPosition.Variable != null)
+                _sightPosition.RegisterListener(SetSightPosition);
+            else
+                SetSightPosition(_sightPosition.Value);
         }
 
         private void OnDisable()
         {
-            _danger.UnregisterListener(SetMaterialValues);
-            _willpower.UnregisterListener(SetWillpowerValues);
-            _sightPosition?.UnregisterListener(SetSightPosition);
+            if (_danger.Variable != null)
+                _danger.UnregisterListener(SetMaterialValues);
+            if (_willpower.Variable != null)
+                _willpower.UnregisterListener(SetWillpowerValues);
+            if (_sightPosition.Variable != null)
+                _sightPosition?.UnregisterListener(SetSightPosition);
         }
 
         private void OnValidate()

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Coffee/Tobacco/Snus/whatever
   Delta: -500
-  WillpowerActive: 0
+  WillpowerActive: 1
   WillpowerNotActive: -3
   Required: 0
+  Bought: 0

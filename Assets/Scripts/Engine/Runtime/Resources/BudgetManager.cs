@@ -4,6 +4,7 @@ using UkensJoker.DataArchitecture;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections;
 
 namespace UkensJoker.Engine
 {
@@ -30,6 +31,8 @@ namespace UkensJoker.Engine
         private bool[] _actives;
         private float _startWillpower;
 
+        private bool _start;
+
         private void Start()
         {
             Cursor.lockState = CursorLockMode.None;
@@ -38,6 +41,8 @@ namespace UkensJoker.Engine
             _startWillpower = _willpower.Value;
             RollBudgetElementsForDay(_day.Value);
             UpdateUI();
+
+            StartCoroutine(LoadTimelapse());
         }
 
         private void RollBudgetElementsForDay(int day)
@@ -171,7 +176,32 @@ namespace UkensJoker.Engine
 
             _willpower.Value = Mathf.Clamp(_willpower.Value, 0f, _willpowerMax.Value);
 
-            SceneManager.LoadScene(4);
+            _start = true;
+        }
+
+        IEnumerator LoadTimelapse()
+        {
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(4, LoadSceneMode.Additive);
+            asyncLoad.allowSceneActivation = false;
+            while (!_start)
+            {
+                yield return null;
+            }
+            asyncLoad.allowSceneActivation = true;
+            while (!asyncLoad.isDone)
+            {
+                yield return null;
+            }
+            asyncLoad = SceneManager.UnloadSceneAsync(SceneManager.GetSceneByBuildIndex(5));
+            while (!asyncLoad.isDone)
+            {
+                yield return null;
+            }
+            asyncLoad = SceneManager.UnloadSceneAsync(SceneManager.GetSceneByBuildIndex(1));
+            while (!asyncLoad.isDone)
+            {
+                yield return null;
+            }
         }
     }
 }

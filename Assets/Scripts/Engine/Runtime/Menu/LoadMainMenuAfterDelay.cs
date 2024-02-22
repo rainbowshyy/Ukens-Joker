@@ -19,7 +19,7 @@ namespace UkensJoker.Engine
         {
             while (SceneManager.GetSceneByBuildIndex(2).isLoaded)
                 yield return null;
-            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(0, LoadSceneMode.Single);
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(5, LoadSceneMode.Single);
             asyncLoad.allowSceneActivation = false;
             yield return new WaitForSeconds(_deadTime.Value);
             asyncLoad.allowSceneActivation = true;

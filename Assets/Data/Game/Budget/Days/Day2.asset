@@ -37,3 +37,5 @@ MonoBehaviour:
     Count: 2
   - BudgetType: {fileID: 11400000, guid: fe85801280dd9e44496bac89a84b5b21, type: 2}
     Count: 1
+  - BudgetType: {fileID: 11400000, guid: 62d2387a32517c545b2a0d315c21095b, type: 2}
+    Count: 1
