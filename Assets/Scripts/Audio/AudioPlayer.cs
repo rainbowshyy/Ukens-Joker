@@ -82,5 +82,13 @@ namespace UkensJoker.Audio
             yield return new WaitForEndOfFrame();
             StartCoroutine(SetAudioDataIfLooped());
         }
+
+        public void SetVolume(float volume)
+        {
+            for (int i = 0; i < _audioSources.Length; i++)
+            {
+                _audioSources[i].volume = volume;
+            }
+        }
     }
 }

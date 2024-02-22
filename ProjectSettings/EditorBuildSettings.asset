@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dead.unity
     guid: dede25085d356944d87675b4e997b959
+  - enabled: 1
+    path: Assets/Scenes/Timelapse.unity
+    guid: 3d32601c93510c640a8365fe73b7ac8a
   m_configObjects: {}
