@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UkensJoker.DataArchitecture;
 using UnityEngine;
 
 namespace UkensJoker.Engine
@@ -15,5 +16,6 @@ namespace UkensJoker.Engine
         public float WillpowerNotActive;
         public bool Required;
         [HideInInspector] public bool Bought;
+        [SerializeField] public BoolVariable TimelapseElement;
     }
 }

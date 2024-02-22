@@ -167,6 +167,10 @@ namespace UkensJoker.Engine
                 _onWillpowerDelta.Invoke(_actives[activeIndex] ? _currentBudgetElements[activeIndex].WillpowerNotActive : _currentBudgetElements[activeIndex].WillpowerActive);
 
                 _actives[activeIndex] = !_actives[activeIndex];
+
+                if (_currentBudgetElements[activeIndex].TimelapseElement != null)
+                    _currentBudgetElements[activeIndex].TimelapseElement.Value = _actives[activeIndex];
+
                 UpdateUI();
             }
         }

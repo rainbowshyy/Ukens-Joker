@@ -10,6 +10,9 @@ namespace UkensJoker.Engine
 {
     public class Timelapse : MonoBehaviour
     {
+        [SerializeField] private BoolReference _doBar;
+        [SerializeField] private BoolReference _doCafe;
+
         private bool _playing;
 
         [SerializeField] private ScriptableObject[] _scriptableObjectsToKeepLoaded;
@@ -128,33 +131,39 @@ namespace UkensJoker.Engine
             StopCoroutine(_work);
             _stopWork.Invoke();
 
-            _onTrain.Invoke();
-            _train = StartCoroutine(Train(true));
-            yield return new WaitForSeconds(_timeCurrent);
-            _timeCurrent -= _timelapseDecayTime.Value;
-            StopCoroutine(_train);
-            _stopTrain.Invoke();
+            if (_doCafe.Value)
+            {
+                _onTrain.Invoke();
+                _train = StartCoroutine(Train(true));
+                yield return new WaitForSeconds(_timeCurrent);
+                _timeCurrent -= _timelapseDecayTime.Value;
+                StopCoroutine(_train);
+                _stopTrain.Invoke();
 
-            _onCafe.Invoke();
-            _cafe = StartCoroutine(Cafe(0f));
-            yield return new WaitForSeconds(_timeCurrent);
-            _timeCurrent -= _timelapseDecayTime.Value;
-            StopCoroutine(_cafe);
-            _stopCafe.Invoke();
+                _onCafe.Invoke();
+                _cafe = StartCoroutine(Cafe(0f));
+                yield return new WaitForSeconds(_timeCurrent);
+                _timeCurrent -= _timelapseDecayTime.Value;
+                StopCoroutine(_cafe);
+                _stopCafe.Invoke();
+            }
 
-            _onTrain.Invoke();
-            _train = StartCoroutine(Train(true));
-            yield return new WaitForSeconds(_timeCurrent);
-            _timeCurrent -= _timelapseDecayTime.Value;
-            StopCoroutine(_train);
-            _stopTrain.Invoke();
+            if (_doBar.Value)
+            {
+                _onTrain.Invoke();
+                _train = StartCoroutine(Train(true));
+                yield return new WaitForSeconds(_timeCurrent);
+                _timeCurrent -= _timelapseDecayTime.Value;
+                StopCoroutine(_train);
+                _stopTrain.Invoke();
 
-            _onBar.Invoke();
-            _bar = StartCoroutine(Bar(15f));
-            yield return new WaitForSeconds(_timeCurrent);
-            _timeCurrent -= _timelapseDecayTime.Value;
-            StopCoroutine(_bar);
-            _stopBar.Invoke();
+                _onBar.Invoke();
+                _bar = StartCoroutine(Bar(15f));
+                yield return new WaitForSeconds(_timeCurrent);
+                _timeCurrent -= _timelapseDecayTime.Value;
+                StopCoroutine(_bar);
+                _stopBar.Invoke();
+            }
 
             _onTrain.Invoke();
             _train = StartCoroutine(Train(true));
