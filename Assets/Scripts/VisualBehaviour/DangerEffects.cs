@@ -32,6 +32,8 @@ namespace UkensJoker.VisualBehaviour
         {
             if (_danger.Variable != null)
                 SetMaterialValues(0f);
+            else
+                SetMaterialValues(_danger.Value);
             SetWillpowerValues(_willpower.Value);
         }
 
