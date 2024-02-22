@@ -192,7 +192,9 @@ namespace UkensJoker.Engine
             {
                 yield return null;
             }
-            asyncLoad = SceneManager.UnloadSceneAsync(SceneManager.GetSceneByBuildIndex(5));
+
+            if (SceneManager.GetSceneByBuildIndex(5).isLoaded)
+                asyncLoad = SceneManager.UnloadSceneAsync(SceneManager.GetSceneByBuildIndex(5));
             while (!asyncLoad.isDone)
             {
                 yield return null;
