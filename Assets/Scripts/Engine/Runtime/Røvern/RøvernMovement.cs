@@ -33,6 +33,23 @@ namespace UkensJoker.Engine
 
         [SerializeField] private UnityEvent _onPlayerSpot;
 
+        [SerializeField] private UnityEvent _onWindow;
+
+        [SerializeField] private UnityEvent _onStartChase;
+        [SerializeField] private UnityEvent _onStopChase;
+
+        [SerializeField] private FloatReference _footstepFrequencyIdle;
+        [SerializeField] private FloatReference _footstepFrequencyChase;
+        [SerializeField] private UnityEvent _onFootstepIdle;
+        [SerializeField] private UnityEvent _onFootstepChase;
+        private float _footstepTimeCurrent;
+
+        private bool _pause;
+        private Vector3 _hideLocation;
+        private bool _sawHide;
+
+        [SerializeField] private GameEvent _lose;
+
         private void Start()
         {
             _spotCurrent = _røvernSpots[0];
@@ -50,11 +67,29 @@ namespace UkensJoker.Engine
                 _onPlayerSpot.Invoke();
             }
 
-            _timeBeforeUpdate -= Time.deltaTime;
+            if (!_pause)
+                _timeBeforeUpdate -= Time.deltaTime;
 
             if (_chasing)
             {
-                _agent.destination = _playerPosition.Value;
+                if (_sawHide)
+                {
+                    _agent.destination = _hideLocation;
+                    if ((transform.position - _hideLocation).magnitude < 0.1f)
+                    {
+                        _lose.Raise(this, null);
+                    }
+                }
+                else
+                {
+                    _agent.destination = _playerPosition.Value;
+                }
+                _footstepTimeCurrent += Time.deltaTime * _footstepFrequencyChase.Value;
+                if (_footstepTimeCurrent >= 1f)
+                {
+                    _footstepTimeCurrent -= 1f;
+                    _onFootstepChase.Invoke();
+                }
                 return;
             }
 
@@ -65,10 +100,25 @@ namespace UkensJoker.Engine
                 UpdateInterests();
                 _timeBeforeUpdate = _røvernUpdateTime.Value + (_willpower.Value - _willpowerMax.Value) * _røvernUpdateAngerTime.Value;
             }
+
+            if (!_agent.enabled)
+                return;
+
+            if (_agent.velocity.magnitude > 0.1f)
+                _footstepTimeCurrent += Time.deltaTime * _footstepFrequencyIdle.Value;
+
+            if (_footstepTimeCurrent >= 1f)
+            {
+                _footstepTimeCurrent -= 1f;
+                _onFootstepIdle.Invoke();
+            }
         }
 
         private void MoveToCurrentSpot()
         {
+            if (_agent.enabled != _spotCurrent.PathfindingEnabled)
+                _onWindow.Invoke();
+
             if (_spotCurrent.PathfindingEnabled)
             {
                 _agent.enabled = true;
@@ -123,7 +173,7 @@ namespace UkensJoker.Engine
         private void UpdateInterests()
         {
             _spotCurrent.SetInterest(_spotInterestMin.Value);
-            _røvernSpots[0].SetInterest(_spotInterestMax.Value - (_willpower.Value / _willpowerMax.Value + _willpowerOutsideRatioThreshold.Value) * _spotInterestMax.Value); //Outside is unique
+            _røvernSpots[0].SetInterest((_willpower.Value / _willpowerMax.Value + _willpowerOutsideRatioThreshold.Value) * _spotInterestMax.Value); //Outside is unique
             for (int i = 1; i < _røvernSpots.Length; i++)
             {
                 _røvernSpots[i].SetInterest(Mathf.Clamp(_røvernSpots[i].Interest * _spotInterestDecay.Value, _spotInterestMin.Value, _spotInterestMax.Value));
@@ -139,9 +189,11 @@ namespace UkensJoker.Engine
 
             if (chase)
             {
+                _onStartChase.Invoke();
                 return;
             }
 
+            _onStopChase.Invoke();
             SetNewSpotFromPosition();
             MoveToCurrentSpot();
             UpdateInterests();
@@ -173,6 +225,36 @@ namespace UkensJoker.Engine
 
                 _spotCurrent.OnInterestChanged += RemoveTimeOnInterest;
             }
+        }
+        
+        public void PauseUpdateTime(bool pause)
+        {
+            _pause = pause;
+        }
+
+        public void SetHideLocation(Component sender, object location)
+        {
+            if (location is Vector3)
+            {
+                _hideLocation = (Vector3)location;
+            }
+        }
+
+        public void ResetHideLocation(Component sender, object hide)
+        {
+            if (hide is bool)
+            {
+                if (!(bool)hide)
+                {
+                    _hideLocation = Vector3.zero;
+                    _sawHide = false;
+                }
+            }
+        }
+
+        public void SawHide()
+        {
+            _sawHide = true;
         }
     }
 }

@@ -11,15 +11,19 @@ namespace UkensJoker.Engine
         [SerializeField] private IntReference _moneyMax;
         [SerializeField] private GameEvent _enoughMoney;
 
-        private bool _hasBroadcasted;
-
-        private void Update()
+        private void OnEnable()
         {
-            if (_money.Value >= _moneyMax.Value && !_hasBroadcasted)
-            {
-                _hasBroadcasted = true;
-                _enoughMoney.Raise(this, null);
-            }
+            _money.RegisterListener(OnNewMoney);
+        }
+
+        private void OnDisable()
+        {
+            _money.UnregisterListener(OnNewMoney);
+        }
+
+        private void OnNewMoney(int value)
+        {
+            _enoughMoney.Raise(this, value >= _moneyMax.Value);
         }
     }
 }

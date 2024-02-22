@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Good food
   m_EditorClassIdentifier: 
   Name: Better food
-  Delta: -1600
+  Delta: -400
   WillpowerActive: 1
   WillpowerNotActive: -1
   Required: 0

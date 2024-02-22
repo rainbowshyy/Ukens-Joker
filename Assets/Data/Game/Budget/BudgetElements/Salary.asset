@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Salary
   Delta: 4000
-  WillpowerActive: -3
+  WillpowerActive: -4
   WillpowerNotActive: 0
   Required: 1
   Bought: 0

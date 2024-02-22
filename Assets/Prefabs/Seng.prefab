@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 7456705747179952646}
   - component: {fileID: 2227845278926435548}
   - component: {fileID: 8890862018611989734}
+  - component: {fileID: 5727398725095844466}
   m_Layer: 9
   m_Name: FinalInteract
   m_TagString: Untagged
@@ -145,7 +146,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1.6, y: 1.1, z: 2.6}
   m_Center: {x: 0, y: 0, z: 0}
@@ -169,6 +170,90 @@ MonoBehaviour:
     Variable: {fileID: 11400000, guid: b6eee1d2d7d4c4c4f8ea4f5cbf52d444, type: 2}
   _BSU:
   - {fileID: 11400000, guid: cf2fd0d08f7e2944a8ac37518f9e0596, type: 2}
+  - {fileID: 11400000, guid: 4e0158fa48d927141a11b437bcfb8378, type: 2}
+  - {fileID: 11400000, guid: 206354eaf81b8f94ea1e63fc6ecb3f2d, type: 2}
+  _onEnough:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2227845278926435548}
+        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 8565093335691606305}
+        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onNotEnough:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2227845278926435548}
+        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8565093335691606305}
+        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &5727398725095844466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2190137187120791085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9978dbcdb7d89b449b8088faf71e580b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameEvent: {fileID: 11400000, guid: 7e858568959ebff46930f2a0c6c61098, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8890862018611989734}
+        m_TargetAssemblyTypeName: UkensJoker.Engine.Bed, ukensjoker.engine
+        m_MethodName: EnoughMoney
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2823892381847777630
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,7 +280,7 @@ Transform:
   m_GameObject: {fileID: 2823892381847777630}
   serializedVersion: 2
   m_LocalRotation: {x: -0.10470725, y: -0.6707433, z: -0.07664332, w: -0.7302504}
-  m_LocalPosition: {x: 0.059, y: -0.203, z: 0.505}
+  m_LocalPosition: {x: 0.36, y: -0.203, z: 0.505}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -252,7 +337,6 @@ GameObject:
   - component: {fileID: 9024353856978361183}
   - component: {fileID: 8565093335691606305}
   - component: {fileID: 6287243061142055444}
-  - component: {fileID: 1599725856834163940}
   m_Layer: 9
   m_Name: Interact
   m_TagString: Untagged
@@ -311,52 +395,46 @@ MonoBehaviour:
   _hidingSpotNamePrompt: Hide under bed
   _virtualCamera: {fileID: 6543978622482220775}
   _setPlayerControls: {fileID: 11400000, guid: 866377e7c3dded94ebd616af8b50c0d4, type: 2}
+  _setHiding: {fileID: 11400000, guid: 28633bf603a2b2749b4a1cf4d9855f63, type: 2}
+  "_r\xF8vernFoundLocation": {fileID: 2705602756810044080}
+  _setHidingLocation: {fileID: 11400000, guid: a6d4982dda038c241a7ddfa08a522a97, type: 2}
   OnStartHide:
     m_PersistentCalls:
       m_Calls: []
   OnStopHide:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1599725856834163940
-MonoBehaviour:
+--- !u!1 &5507888133106796849
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5221161414457070604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9978dbcdb7d89b449b8088faf71e580b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GameEvent: {fileID: 11400000, guid: 7e858568959ebff46930f2a0c6c61098, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2190137187120791085}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 5221161414457070604}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2705602756810044080}
+  m_Layer: 0
+  m_Name: FoundLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2705602756810044080
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5507888133106796849}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.185, y: -0.25, z: 0.563}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 463248374405488217}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6536952082294995831
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,6 +602,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1068582531019652130}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: fb83196a6f5a45f4c87fef4c1194480c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2705602756810044080}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb83196a6f5a45f4c87fef4c1194480c, type: 3}
 --- !u!4 &463248374405488217 stripped

@@ -51,5 +51,10 @@ namespace UkensJoker.Engine
             if (enabled is bool)
                 _canInteract = (bool)enabled;
         }
+
+        public void ResetInteractable()
+        {
+            _interactableCurrent = null;
+        }
     }
 }

@@ -3457,11 +3457,13 @@ MonoBehaviour:
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: 72de17ca490010a4881a87e300a28f04, type: 2}
   _day:
-    UseConstant: 1
+    UseConstant: 0
     ConstantValue: 0
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: 37c6699460b57c549b2288c6cfc3de39, type: 2}
   _days:
   - {fileID: 11400000, guid: 9baf7e73195c87442a2d79db474bfa85, type: 2}
+  - {fileID: 11400000, guid: d3a9894d64c9e314c9666410b206bedb, type: 2}
+  - {fileID: 11400000, guid: 49c3d8056c0a3c144a797e0aeddccfcc, type: 2}
   _uiElements:
   - {fileID: 8550445316389023091}
   - {fileID: 1417351869}

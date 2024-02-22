@@ -11,9 +11,11 @@ namespace UkensJoker.Engine
 
         private void Update()
         {
-            if (_willpower.Value <= 0)
+            if (_willpower.Value < 0)
+            {
+                _willpower.Value = 0;
                 return;
-
+            }
             _willpower.Value = Mathf.Clamp(_willpower.Value - _willpowerDecay.Value * Time.deltaTime, 0f, _willpowerMax.Value);
         }
     }

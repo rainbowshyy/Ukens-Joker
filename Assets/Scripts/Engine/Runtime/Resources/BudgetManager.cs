@@ -171,7 +171,7 @@ namespace UkensJoker.Engine
 
             _willpower.Value = Mathf.Clamp(_willpower.Value, 0f, _willpowerMax.Value);
 
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(4);
         }
     }
 }

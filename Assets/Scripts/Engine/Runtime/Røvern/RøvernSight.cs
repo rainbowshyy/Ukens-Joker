@@ -14,6 +14,7 @@ namespace UkensJoker.Engine
         [SerializeField] private FloatVariable _sightDanger;
         [SerializeField] private FloatReference _sightDangerMax;
         [SerializeField] private FloatReference _sightDangerMultiplier;
+        [SerializeField] private FloatReference _sightDangerWindowMultiplier;
         [SerializeField] private FloatReference _sightDangerDecayMultiplier;
         [SerializeField] private Vector2Variable _sightPosition;
 
@@ -26,6 +27,23 @@ namespace UkensJoker.Engine
         private bool _chasing;
         private bool _hasSeen;
         [SerializeField] private UnityEvent _onHasSeen;
+        [SerializeField] private UnityEvent _onStopSeen;
+
+        private bool _visible;
+
+        [SerializeField] private UnityEvent _onSawHide;
+        private bool _knowHide;
+        private bool _hide;
+
+        private void OnBecameVisible()
+        {
+            _visible = true;
+        }
+
+        private void OnBecameInvisible()
+        {
+            _visible = false;
+        }
 
         private void Awake()
         {
@@ -39,7 +57,7 @@ namespace UkensJoker.Engine
             if (_chasing)
             {
                 _sightDanger.Value = _sightDangerMax.Value;
-                if (IsInSight())
+                if ((IsInSight() && !_hide) || _knowHide)
                 {
                     _sightTimeCurrent = 0f;
                 }
@@ -57,22 +75,28 @@ namespace UkensJoker.Engine
 
             float value = _sightDanger.Value;
 
-            if (IsInSight())
+            if (IsInSight() || _knowHide)
             {
                 _sightTimeCurrent += _agent.enabled ? Time.deltaTime : Time.deltaTime * _sightTimeWindowMultipler.Value;
-                value += Time.deltaTime * _sightDangerMultiplier.Value;
-                if (!_hasSeen)
+                if (_visible)
                 {
-                    _hasSeen = true;
-                    _onHasSeen.Invoke();
+                    value += _agent.enabled ? Time.deltaTime * _sightDangerMultiplier.Value : Time.deltaTime * _sightDangerMultiplier.Value * _sightDangerWindowMultiplier.Value;
+                    if (!_hasSeen)
+                    {
+                        _hasSeen = true;
+                        _onHasSeen.Invoke();
+                    }
                 }
             }
             else
             {
                 _sightTimeCurrent = 0f;
                 value -= Time.deltaTime * _sightDangerDecayMultiplier.Value;
-                if (_hasSeen)
+                if (_hasSeen && !_visible && value <= 0f)
+                {
                     _hasSeen = false;
+                    _onStopSeen.Invoke();
+                }
             }
 
             if (_sightTimeCurrent >= _sightTimeBeforeChase.Value)
@@ -100,12 +124,38 @@ namespace UkensJoker.Engine
             return _camera.WorldToViewportPoint(transform.position);
         }
 
+        public void ChaseIfSeen()
+        {
+            if (IsInSight() && !_hide)
+            {
+                Chase(true);
+            }
+        }
+
         public void Chase(bool chase)
         {
             Debug.Log("Started chasing...");
             _chasing = chase;
             _sightTimeCurrent = 0f;
             _onSightChase.Invoke(chase);
+        }
+
+        public void TrySeeHide(Component sender, object hide)
+        {
+            if (hide is bool)
+            {
+                _hide = (bool) hide;
+                if ((bool)hide && IsInSight())
+                {
+                    _onSawHide.Invoke();
+                    _knowHide = true;
+                }
+                else if (!(bool)hide)
+                {
+                    _knowHide = false;
+                }
+            }
+
         }
     }
 }

@@ -1,6 +1,7 @@
 using TMPro;
 using UkensJoker.DataArchitecture;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace UkensJoker.UI
 {
@@ -10,6 +11,8 @@ namespace UkensJoker.UI
         [SerializeField] private IntReference _moneyGoal;
 
         [SerializeField] private TMP_Text _text;
+
+        [SerializeField] private UnityEvent _onNewMoney;
 
         private void OnEnable()
         {
@@ -44,9 +47,11 @@ namespace UkensJoker.UI
 
                 goalText += _moneyGoal.Value.ToString()[i];
             }
-            _text.text = $"{valueText} / {goalText} kr";
+            _text.text = $"{valueText} kr / {goalText} kr";
             if (value >= _moneyGoal.Value)
                 _text.text += "\nYou can now go to sleep!";
+
+            _onNewMoney.Invoke();
         }
     }
 }

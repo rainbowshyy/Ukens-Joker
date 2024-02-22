@@ -11,6 +11,7 @@ namespace UkensJoker.Engine
         [SerializeField] private TMP_Text[] _numberTexts;
         [SerializeField] private FloatReference _correctChance;
         [SerializeField] private FloatReference _willpower;
+        [SerializeField] private FloatReference _willpowerMax;
         [SerializeField] private FloatReference _willpowerCorrectPenaltyMultiplier;
         [SerializeField] private FloatReference _cheatTime;
         [SerializeField] private UnityEvent _onCheat;
@@ -42,6 +43,7 @@ namespace UkensJoker.Engine
                 _onCompleteCheat.Invoke();
                 if (CorrectNumbers())
                 {
+                    Debug.Log("Cheat.exe generated correct numbers...");
                     for (int i = 0; i < _numbers.Length; i++)
                     {
                         _numberTexts[i].text = _numbers[i].Value.ToString();
@@ -49,6 +51,7 @@ namespace UkensJoker.Engine
                 }
                 else
                 {
+                    Debug.Log("Cheat.exe generated wrong numbers...");
                     SetRandomNumbers();
                 }
             }
@@ -79,7 +82,7 @@ namespace UkensJoker.Engine
 
         private bool CorrectNumbers()
         {
-            return Random.Range(0f, 1f) <= _correctChance.Value - _willpowerCorrectPenaltyMultiplier.Value * _willpower.Value;
+            return Random.Range(0f, 1f) <= _correctChance.Value - _willpowerCorrectPenaltyMultiplier.Value * (1f - _willpower.Value / _willpowerMax.Value);
         }
     }
 }

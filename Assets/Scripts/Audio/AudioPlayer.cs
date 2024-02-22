@@ -27,7 +27,7 @@ namespace UkensJoker.Audio
                 _audioSources[1].playOnAwake = _audio.PlayOnAwake;
             }
 
-            if (_audio is not RandomAudioData)
+            if (_audio is not RandomAudioData && !_audio.CanOverlap)
             {
                 for (int i = 0; i < _audioSources.Length; i++)
                 {
@@ -54,9 +54,9 @@ namespace UkensJoker.Audio
             if (_audio is RandomAudioData)
             {
                 SetAudioData();
-                if (_audio.Loop)
-                    StartCoroutine(SetAudioDataIfLooped());
             }
+            if (_audio.Loop)
+                StartCoroutine(SetAudioDataIfLooped());
             _audioSources[_lastPlayedIndex].Play();
         }
 
@@ -75,10 +75,20 @@ namespace UkensJoker.Audio
             {
                 SetAudioData();
                 _audioSources[_lastPlayedIndex].Play();
+                if (_audio.CanOverlap)
+                    _lastPlayedIndex = _audio.CanOverlap ? 1 - _lastPlayedIndex : 0;
             }
 
             yield return new WaitForEndOfFrame();
             StartCoroutine(SetAudioDataIfLooped());
+        }
+
+        public void SetVolume(float volume)
+        {
+            for (int i = 0; i < _audioSources.Length; i++)
+            {
+                _audioSources[i].volume = volume;
+            }
         }
     }
 }

@@ -506,6 +506,10 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: 4520a9a13fedf8a47949717fbb50f1ae, type: 2}
+  _willpowerMax:
+    UseConstant: 1
+    ConstantValue: 0
+    Variable: {fileID: 0}
   _willpowerCorrectPenaltyMultiplier:
     UseConstant: 0
     ConstantValue: 0
@@ -725,7 +729,7 @@ MonoBehaviour:
   _chromaticNoiseStop: {fileID: 11400000, guid: 2997fc3d331ff8a4a85e841978c8b3de,
     type: 2}
   _continuous: 1
-  _baseValue: 1
+  _baseValue: 0.5
   _decayValue: 0
 --- !u!1 &3734215465387065125
 GameObject:
