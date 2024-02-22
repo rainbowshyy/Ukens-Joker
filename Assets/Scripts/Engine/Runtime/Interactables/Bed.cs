@@ -16,9 +16,12 @@ namespace UkensJoker.Engine
         [SerializeField] private UnityEvent _onEnough;
         [SerializeField] private UnityEvent _onNotEnough;
 
-        private void Awake()
+        private void Start()
         {
-            this.enabled = false;
+            if (_money.Value >= _neededMoney.Value)
+                _onEnough.Invoke();
+            else
+                this.enabled = false;
         }
 
         public string GetInteractText()
