@@ -63,7 +63,7 @@ Material:
     - _PixelHeight: 0
     - _PixelWidth: 0
     - _Spread: 0.65
-    - _Willpower: 0.0713192
+    - _Willpower: 0
     m_Colors:
     - _Black: {r: 0, g: 0, b: 0, a: 1}
     - _Door: {r: 0.29019603, g: 0.19999996, b: 0.07058824, a: 1}

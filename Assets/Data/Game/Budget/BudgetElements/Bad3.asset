@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9229d79ed85032047ae18cd75b663d4e, type: 3}
-  m_Name: Addiction
+  m_Name: Bad3
   m_EditorClassIdentifier: 
-  Name: Coffee/Tobacco/Snus/whatever
-  Delta: -500
-  WillpowerActive: 1
-  WillpowerNotActive: -3
-  Required: 0
+  Name: Stop
+  Delta: 0
+  WillpowerActive: -2
+  WillpowerNotActive: 0
+  Required: 1
   Bought: 0

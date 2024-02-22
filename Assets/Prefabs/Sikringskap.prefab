@@ -215,6 +215,10 @@ MonoBehaviour:
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: 72de17ca490010a4881a87e300a28f04, type: 2}
   _powerChanged: {fileID: 11400000, guid: 124dbd7dbd2e62d49922427853bb3209, type: 2}
+  _day:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 37c6699460b57c549b2288c6cfc3de39, type: 2}
 --- !u!1 &5363416856568881959
 GameObject:
   m_ObjectHideFlags: 0

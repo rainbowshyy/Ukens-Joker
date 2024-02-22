@@ -19,6 +19,8 @@ namespace UkensJoker.Engine
         private bool _power = true;
         private float _timeCurrent;
 
+        [SerializeField] private IntReference _day;
+
         private void Update()
         {
             if (!_power)
@@ -28,7 +30,7 @@ namespace UkensJoker.Engine
             if (_timeCurrent > _powerOffCheckFrequency.Value)
             {
                 _timeCurrent -= _powerOffCheckFrequency.Value;
-                if (Random.Range(0f, 1f) < _powerOffChance.Value + _powerOffWillpowerPenaltyMultiplier.Value * (1f - _willpower.Value / _willpowerMax.Value))
+                if (Random.Range(0f, 1f) < _powerOffChance.Value + _powerOffWillpowerPenaltyMultiplier.Value * (1f - _willpower.Value / _willpowerMax.Value) && _day.Value > 0)
                 {
                     _powerChanged.Raise(this, false);
                     _power = false;
