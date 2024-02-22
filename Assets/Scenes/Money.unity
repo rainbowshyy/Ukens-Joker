@@ -3577,6 +3577,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9baf7e73195c87442a2d79db474bfa85, type: 2}
   - {fileID: 11400000, guid: d3a9894d64c9e314c9666410b206bedb, type: 2}
   - {fileID: 11400000, guid: 49c3d8056c0a3c144a797e0aeddccfcc, type: 2}
+  - {fileID: 11400000, guid: 9ee239d9ef023244eb43a056bf60edf9, type: 2}
+  - {fileID: 11400000, guid: 6f540bfe00362864f88bd49c0355bec8, type: 2}
   _uiElements:
   - {fileID: 8550445316389023091}
   - {fileID: 1417351869}

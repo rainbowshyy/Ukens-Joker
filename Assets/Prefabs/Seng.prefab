@@ -172,6 +172,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cf2fd0d08f7e2944a8ac37518f9e0596, type: 2}
   - {fileID: 11400000, guid: 4e0158fa48d927141a11b437bcfb8378, type: 2}
   - {fileID: 11400000, guid: 206354eaf81b8f94ea1e63fc6ecb3f2d, type: 2}
+  - {fileID: 11400000, guid: e3a537e5ca4264246a48d1c9540961db, type: 2}
+  - {fileID: 11400000, guid: 141c83573bbfa1d45a167dbca4682503, type: 2}
   _onEnough:
     m_PersistentCalls:
       m_Calls:
