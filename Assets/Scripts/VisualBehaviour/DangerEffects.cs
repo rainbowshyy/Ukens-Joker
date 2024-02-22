@@ -30,13 +30,15 @@ namespace UkensJoker.VisualBehaviour
 
         private void Awake()
         {
-            SetMaterialValues(0f);
+            if (_danger.Variable != null)
+                SetMaterialValues(0f);
             SetWillpowerValues(_willpower.Value);
         }
 
         private void OnEnable()
         {
-            _danger.RegisterListener(SetMaterialValues);
+            if (_danger.Variable != null)
+                _danger.RegisterListener(SetMaterialValues);
             if (_willpower.Variable != null)
                 _willpower.RegisterListener(SetWillpowerValues);
             if (_sightPosition.Variable != null)
@@ -47,7 +49,8 @@ namespace UkensJoker.VisualBehaviour
 
         private void OnDisable()
         {
-            _danger.UnregisterListener(SetMaterialValues);
+            if (_danger.Variable != null)
+                _danger.UnregisterListener(SetMaterialValues);
             if (_willpower.Variable != null)
                 _willpower.UnregisterListener(SetWillpowerValues);
             if (_sightPosition.Variable != null)
