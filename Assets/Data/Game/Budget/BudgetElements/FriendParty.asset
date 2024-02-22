@@ -17,3 +17,5 @@ MonoBehaviour:
   WillpowerActive: 2
   WillpowerNotActive: -3
   Required: 0
+  Bought: 0
+  TimelapseElement: {fileID: 11400000, guid: f8f9493eef7a7ef44b8a6fe5d821f0e5, type: 2}

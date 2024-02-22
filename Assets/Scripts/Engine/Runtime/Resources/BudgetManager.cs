@@ -35,6 +35,7 @@ namespace UkensJoker.Engine
         private bool _start;
 
         [SerializeField] private UnityEvent<float> _onWillpowerDelta;
+        [SerializeField] private CanvasGroup _black;
 
         private void Start()
         {
@@ -188,6 +189,16 @@ namespace UkensJoker.Engine
             _start = true;
         }
 
+        IEnumerator FadeToBlack()
+        {
+            while (_black.alpha < 1f)
+            {
+                _black.alpha += Time.deltaTime;
+
+                yield return new WaitForEndOfFrame();
+            }
+        }
+
         IEnumerator LoadTimelapse()
         {
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(4, LoadSceneMode.Additive);
@@ -196,6 +207,8 @@ namespace UkensJoker.Engine
             {
                 yield return null;
             }
+            _black.gameObject.SetActive(true);
+            yield return FadeToBlack();
             asyncLoad.allowSceneActivation = true;
             while (!asyncLoad.isDone)
             {

@@ -12,6 +12,9 @@ namespace UkensJoker.Engine
     {
         [SerializeField] private BoolReference _doBar;
         [SerializeField] private BoolReference _doCafe;
+        [SerializeField] private BoolReference _doParty;
+        [SerializeField] private BoolReference _doBirthday;
+        [SerializeField] private BoolReference _doHangout;
 
         private bool _playing;
 
@@ -56,6 +59,11 @@ namespace UkensJoker.Engine
         [SerializeField] private UnityEvent _stopSchool;
         [SerializeField] private Transform _schoolCam;
         private Coroutine _school;
+
+        [SerializeField] private UnityEvent _onParty;
+        [SerializeField] private UnityEvent _stopParty;
+        [SerializeField] private Transform _partyCam;
+        private Coroutine _party;
 
         private void Start()
         {
@@ -131,7 +139,7 @@ namespace UkensJoker.Engine
             StopCoroutine(_work);
             _stopWork.Invoke();
 
-            if (_doCafe.Value)
+            if (_doCafe.Value || _doHangout.Value)
             {
                 _onTrain.Invoke();
                 _train = StartCoroutine(Train(true));
@@ -163,6 +171,23 @@ namespace UkensJoker.Engine
                 _timeCurrent -= _timelapseDecayTime.Value;
                 StopCoroutine(_bar);
                 _stopBar.Invoke();
+            }
+
+            if (_doParty.Value || _doBirthday.Value)
+            {
+                _onTrain.Invoke();
+                _train = StartCoroutine(Train(true));
+                yield return new WaitForSeconds(_timeCurrent);
+                _timeCurrent -= _timelapseDecayTime.Value;
+                StopCoroutine(_train);
+                _stopTrain.Invoke();
+
+                _onParty.Invoke();
+                _party = StartCoroutine(Party(0f));
+                yield return new WaitForSeconds(_timeCurrent);
+                _timeCurrent -= _timelapseDecayTime.Value;
+                StopCoroutine(_party);
+                _stopParty.Invoke();
             }
 
             _onTrain.Invoke();
@@ -232,6 +257,13 @@ namespace UkensJoker.Engine
             _schoolCam.localEulerAngles = new Vector3(_schoolCam.localEulerAngles.x + speed * Time.deltaTime, _schoolCam.localEulerAngles.y + speed * Time.deltaTime, _schoolCam.localEulerAngles.z);
             yield return new WaitForEndOfFrame();
             _school = StartCoroutine(School(speed + Time.deltaTime * 2f));
+        }
+
+        IEnumerator Party(float time)
+        {
+            _partyCam.localPosition = new Vector3(_partyCam.localPosition.x, 1f + Mathf.Sin(time) * 0.0035f, _partyCam.localPosition.z);
+            yield return new WaitForEndOfFrame();
+            _party = StartCoroutine(Party(time + Time.deltaTime * 20f));
         }
     }
 }
