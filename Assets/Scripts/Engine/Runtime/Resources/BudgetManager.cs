@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.Events;
 
 namespace UkensJoker.Engine
 {
@@ -32,6 +33,8 @@ namespace UkensJoker.Engine
         private float _startWillpower;
 
         private bool _start;
+
+        [SerializeField] private UnityEvent<float> _onWillpowerDelta;
 
         private void Start()
         {
@@ -161,6 +164,8 @@ namespace UkensJoker.Engine
         {
             if (activeIndex < _actives.Length)
             {
+                _onWillpowerDelta.Invoke(_actives[activeIndex] ? _currentBudgetElements[activeIndex].WillpowerNotActive : _currentBudgetElements[activeIndex].WillpowerActive);
+
                 _actives[activeIndex] = !_actives[activeIndex];
                 UpdateUI();
             }
