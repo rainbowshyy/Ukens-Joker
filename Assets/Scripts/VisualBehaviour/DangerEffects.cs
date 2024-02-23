@@ -7,6 +7,8 @@ namespace UkensJoker.VisualBehaviour
 {
     public class DangerEffects : MonoBehaviour
     {
+        [SerializeField] private bool _UIFailSafe;
+
         [SerializeField] private FloatReference _danger;
         [SerializeField] private FloatReference _willpower;
         [SerializeField] private FloatReference _willpowerMax;
@@ -35,6 +37,15 @@ namespace UkensJoker.VisualBehaviour
             else
                 SetMaterialValues(_danger.Value);
             SetWillpowerValues(_willpower.Value);
+        }
+
+        private void Update()
+        {
+            if (_UIFailSafe)
+            {
+                _aberrationMat.SetFloat("_Noise", 0f);
+                _aberrationMat.SetFloat("_Danger", _clamp ? Mathf.Clamp(0.99f + _aberrationPixelMultiplier.Value * _danger.Value, 0f, 2f) : 0.99f + _aberrationPixelMultiplier.Value * _danger.Value);
+            }
         }
 
         private void OnEnable()

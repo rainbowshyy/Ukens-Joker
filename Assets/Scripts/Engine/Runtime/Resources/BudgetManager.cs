@@ -37,6 +37,10 @@ namespace UkensJoker.Engine
         [SerializeField] private UnityEvent<float> _onWillpowerDelta;
         [SerializeField] private CanvasGroup _black;
 
+        [SerializeField] private TMP_Text _gambleText;
+        [SerializeField] private FloatVariable _danger;
+        [SerializeField] private Image[] _willpowerImages;
+
         private void Start()
         {
             Cursor.lockState = CursorLockMode.None;
@@ -115,7 +119,7 @@ namespace UkensJoker.Engine
 
                 needText += moneyNumber.ToString()[i];
             }
-            needText += " kr / ";
+            needText += " kr / <color=#E6284D>-";
 
             for (int i = 0; i < needNumber.ToString().Length; i++)
             {
@@ -124,7 +128,25 @@ namespace UkensJoker.Engine
 
                 needText += needNumber.ToString()[i];
             }
-            _needText.text = needText + " kr";
+            _needText.text = needText + " kr</color>";
+
+            if (moneyNumber < needNumber)
+            {
+                string delta = ((int)(needNumber - moneyNumber)).ToString();
+                string deltaText = "";
+                for (int i = 0; i < delta.ToString().Length; i++)
+                {
+                    if ((delta.ToString().Length - i) % 3 == 0)
+                        deltaText += " ";
+
+                    deltaText += delta.ToString()[i];
+                }
+                _gambleText.text = $"Will need to win {deltaText} kr from playing Joker.";
+            }
+            else
+            {
+                _gambleText.text = "";
+            }
 
             UpdateWillpower();
 
@@ -141,7 +163,12 @@ namespace UkensJoker.Engine
                 newWillPower += _actives[i] ? _currentBudgetElements[i].WillpowerActive : _currentBudgetElements[i].WillpowerNotActive;
             }
 
-            _willpower.Value = newWillPower;
+            _willpower.Value = Mathf.Clamp(newWillPower, 0f, _willpowerMax.Value);
+            _danger.Value = (_willpowerMax.Value - _willpower.Value) * 0.05f;
+            for (int i = 0; i < _willpowerImages.Length; i++)
+            {
+                _willpowerImages[i].color = Color.white * ((_willpower.Value / _willpowerMax.Value) * 0.2f + 0.8f);
+            }
         }
 
         private (int, int) GetNeededSum()
