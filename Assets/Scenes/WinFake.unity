@@ -484,10 +484,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Good job making it this far.
+  m_text: 'Good job!
 
 
-    You will never afford a house.
+    You survived 5 months!
+
+    This is expected.
+
 
 
 
@@ -1076,7 +1079,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: (You apparently have to save money for that stuff...)
+  m_text: (Try saving money for 5 months for another ending)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 346b18ddb817b084e92e4ac31ad05d28, type: 2}
   m_sharedMaterial: {fileID: 1091473985511703747, guid: 346b18ddb817b084e92e4ac31ad05d28,
