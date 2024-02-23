@@ -9096,6 +9096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f05c34cad82d9e245a97ceb5759cabe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _UIFailSafe: 0
   _danger:
     UseConstant: 0
     ConstantValue: 0
@@ -10094,12 +10095,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789416459}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &790357808 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6081466724355457608, guid: 3af8c152c0d015b45bfe68f0ad3dafe0,
-    type: 3}
-  m_PrefabInstance: {fileID: 7656313106368269677}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &790813651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12776,12 +12771,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1268731679323421255, guid: b7c1196853a295546b2a8d0cd9ac936a,
     type: 3}
   m_PrefabInstance: {fileID: 957293623}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1025334175 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1984801094262912639, guid: 3af8c152c0d015b45bfe68f0ad3dafe0,
-    type: 3}
-  m_PrefabInstance: {fileID: 7656313106368269677}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1027901644
 PrefabInstance:
@@ -29643,42 +29632,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Laptop
       objectReference: {fileID: 0}
-    - target: {fileID: 6081466724355457608, guid: 3af8c152c0d015b45bfe68f0ad3dafe0,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7902225215109287445, guid: 3af8c152c0d015b45bfe68f0ad3dafe0,
-        type: 3}
-      propertyPath: _day.Variable
-      value: 
-      objectReference: {fileID: 11400000, guid: 37c6699460b57c549b2288c6cfc3de39,
-        type: 2}
-    - target: {fileID: 7902225215109287445, guid: 3af8c152c0d015b45bfe68f0ad3dafe0,
-        type: 3}
-      propertyPath: _day.UseConstant
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7902225215109287445, guid: 3af8c152c0d015b45bfe68f0ad3dafe0,
-        type: 3}
-      propertyPath: _objectsToDisableOnFinalDay.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 7902225215109287445, guid: 3af8c152c0d015b45bfe68f0ad3dafe0,
         type: 3}
       propertyPath: _objectsToDisableOnFinalDay.Array.data[0]
       value: 
       objectReference: {fileID: 1738743578}
-    - target: {fileID: 7902225215109287445, guid: 3af8c152c0d015b45bfe68f0ad3dafe0,
-        type: 3}
-      propertyPath: _objectsToDisableOnFinalDay.Array.data[1]
-      value: 
-      objectReference: {fileID: 790357808}
-    - target: {fileID: 7902225215109287445, guid: 3af8c152c0d015b45bfe68f0ad3dafe0,
-        type: 3}
-      propertyPath: _objectsToDisableOnFinalDay.Array.data[2]
-      value: 
-      objectReference: {fileID: 1025334175}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
