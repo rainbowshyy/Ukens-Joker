@@ -16,10 +16,10 @@ namespace UkensJoker.Engine
         {
             string password = "";
             int sixCount = 0;
-            int nextNumber = Mathf.FloorToInt(Random.Range(0f, 9.99f));
+            int nextNumber = Mathf.FloorToInt(Random.Range(1f, 9.99f));
             for (int i = 0; i < 12; i++)
             {
-                if (Random.Range(0f, 1f) > 0.5f && nextNumber != 0 && nextNumber != 6)
+                if (Random.Range(0f, 1f) > 0.6f && nextNumber != 0 && nextNumber != 6)
                     nextNumber = Mathf.FloorToInt(Random.Range(0f, 9.99f));
 
                 if (sixCount == 3)
