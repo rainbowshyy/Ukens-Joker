@@ -15,6 +15,8 @@ namespace UkensJoker.Engine
         [SerializeField] IntReference _moneyStart;
         [SerializeField] IntVariable _day;
 
+        [SerializeField] GameObject _winStar;
+
         private bool _starting;
         [SerializeField] private Material _menuMat;
         private float _alpha = 1f;
@@ -26,6 +28,8 @@ namespace UkensJoker.Engine
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             _menuMat.SetFloat("_Fade", _alpha);
+            if (PlayerPrefs.GetInt("Won", 0) == 1)
+                _winStar.SetActive(true);
         }
 
         private void Update()

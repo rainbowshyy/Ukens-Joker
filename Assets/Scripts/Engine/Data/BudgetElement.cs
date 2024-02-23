@@ -15,7 +15,7 @@ namespace UkensJoker.Engine
         public float WillpowerActive;
         public float WillpowerNotActive;
         public bool Required;
-        [HideInInspector] public bool Bought;
+        public bool Bought;
         [SerializeField] public BoolVariable TimelapseElement;
     }
 }

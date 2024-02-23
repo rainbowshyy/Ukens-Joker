@@ -28,7 +28,7 @@ namespace UkensJoker.VisualBehaviour
 
         private bool _clamp;
 
-        private void Awake()
+        private void Start()
         {
             if (_danger.Variable != null)
                 SetMaterialValues(0f);

@@ -32,6 +32,14 @@ namespace UkensJoker.Engine
         public void Interact(Vector3 direction)
         {
             _money.Value += _BSU[_day.Value].Bought ? Mathf.Abs(_BSU[_day.Value].Delta) - _neededMoney.Value : -_neededMoney.Value;
+            if (_day.Value >= 4)
+            {
+                if (_BSU[_day.Value].Bought)
+                    SceneManager.LoadScene(7);
+                else
+                    SceneManager.LoadScene(6);
+                return;
+            }
             _day.Value += 1;
             SceneManager.LoadScene(1);
         }
