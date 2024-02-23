@@ -5151,6 +5151,7 @@ GameObject:
   - component: {fileID: 391776390}
   - component: {fileID: 391776392}
   - component: {fileID: 391776391}
+  - component: {fileID: 391776393}
   m_Layer: 0
   m_Name: Computer2
   m_TagString: Untagged
@@ -5258,6 +5259,27 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &391776393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391776389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d40f2900e2aa944d8f2301b1ccc4850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _light: {fileID: 391776392}
+  _pulseIntensity:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: ae5d1f73f2f586b478e82cd0ba2c25bd, type: 2}
+  _pulseFrequency:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: c49887be9228803418faeccd2d543655, type: 2}
 --- !u!1001 &400980399
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23202,6 +23224,7 @@ GameObject:
   - component: {fileID: 1738743579}
   - component: {fileID: 1738743581}
   - component: {fileID: 1738743580}
+  - component: {fileID: 1738743582}
   m_Layer: 0
   m_Name: Cheat
   m_TagString: Untagged
@@ -23309,6 +23332,27 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1738743582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738743578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d40f2900e2aa944d8f2301b1ccc4850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _light: {fileID: 1738743581}
+  _pulseIntensity:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 6cbf34ce3fb8d3f4b86668fe25a29eb3, type: 2}
+  _pulseFrequency:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: c49887be9228803418faeccd2d543655, type: 2}
 --- !u!4 &1740239797 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8595439077312793960, guid: e3b03d3e64ec24142bf3a627e6e87580,
@@ -25910,6 +25954,7 @@ GameObject:
   - component: {fileID: 1904619059}
   - component: {fileID: 1904619061}
   - component: {fileID: 1904619060}
+  - component: {fileID: 1904619062}
   m_Layer: 0
   m_Name: Computer
   m_TagString: Untagged
@@ -26017,6 +26062,27 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1904619062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904619058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d40f2900e2aa944d8f2301b1ccc4850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _light: {fileID: 1904619061}
+  _pulseIntensity:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 71a3d4a1ed5b6da46b6d919d0aedd64f, type: 2}
+  _pulseFrequency:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: c49887be9228803418faeccd2d543655, type: 2}
 --- !u!1001 &1908602311
 PrefabInstance:
   m_ObjectHideFlags: 0
