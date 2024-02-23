@@ -80,6 +80,7 @@ namespace UkensJoker.UI
             if (broken is bool)
             {
                 _brokenSink = (bool)broken;
+                UpdateMoney(_money.Value);
             }
         }
     }

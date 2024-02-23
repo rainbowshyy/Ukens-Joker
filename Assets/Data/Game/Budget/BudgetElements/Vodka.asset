@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Alcohol
   Delta: -241
-  WillpowerActive: 2
+  WillpowerActive: 1
   WillpowerNotActive: -1
   Required: 0
   Bought: 0
+  TimelapseElement: {fileID: 0}
