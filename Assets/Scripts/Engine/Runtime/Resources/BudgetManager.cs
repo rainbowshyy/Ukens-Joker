@@ -41,6 +41,8 @@ namespace UkensJoker.Engine
         [SerializeField] private FloatVariable _danger;
         [SerializeField] private Image[] _willpowerImages;
 
+        [SerializeField] private TMP_Text _monthText;
+
         private void Start()
         {
             Cursor.lockState = CursorLockMode.None;
@@ -49,6 +51,8 @@ namespace UkensJoker.Engine
             _startWillpower = _willpower.Value;
             RollBudgetElementsForDay(_day.Value);
             UpdateUI();
+
+            _monthText.text = "Budget - Month " + (_day.Value + 1).ToString();
 
             StartCoroutine(LoadTimelapse());
         }

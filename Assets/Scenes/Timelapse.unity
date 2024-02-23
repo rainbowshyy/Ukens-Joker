@@ -3835,6 +3835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f05c34cad82d9e245a97ceb5759cabe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _UIFailSafe: 0
   _danger:
     UseConstant: 0
     ConstantValue: 0
@@ -4617,7 +4618,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "R\xF8ver'n will come through your windows.\n\nDon't let him hear or see
-    you.\n\nYou're safe when you've earned enough money."
+    you.\n\nYou're safe when you've earned enough money.\n\nSurvive 5 months."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 346b18ddb817b084e92e4ac31ad05d28, type: 2}
   m_sharedMaterial: {fileID: 1091473985511703747, guid: 346b18ddb817b084e92e4ac31ad05d28,
