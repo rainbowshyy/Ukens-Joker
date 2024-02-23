@@ -16,5 +16,6 @@ MonoBehaviour:
   Delta: -3000
   WillpowerActive: 3
   WillpowerNotActive: -1
-  Required: 0
+  Required: 1
   Bought: 0
+  TimelapseElement: {fileID: 0}
