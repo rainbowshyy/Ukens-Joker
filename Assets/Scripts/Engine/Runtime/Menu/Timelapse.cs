@@ -65,6 +65,11 @@ namespace UkensJoker.Engine
         [SerializeField] private Transform _partyCam;
         private Coroutine _party;
 
+        [SerializeField] private IntReference _day;
+        [SerializeField] private UnityEvent _onTips;
+        [SerializeField] private UnityEvent _onShowTips;
+        [SerializeField] private FloatReference _tipsTime;
+
         private void Start()
         {
             StartCoroutine(DoTimelapse());
@@ -203,6 +208,14 @@ namespace UkensJoker.Engine
             _timeCurrent -= _timelapseDecayTime.Value;
             StopCoroutine(_walkFrom);
             _stopWalkFrom.Invoke();
+
+            if (_day.Value == 0)
+            {
+                _onTips.Invoke();
+                yield return new WaitForSeconds(_tipsTime.Value * 0.5f);
+                _onShowTips.Invoke();
+                yield return new WaitForSeconds(_tipsTime.Value);
+            }
 
             _playing = false;
         }
