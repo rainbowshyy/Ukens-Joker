@@ -21,8 +21,22 @@ namespace UkensJoker.Engine
         [SerializeField] private string _interactText;
         [SerializeField] private string _cheatingInteractText;
 
+        [SerializeField] private GameObject[] _objectsToDisableOnFinalDay;
+        [SerializeField] private IntReference _day;
+
         private bool _cheating;
         private float _cheatTimeCurrent;
+
+        private void Start()
+        {
+            if (_day.Value >= 4)
+            {
+                for (int i = 0; i < _objectsToDisableOnFinalDay.Length; i++)
+                {
+                    _objectsToDisableOnFinalDay[i].gameObject.SetActive(false);
+                }
+            }
+        }
 
         private void Update()
         {
