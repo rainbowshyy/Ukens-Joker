@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: BSU2
   m_EditorClassIdentifier: 
   Name: Try to save for house / future
-  Delta: -6000
+  Delta: -4000
   WillpowerActive: 2
   WillpowerNotActive: -1
   Required: 0
   Bought: 0
+  TimelapseElement: {fileID: 0}

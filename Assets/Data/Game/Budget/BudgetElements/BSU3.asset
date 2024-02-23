@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: BSU3
   m_EditorClassIdentifier: 
   Name: Try to save money
-  Delta: -9000
+  Delta: -6000
   WillpowerActive: 1
   WillpowerNotActive: -1
   Required: 0
   Bought: 0
+  TimelapseElement: {fileID: 0}
