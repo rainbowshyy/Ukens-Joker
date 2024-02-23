@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9229d79ed85032047ae18cd75b663d4e, type: 3}
   m_Name: Bad4
   m_EditorClassIdentifier: 
-  Name: :)
+  Name: This is going great
   Delta: 0
   WillpowerActive: -2
   WillpowerNotActive: 0
   Required: 1
   Bought: 0
+  TimelapseElement: {fileID: 0}
