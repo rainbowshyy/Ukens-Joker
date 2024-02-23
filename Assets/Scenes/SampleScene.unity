@@ -22027,6 +22027,101 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1651102248}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1667998325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1667998326}
+  - component: {fileID: 1667998327}
+  - component: {fileID: 1667998328}
+  m_Layer: 8
+  m_Name: SeeSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1667998326
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667998325}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 583535725}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1667998327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667998325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da40c789842763a4184034d7c8065a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audio: {fileID: 11400000, guid: 067e42ca7d155e245852daf9c6b0aa7a, type: 2}
+  _playerPosition:
+    UseConstant: 0
+    ConstantValue: {x: 0, y: 0, z: 0}
+    Variable: {fileID: 11400000, guid: ce2e96dbefabec446979e58150c41dba, type: 2}
+  _dryLevelDistanceModifier:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: fc6fe01695ff402478ca02a3a20fcca5, type: 2}
+  _lowPassNoPlayer:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 7b8ae66187c29fc42927ba6567efd6b2, type: 2}
+  _lowPassNotConnected:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: a8741c76e02cc1145947b5ff1735cff9, type: 2}
+  _vfx: {fileID: 0}
+  _room: {fileID: 0}
+--- !u!114 &1667998328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667998325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d803daea9e5e7f4c921739c05ece411, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _danger:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 3f9a76c8d95dd2248acc4bbda7ca4713, type: 2}
+  _onNewDanger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1667998327}
+        m_TargetAssemblyTypeName: UkensJoker.Audio.AudioPlayer, ukensjoker.audio
+        m_MethodName: SetVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1669307259
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29268,6 +29363,81 @@ PrefabInstance:
       propertyPath: _camera
       value: 
       objectReference: {fileID: 2139625128}
+    - target: {fileID: 1933146386587277028, guid: 943125c4338db934b8b9d4122c66f1f7,
+        type: 3}
+      propertyPath: _onHasSeen.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933146386587277028, guid: 943125c4338db934b8b9d4122c66f1f7,
+        type: 3}
+      propertyPath: _onStopSeen.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933146386587277028, guid: 943125c4338db934b8b9d4122c66f1f7,
+        type: 3}
+      propertyPath: _onHasSeen.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933146386587277028, guid: 943125c4338db934b8b9d4122c66f1f7,
+        type: 3}
+      propertyPath: _onStopSeen.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933146386587277028, guid: 943125c4338db934b8b9d4122c66f1f7,
+        type: 3}
+      propertyPath: _onHasSeen.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1667998327}
+    - target: {fileID: 1933146386587277028, guid: 943125c4338db934b8b9d4122c66f1f7,
+        type: 3}
+      propertyPath: _onStopSeen.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1667998327}
+    - target: {fileID: 1933146386587277028, guid: 943125c4338db934b8b9d4122c66f1f7,
+        type: 3}
+      propertyPath: _onHasSeen.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933146386587277028, guid: 943125c4338db934b8b9d4122c66f1f7,
+        type: 3}
+      propertyPath: _onHasSeen.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933146386587277028, guid: 943125c4338db934b8b9d4122c66f1f7,
+        type: 3}
+      propertyPath: _onStopSeen.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933146386587277028, guid: 943125c4338db934b8b9d4122c66f1f7,
+        type: 3}
+      propertyPath: _onStopSeen.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Stop
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933146386587277028, guid: 943125c4338db934b8b9d4122c66f1f7,
+        type: 3}
+      propertyPath: _onHasSeen.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UkensJoker.Audio.SpatialAudioPlayer, ukensjoker.audio
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933146386587277028, guid: 943125c4338db934b8b9d4122c66f1f7,
+        type: 3}
+      propertyPath: _onStopSeen.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UkensJoker.Audio.SpatialAudioPlayer, ukensjoker.audio
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933146386587277028, guid: 943125c4338db934b8b9d4122c66f1f7,
+        type: 3}
+      propertyPath: _onHasSeen.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933146386587277028, guid: 943125c4338db934b8b9d4122c66f1f7,
+        type: 3}
+      propertyPath: _onHasSeen.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933146386587277028, guid: 943125c4338db934b8b9d4122c66f1f7,
+        type: 3}
+      propertyPath: _onStopSeen.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3287700731361885628, guid: 943125c4338db934b8b9d4122c66f1f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -29325,7 +29495,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3287700731361885628, guid: 943125c4338db934b8b9d4122c66f1f7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1667998326}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 943125c4338db934b8b9d4122c66f1f7, type: 3}
 --- !u!23 &6079048242050078332
