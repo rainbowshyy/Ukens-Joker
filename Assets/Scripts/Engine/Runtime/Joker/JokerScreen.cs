@@ -129,6 +129,13 @@ namespace UkensJoker.Engine
                 SelectCurrent();
         }
 
+        public void StopAnticipation()
+        {
+            if (_anticipating)
+                SelectCurrent();
+            _anticipating = false;
+        }
+
         private void SelectCurrent()
         {
             _columns[_currentNumber].Up.Select("W", _inputColor, _filledNumberFrame);
