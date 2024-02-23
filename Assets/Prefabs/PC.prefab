@@ -3212,6 +3212,7 @@ MonoBehaviour:
     Variable: {fileID: 11400000, guid: 5db125d8fe1dbb9408e70bcd890ac64a, type: 2}
   _wagerText: {fileID: 592087358520654989}
   _inputColor: {r: 0.9019608, g: 0.15686275, b: 0.3019608, a: 1}
+  _playerSolvedGame: {fileID: 11400000, guid: 8a8334b6f50ca2a49af754fe4ad8d7c9, type: 2}
 --- !u!1 &3684098864214704320
 GameObject:
   m_ObjectHideFlags: 0

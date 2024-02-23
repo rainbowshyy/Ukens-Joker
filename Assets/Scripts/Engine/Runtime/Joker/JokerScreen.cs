@@ -79,6 +79,7 @@ namespace UkensJoker.Engine
         [SerializeField] private IntReference _wager;
         [SerializeField] private TMP_Text _wagerText;
         [SerializeField] private Color _inputColor;
+        [SerializeField] private GameEvent _playerSolvedGame;
 
         public void ResetColumns()
         {
@@ -121,6 +122,7 @@ namespace UkensJoker.Engine
                 _onWrong.Invoke();
 
             _currentNumber++;
+            _playerSolvedGame.Raise(this, null);
             _anticipating = false;
 
             if (_currentNumber >= _rightNumbers.Length)

@@ -48,6 +48,9 @@ namespace UkensJoker.Engine
         private Vector3 _hideLocation;
         private bool _sawHide;
 
+        private bool _isActivated;
+        [SerializeField] private IntReference _day;
+
         [SerializeField] private GameEvent _lose;
 
         private void Start()
@@ -57,6 +60,8 @@ namespace UkensJoker.Engine
             MoveToCurrentSpot();
             _timeBeforeUpdate = _røvernUpdateTime.Value;
             _agent.speed = _røvernSpeedIdle.Value;
+            if (_day.Value > 0)
+                _isActivated = true;
         }
 
         private void Update()
@@ -67,7 +72,7 @@ namespace UkensJoker.Engine
                 _onPlayerSpot.Invoke();
             }
 
-            if (!_pause)
+            if (!_pause && _isActivated)
                 _timeBeforeUpdate -= Time.deltaTime;
 
             if (_chasing)
@@ -255,6 +260,11 @@ namespace UkensJoker.Engine
         public void SawHide()
         {
             _sawHide = true;
+        }
+
+        public void PlayerSolvedAGame()
+        {
+            _isActivated = true;
         }
     }
 }
