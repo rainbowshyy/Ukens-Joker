@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Everything is shit I think
   Delta: 0
-  WillpowerActive: -2
+  WillpowerActive: -1
   WillpowerNotActive: 0
   Required: 1
   Bought: 0
+  TimelapseElement: {fileID: 0}
