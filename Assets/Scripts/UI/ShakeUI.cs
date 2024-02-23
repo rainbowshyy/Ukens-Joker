@@ -52,5 +52,10 @@ namespace UkensJoker.UI
             _shakeCurrent = _shakeCooldown.Value;
             _offsetX = _shakePixelIntensity.Value;
         }
+
+        public void KeepShaking()
+        {
+            _shakesLeft = _shakeAmount.Value;
+        }
     }
 }

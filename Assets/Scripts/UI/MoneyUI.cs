@@ -15,6 +15,8 @@ namespace UkensJoker.UI
         [SerializeField] private UnityEvent _onNewMoney;
 
         private bool _brokenSink;
+        private bool _enough;
+        [SerializeField] private UnityEvent _onEnough;
 
         private void OnEnable()
         {
@@ -29,6 +31,14 @@ namespace UkensJoker.UI
         private void Start()
         {
             UpdateMoney(_money.Value);
+        }
+
+        private void Update()
+        {
+            if (!_enough)
+                return;
+
+            _onEnough.Invoke();
         }
 
         private void UpdateMoney(int value)
@@ -53,7 +63,14 @@ namespace UkensJoker.UI
             if (_brokenSink)
                 _text.text += "\nBathroom sink is leaking!";
             if (value >= _moneyGoal.Value)
+            {
                 _text.text += "\nYou can now go to sleep!";
+                _enough = true;
+            }
+            else
+            {
+                _enough = false;
+            }
 
             _onNewMoney.Invoke();
         }
