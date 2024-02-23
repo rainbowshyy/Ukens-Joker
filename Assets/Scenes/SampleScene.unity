@@ -2702,6 +2702,7 @@ GameObject:
   - component: {fileID: 140405688}
   - component: {fileID: 140405687}
   - component: {fileID: 140405690}
+  - component: {fileID: 140405691}
   m_Layer: 5
   m_Name: Money
   m_TagString: Untagged
@@ -2889,6 +2890,34 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: d7ad48c15895cb1438ba92f37f98d623, type: 2}
+--- !u!114 &140405691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140405685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9978dbcdb7d89b449b8088faf71e580b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameEvent: {fileID: 11400000, guid: 6cf86a6c296428d48931a39a323ea747, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 140405687}
+        m_TargetAssemblyTypeName: UkensJoker.UI.MoneyUI, ukensjoker.ui
+        m_MethodName: OnSinkChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &160488347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10506,7 +10535,7 @@ GameObject:
   - component: {fileID: 821189986}
   - component: {fileID: 821189988}
   - component: {fileID: 821189987}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: Panel (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10525,7 +10554,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1748323993}
+  m_Father: {fileID: 978364445}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -12321,6 +12350,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 821189986}
   - {fileID: 1820345126}
   - {fileID: 65747092}
   - {fileID: 140405686}
@@ -23364,7 +23394,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 840251728}
-  - {fileID: 821189986}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

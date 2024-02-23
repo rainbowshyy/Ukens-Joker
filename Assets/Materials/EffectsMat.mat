@@ -39,5 +39,9 @@ Material:
     m_Ints: []
     m_Floats:
     - _Threshold: 0
-    m_Colors: []
+    - _WaterThresholdRatio: 0.3
+    m_Colors:
+    - _Blue1: {r: 0.43137258, g: 0.8392157, b: 1, a: 1}
+    - _Blue2: {r: 0.30196077, g: 0.6, b: 0.9019608, a: 1}
+    - _Blue3: {r: 0.19999996, g: 0.39999998, b: 0.8, a: 1}
   m_BuildTextureStacks: []

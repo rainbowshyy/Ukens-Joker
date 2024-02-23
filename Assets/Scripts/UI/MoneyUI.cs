@@ -14,6 +14,8 @@ namespace UkensJoker.UI
 
         [SerializeField] private UnityEvent _onNewMoney;
 
+        private bool _brokenSink;
+
         private void OnEnable()
         {
             _money.RegisterListener(UpdateMoney);
@@ -48,10 +50,20 @@ namespace UkensJoker.UI
                 goalText += _moneyGoal.Value.ToString()[i];
             }
             _text.text = $"{valueText} kr / {goalText} kr";
+            if (_brokenSink)
+                _text.text += "\nBathroom sink is leaking!";
             if (value >= _moneyGoal.Value)
                 _text.text += "\nYou can now go to sleep!";
 
             _onNewMoney.Invoke();
+        }
+
+        public void OnSinkChanged(Component sender, object broken)
+        {
+            if (broken is bool)
+            {
+                _brokenSink = (bool)broken;
+            }
         }
     }
 }
