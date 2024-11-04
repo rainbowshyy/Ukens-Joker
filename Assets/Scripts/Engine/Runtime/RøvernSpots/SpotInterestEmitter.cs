@@ -15,6 +15,11 @@ namespace UkensJoker.Engine
         {
             for (int s = 0; s < _røvernSpots.Length; s++)
             {
+                if (_røvernSpots[s] == null)
+                {
+                    Debug.LogWarning("No insterest spot set!");
+                    continue;
+                }
                 _røvernSpots[s].AddInterest(_interest.Value);
                 Debug.Log($"Added {_interest.Value} interest to {_røvernSpots[s].name}");
                 if (_spread)
